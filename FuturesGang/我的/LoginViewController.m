@@ -8,8 +8,9 @@
 
 #import "LoginViewController.h"
 
-@interface LoginViewController ()
-
+@interface LoginViewController ()<UITextFieldDelegate>
+@property(nonatomic,strong)UITextField * zhTextview;
+@property(nonatomic,strong) UITextField * mmTextview;
 @end
 
 @implementation LoginViewController
@@ -34,19 +35,21 @@
     
     
     //账号 切圆角
-    UITextField * zhTextview = [[UITextField alloc]init];
-    zhTextview.frame = CGRectMake((SCREEN_WIDTH-580*wb)/2, 520*hb, 580*wb, 88*hb);
-    [self.view addSubview:zhTextview];
+    _zhTextview = [[UITextField alloc]init];
+    _zhTextview.frame = CGRectMake((SCREEN_WIDTH-580*wb)/2, 520*hb, 580*wb, 88*hb);
+    [self.view addSubview:_zhTextview];
+    _zhTextview.delegate = self;
+    _zhTextview.tag = 101;
+    _zhTextview.returnKeyType = UIReturnKeyNext;
+    _zhTextview.layer.masksToBounds = YES;
+    _zhTextview.layer.cornerRadius  = _zhTextview.frame.size.height/16;
     
-    zhTextview.layer.masksToBounds = YES;
-    zhTextview.layer.cornerRadius  = zhTextview.frame.size.height/16;
-    
-    zhTextview.backgroundColor = RGBA(66, 69, 87, 1);
+    _zhTextview.backgroundColor = RGBA(66, 69, 87, 1);
     
     UIView * leftview = [[UIView alloc]init];
     leftview.frame = CGRectMake(0, 0, 155*wb, 90*hb);
     leftview.backgroundColor =RGBA(66, 69, 87, 1);
-    [zhTextview addSubview:leftview];
+    [_zhTextview addSubview:leftview];
     
     UILabel * label = [[UILabel alloc]init];
     label.frame =CGRectMake(60*wb, 28*hb, 75*wb, 30*hb);
@@ -60,28 +63,30 @@
     }
     label.textAlignment = NSTextAlignmentLeft;
     [leftview addSubview:label];
-    zhTextview.leftView = leftview;
-    zhTextview.leftViewMode=UITextFieldViewModeAlways;
+    _zhTextview.leftView = leftview;
+    _zhTextview.leftViewMode=UITextFieldViewModeAlways;
     
    
-    zhTextview.placeholder =@"用户名或手机号";
-    [zhTextview setValue:RGBA(150, 160, 190, 1) forKeyPath:@"_placeholderLabel.textColor"];
-    [zhTextview setValue:[UIFont systemFontOfSize:13] forKeyPath:@"_placeholderLabel.font"];
+    _zhTextview.placeholder =@"用户名或手机号";
+    [_zhTextview setValue:RGBA(150, 160, 190, 1) forKeyPath:@"_placeholderLabel.textColor"];
+    [_zhTextview setValue:[UIFont systemFontOfSize:13] forKeyPath:@"_placeholderLabel.font"];
     
     //密码
-    UITextField * mmTextview = [[UITextField alloc]init];
-    mmTextview.frame = CGRectMake((SCREEN_WIDTH-580*wb)/2, 520*hb+90*hb, 580*wb, 88*hb);
-    [self.view addSubview:mmTextview];
+    _mmTextview = [[UITextField alloc]init];
+    _mmTextview.frame = CGRectMake((SCREEN_WIDTH-580*wb)/2, 520*hb+90*hb, 580*wb, 88*hb);
+    [self.view addSubview:_mmTextview];
+    _mmTextview.delegate = self;
+    _mmTextview.tag = 102;
+    _mmTextview.returnKeyType = UIReturnKeyDone;
+    _mmTextview.layer.masksToBounds = YES;
+    _mmTextview.layer.cornerRadius  = _mmTextview.frame.size.height/16;
     
-    mmTextview.layer.masksToBounds = YES;
-    mmTextview.layer.cornerRadius  = zhTextview.frame.size.height/16;
-    
-    mmTextview.backgroundColor = RGBA(66, 69, 87, 1);
+    _mmTextview.backgroundColor = RGBA(66, 69, 87, 1);
     
     UIView * mleftview = [[UIView alloc]init];
     mleftview.frame = CGRectMake(0, 0, 155*wb, 90*hb);
     mleftview.backgroundColor =RGBA(66, 69, 87, 1);
-    [mmTextview addSubview:mleftview];
+    [_mmTextview addSubview:mleftview];
     
     UILabel * mlabel = [[UILabel alloc]init];
     mlabel.frame =CGRectMake(60*wb, 28*hb, 75*wb, 30*hb);
@@ -95,20 +100,93 @@
     }
     mlabel.textAlignment = NSTextAlignmentLeft;
     [mleftview addSubview:mlabel];
-    mmTextview.leftView = mleftview;
-    mmTextview.leftViewMode=UITextFieldViewModeAlways;
+    _mmTextview.leftView = mleftview;
+    _mmTextview.leftViewMode=UITextFieldViewModeAlways;
     
     
-    mmTextview.placeholder =@"请输入登录密码";
-    [mmTextview setValue:RGBA(150, 160, 190, 1) forKeyPath:@"_placeholderLabel.textColor"];
-    [mmTextview setValue:[UIFont systemFontOfSize:13] forKeyPath:@"_placeholderLabel.font"];
+    _mmTextview.placeholder =@"请输入登录密码";
+    [_mmTextview setValue:RGBA(150, 160, 190, 1) forKeyPath:@"_placeholderLabel.textColor"];
+    [_mmTextview setValue:[UIFont systemFontOfSize:13] forKeyPath:@"_placeholderLabel.font"];
     
 
+    //忘记密码
+    UIButton * wjbutton = [[UIButton alloc]init];
+    wjbutton.frame = CGRectMake(86*wb,  520*hb+90*hb+88*hb, 250*wb, 60*hb);
+    [wjbutton setTitleColor:RGBA(63, 111, 198, 1) forState:UIControlStateNormal];
+    [wjbutton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [wjbutton setTitle:@"忘记密码" forState:UIControlStateNormal];
+    if (SCREEN_WIDTH == 320) {
+        wjbutton.titleLabel.font = [UIFont systemFontOfSize: 16.0];
+    }else
+    {
+        wjbutton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
+    }
+    wjbutton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    [self.view addSubview:wjbutton];
+    
+    //免费注册
+    
+    UIButton * mfbutton = [[UIButton alloc]init];
+    mfbutton.frame = CGRectMake(SCREEN_WIDTH-86*wb-250*wb,  520*hb+90*hb+88*hb, 250*wb, 60*hb);
+    [mfbutton setTitleColor:RGBA(63, 111, 198, 1) forState:UIControlStateNormal];
+     [mfbutton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [mfbutton setTitle:@"免费注册" forState:UIControlStateNormal];
+    if (SCREEN_WIDTH == 320) {
+        mfbutton.titleLabel.font = [UIFont systemFontOfSize: 16.0];
+    }else
+    {
+        mfbutton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
+    }
+    mfbutton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    [self.view addSubview:mfbutton];
+    
+    
+    
+    //登录按钮
+    
+    UIButton * dlbutton = [[UIButton alloc]init];
+    dlbutton.frame = CGRectMake((SCREEN_WIDTH-580*wb)/2, 520*hb+90*hb+88*hb+190*hb, 580*wb, 80*hb);
+    [dlbutton setBackgroundColor:RGBA(63, 111, 198, 1)];
+    [dlbutton setTitle:@"登录" forState:UIControlStateNormal];
+    [dlbutton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    if (SCREEN_WIDTH == 320) {
+         dlbutton.titleLabel.font = [UIFont systemFontOfSize: 16.0];
+    }else
+    {
+        dlbutton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
+    }
+    [dlbutton addTarget:self action:@selector(loginClick) forControlEvents:UIControlEventTouchUpInside];
+    dlbutton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+    
+    dlbutton.layer.masksToBounds =YES;
+    dlbutton.layer.cornerRadius = dlbutton.frame.size.width/64;
+    [self.view addSubview:dlbutton];
     
     
     
 }
 
+-(void)loginClick{
+    
+     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    RootTabViewController * vc = [[RootTabViewController alloc]init];
+  //  [self presentModalViewController:vc animated:YES];
+     [self presentViewController:vc animated:YES completion:Nil];
+    
+    
+}
+#pragma mark textField delegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if (textField.tag == 101) {
+        [_zhTextview resignFirstResponder];
+        [_mmTextview becomeFirstResponder];
+    }else
+    {
+        [_mmTextview resignFirstResponder];
+    }
+    return YES;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
