@@ -20,5 +20,28 @@
 #define RGBA(R/*红*/, G/*绿*/, B/*蓝*/, A/*透明*/) \
 [UIColor colorWithRed:R/255.f green:G/255.f blue:B/255.f alpha:A]
 
+//获取屏幕 宽度、高度
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+
+#define iPhoneX (SCREEN_WIDTH == 375.f && SCREEN_HEIGHT == 812.f ? YES : NO)
+#define wb   (iPhoneX ? SCREEN_WIDTH/750: SCREEN_WIDTH/750)
+#define hb   (iPhoneX ? SCREEN_HEIGHT/1624 : SCREEN_HEIGHT/1334)
+#define  StatusBarAndNavigationBarHeight  (iPhoneX ? 88.f : 64.f)
+#define  TabbarHeight         (iPhoneX ? (49.f+34.f) : 49.f)
+
+
+
+//设备型号
+#define DEVICE_TYPE                [[NSUserDefaults standardUserDefaults] objectForKey:@"DeviceType"]
+//设备分辨率
+#define DEVICE_SCREEN_SIZE          [[NSUserDefaults standardUserDefaults] objectForKey:@"ScreenSize"]
+//列表字体
+#define LIST_FOUNT      @"STHeitiSC-Light"
+
+//获取沙盒的路径
+#define cache_file_path          [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"caneditappcache"];
+
+#define CACHE_FILE_PATH(file)       [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:file];
 
 #endif /* FG_pch */

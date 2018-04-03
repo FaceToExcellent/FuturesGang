@@ -19,6 +19,7 @@
 		467DE9972073195F00183731 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE9932073195F00183731 /* RootViewController.m */; };
 		467DE9982073195F00183731 /* OneLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE9952073195F00183731 /* OneLevelViewController.m */; };
 		467DE99B20731A0B00183731 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE99A20731A0B00183731 /* UINavigationController+FDFullscreenPopGesture.m */; };
+		46A2413D2073214500EFA8B4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A2413C2073214500EFA8B4 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		467DE9962073195F00183731 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		467DE99920731A0B00183731 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		467DE99A20731A0B00183731 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		46A2413B2073214500EFA8B4 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		46A2413C2073214500EFA8B4 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 			children = (
 				467DE984207315BD00183731 /* MyCenterViewController.h */,
 				467DE985207315BD00183731 /* MyCenterViewController.m */,
+				46A2413B2073214500EFA8B4 /* LoginViewController.h */,
+				46A2413C2073214500EFA8B4 /* LoginViewController.m */,
 			);
 			path = "我的";
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 				467DE9982073195F00183731 /* OneLevelViewController.m in Sources */,
 				467DE98D2073162600183731 /* OptionalViewController.m in Sources */,
 				467DE9902073165E00183731 /* QuotationViewController.m in Sources */,
+				46A2413D2073214500EFA8B4 /* LoginViewController.m in Sources */,
 				467DE9672073096E00183731 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

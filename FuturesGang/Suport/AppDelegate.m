@@ -6,6 +6,7 @@
 //  Copyright © 2018年 yuzhen hua. All rights reserved.
 //
 #import "RootTabViewController.h"
+#import "LoginViewController.h"
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
@@ -21,7 +22,7 @@
     self.window.frame = [UIScreen mainScreen].bounds;
     self.window.backgroundColor = [UIColor whiteColor];
     
-    RootTabViewController * NVC = [[RootTabViewController alloc]init];
+    LoginViewController * NVC = [[LoginViewController alloc]init];
     self.window.rootViewController = NVC;
 
     [self.window makeKeyAndVisible];
