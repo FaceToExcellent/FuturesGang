@@ -7,7 +7,8 @@
 //
 
 #import "LoginViewController.h"
-
+#import "ForgetWordViewController.h"
+#import "SignUPViewController.h"
 @interface LoginViewController ()<UITextFieldDelegate>
 @property(nonatomic,strong)UITextField * zhTextview;
 @property(nonatomic,strong) UITextField * mmTextview;
@@ -170,11 +171,16 @@
 }
 //忘记密码
 -(void)wordforgetAndGetBack{
-    NSLog(@"忘记密码");
+ //  #import "ForgetWordViewController.h"
+    ForgetWordViewController * fvc = [[ForgetWordViewController alloc]init];
+    [self.navigationController pushViewController:fvc animated:YES];
+    
 }
 //免费注册
 -(void)registeForFree{
-     NSLog(@"免费注册");
+    
+    SignUPViewController * fvc = [[SignUPViewController alloc]init];
+    [self.navigationController pushViewController:fvc animated:YES];
 }
 //登录按钮 这里需要登录成功或者失败
 -(void)loginClick{
@@ -188,6 +194,10 @@
     
 }
 #pragma mark textField delegate
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [textField becomeFirstResponder];
+}
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     if (textField.tag == 101) {
         [_zhTextview resignFirstResponder];
@@ -197,6 +207,12 @@
         [_mmTextview resignFirstResponder];
     }
     return YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

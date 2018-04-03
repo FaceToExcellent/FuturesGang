@@ -20,6 +20,8 @@
 		467DE9982073195F00183731 /* OneLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE9952073195F00183731 /* OneLevelViewController.m */; };
 		467DE99B20731A0B00183731 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE99A20731A0B00183731 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		46A2413D2073214500EFA8B4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A2413C2073214500EFA8B4 /* LoginViewController.m */; };
+		46A2414020735F3E00EFA8B4 /* ForgetWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A2413F20735F3E00EFA8B4 /* ForgetWordViewController.m */; };
+		46A24143207360F300EFA8B4 /* SignUPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A24142207360F300EFA8B4 /* SignUPViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,10 @@
 		467DE99A20731A0B00183731 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		46A2413B2073214500EFA8B4 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		46A2413C2073214500EFA8B4 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		46A2413E20735F3E00EFA8B4 /* ForgetWordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetWordViewController.h; sourceTree = "<group>"; };
+		46A2413F20735F3E00EFA8B4 /* ForgetWordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetWordViewController.m; sourceTree = "<group>"; };
+		46A24141207360F300EFA8B4 /* SignUPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUPViewController.h; sourceTree = "<group>"; };
+		46A24142207360F300EFA8B4 /* SignUPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUPViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +101,12 @@
 			children = (
 				467DE984207315BD00183731 /* MyCenterViewController.h */,
 				467DE985207315BD00183731 /* MyCenterViewController.m */,
+				46A24141207360F300EFA8B4 /* SignUPViewController.h */,
+				46A24142207360F300EFA8B4 /* SignUPViewController.m */,
 				46A2413B2073214500EFA8B4 /* LoginViewController.h */,
 				46A2413C2073214500EFA8B4 /* LoginViewController.m */,
+				46A2413E20735F3E00EFA8B4 /* ForgetWordViewController.h */,
+				46A2413F20735F3E00EFA8B4 /* ForgetWordViewController.m */,
 			);
 			path = "我的";
 			sourceTree = "<group>";
@@ -228,8 +238,10 @@
 				467DE9982073195F00183731 /* OneLevelViewController.m in Sources */,
 				467DE98D2073162600183731 /* OptionalViewController.m in Sources */,
 				467DE9902073165E00183731 /* QuotationViewController.m in Sources */,
+				46A24143207360F300EFA8B4 /* SignUPViewController.m in Sources */,
 				46A2413D2073214500EFA8B4 /* LoginViewController.m in Sources */,
 				467DE9672073096E00183731 /* AppDelegate.m in Sources */,
+				46A2414020735F3E00EFA8B4 /* ForgetWordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

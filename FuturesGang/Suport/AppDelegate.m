@@ -22,9 +22,11 @@
     self.window.frame = [UIScreen mainScreen].bounds;
     self.window.backgroundColor = [UIColor whiteColor];
     
-    LoginViewController * NVC = [[LoginViewController alloc]init];
+    LoginViewController * LVC = [[LoginViewController alloc]init];
     //RootTabViewController * NVC = [[RootTabViewController alloc]init];
-    self.window.rootViewController = NVC;
+    UINavigationController * nvc = [[UINavigationController alloc]initWithRootViewController:LVC];
+    
+    self.window.rootViewController = nvc;
 
     [self.window makeKeyAndVisible];
     
