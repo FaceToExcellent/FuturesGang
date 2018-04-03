@@ -11,6 +11,9 @@
 #import "MycenterHeadView.h"
 @interface MyCenterViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView * mycenterTableView;
+
+@property(nonatomic,strong)NSArray * namearray;
+@property(nonatomic,strong)NSArray * imageArray;
 @end
 
 @implementation MyCenterViewController
@@ -20,13 +23,19 @@
     
     self.view.backgroundColor = RGBA(31, 33, 44, 1);
     [self setnaviTitle:@"我的"];
+    [self atrrayset];
     
     [self addRightBtn];
     
     [self mycenterTabviewMake];
     
+    
 }
-
+-(void)atrrayset{
+    _namearray = @[@"资金明细",@"结算单",@"成交记录",@"个人信息",@"关于我们",@"推广赚钱",@"退出登录"];
+    _imageArray= @[@"ZJMX",@"JSD",@"CJJL",@"GRXX",@"GYWM",@"TGZQ",@"TCDL"];
+    
+}
 - (void)addRightBtn {
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:@"客服" style:UIBarButtonItemStylePlain target:self action:@selector(onClickedOKbtn)];
     [rightBarItem setTintColor:[UIColor whiteColor]];
@@ -75,7 +84,19 @@
         cell = [[MyCenterTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"mycentercell"];
     }
      cell.ishidegoright = NO;
-     cell.name.text = [NSString stringWithFormat:@"%ld+假数据",indexPath.row];
+    if (indexPath.section == 0) {
+        cell.name.text = [NSString stringWithFormat:@"%@",_namearray[indexPath.row]];
+        cell.image.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",_imageArray[indexPath.row]]];
+    }
+    if (indexPath.section == 1) {
+        cell.name.text = [NSString stringWithFormat:@"%@",_namearray[5]];
+        cell.image.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",_imageArray[5]]];
+    }
+    if (indexPath.section == 2) {
+        cell.name.text = [NSString stringWithFormat:@"%@",_namearray.lastObject];
+        cell.image.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",_imageArray.lastObject]];
+    }
+    
      cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;

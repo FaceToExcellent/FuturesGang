@@ -32,7 +32,7 @@
     _image.frame= CGRectMake(27*wb, 20*hb, 60*wb, 60*wb);
     _image.layer.masksToBounds = YES;
     _image.layer.cornerRadius = _image.frame.size.width/16;
-    _image.backgroundColor = [UIColor blueColor];
+   // _image.backgroundColor = [UIColor blueColor];
     [self addSubview:_image];
     
     
@@ -54,9 +54,10 @@
     // goright
     
     _goright = [[UIImageView alloc]init];
-    _goright.frame= CGRectMake(SCREEN_WIDTH -45*wb, 20*hb, 20*wb, 30*wb);
+    _goright.frame= CGRectMake(SCREEN_WIDTH -45*wb, 35*hb, 20*wb, 30*wb);
     _goright.hidden = _ishidegoright;
-    _goright.backgroundColor = [UIColor blueColor];
+    _goright.image =  [UIImage imageNamed:@"ZXJT"];
+    //_goright.backgroundColor = [UIColor blueColor];
     [self addSubview:_goright];
     
     
