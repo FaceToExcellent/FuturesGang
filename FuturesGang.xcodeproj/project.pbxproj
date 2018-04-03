@@ -22,6 +22,7 @@
 		46A2413D2073214500EFA8B4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A2413C2073214500EFA8B4 /* LoginViewController.m */; };
 		46A2414020735F3E00EFA8B4 /* ForgetWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A2413F20735F3E00EFA8B4 /* ForgetWordViewController.m */; };
 		46A24143207360F300EFA8B4 /* SignUPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A24142207360F300EFA8B4 /* SignUPViewController.m */; };
+		46A2414920736CAC00EFA8B4 /* MyCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A2414820736CAC00EFA8B4 /* MyCenterTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,8 @@
 		46A2413F20735F3E00EFA8B4 /* ForgetWordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetWordViewController.m; sourceTree = "<group>"; };
 		46A24141207360F300EFA8B4 /* SignUPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUPViewController.h; sourceTree = "<group>"; };
 		46A24142207360F300EFA8B4 /* SignUPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUPViewController.m; sourceTree = "<group>"; };
+		46A2414720736CAC00EFA8B4 /* MyCenterTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCenterTableViewCell.h; sourceTree = "<group>"; };
+		46A2414820736CAC00EFA8B4 /* MyCenterTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCenterTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,7 @@
 		467DE9802073155A00183731 /* 我的 */ = {
 			isa = PBXGroup;
 			children = (
+				46A2414620736C8300EFA8B4 /* View */,
 				467DE984207315BD00183731 /* MyCenterViewController.h */,
 				467DE985207315BD00183731 /* MyCenterViewController.m */,
 				46A24141207360F300EFA8B4 /* SignUPViewController.h */,
@@ -166,6 +170,15 @@
 				467DE97C20730BF500183731 /* RootTabViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		46A2414620736C8300EFA8B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				46A2414720736CAC00EFA8B4 /* MyCenterTableViewCell.h */,
+				46A2414820736CAC00EFA8B4 /* MyCenterTableViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +254,7 @@
 				467DE97D20730BF500183731 /* RootTabViewController.m in Sources */,
 				467DE986207315BD00183731 /* MyCenterViewController.m in Sources */,
 				467DE9972073195F00183731 /* RootViewController.m in Sources */,
+				46A2414920736CAC00EFA8B4 /* MyCenterTableViewCell.m in Sources */,
 				467DE9752073096F00183731 /* main.m in Sources */,
 				467DE98A2073160D00183731 /* TransactionViewController.m in Sources */,
 				467DE9982073195F00183731 /* OneLevelViewController.m in Sources */,
