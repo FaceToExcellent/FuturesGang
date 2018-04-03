@@ -121,6 +121,8 @@
     {
         wjbutton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
     }
+    [wjbutton addTarget:self action:@selector(wordforgetAndGetBack) forControlEvents:UIControlEventTouchUpInside];
+    
     wjbutton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [self.view addSubview:wjbutton];
     
@@ -137,6 +139,7 @@
     {
         mfbutton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
     }
+     [mfbutton addTarget:self action:@selector(registeForFree) forControlEvents:UIControlEventTouchUpInside];
     mfbutton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [self.view addSubview:mfbutton];
     
@@ -165,7 +168,15 @@
     
     
 }
-
+//忘记密码
+-(void)wordforgetAndGetBack{
+    NSLog(@"忘记密码");
+}
+//免费注册
+-(void)registeForFree{
+     NSLog(@"免费注册");
+}
+//登录按钮 这里需要登录成功或者失败
 -(void)loginClick{
     
      [self dismissViewControllerAnimated:YES completion:nil];
@@ -192,14 +203,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
