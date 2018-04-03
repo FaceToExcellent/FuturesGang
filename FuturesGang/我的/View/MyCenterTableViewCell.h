@@ -12,4 +12,5 @@
 @property(nonatomic,strong)UIImageView * image;
 @property(nonatomic,strong)UILabel     * name;
 @property(nonatomic,strong)UIImageView * goright;
+@property(nonatomic)BOOL ishidegoright;
 @end

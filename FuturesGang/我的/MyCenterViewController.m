@@ -7,7 +7,8 @@
 //
 
 #import "MyCenterViewController.h"
-
+#import "MyCenterTableViewCell.h"
+#import "MycenterHeadView.h"
 @interface MyCenterViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView * mycenterTableView;
 @end
@@ -45,9 +46,13 @@
     _mycenterTableView.dataSource =self;
     _mycenterTableView.tableFooterView = [[UIView alloc]init];
     _mycenterTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _mycenterTableView.scrollEnabled =NO;
+   // _mycenterTableView.scrollEnabled =NO;
     [self.view addSubview:_mycenterTableView];
     
+    
+    MycenterHeadView * view = [[MycenterHeadView alloc]init];
+    view.frame =CGRectMake(0, 0, SCREEN_WIDTH, 345*hb);
+    _mycenterTableView.tableHeaderView = view;
 }
 
 #pragma mark TableView.delegate
@@ -65,12 +70,14 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"mycentercell"];
+    MyCenterTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"mycentercell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"mycentercell"];
+        cell = [[MyCenterTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"mycentercell"];
     }
+     cell.ishidegoright = NO;
+     cell.name.text = [NSString stringWithFormat:@"%ld+假数据",indexPath.row];
      cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.backgroundColor = RGBA(38, 40, 52, 1);
+    
     return cell;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -88,6 +95,11 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 15*hb;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {
