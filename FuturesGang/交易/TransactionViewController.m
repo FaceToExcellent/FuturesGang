@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"交易";
+    //self.title = @"交易";
     
     // Do any additional setup after loading the view.
 }

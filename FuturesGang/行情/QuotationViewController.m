@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"行情";
+   // self.title = @"行情";
     
     
 }
