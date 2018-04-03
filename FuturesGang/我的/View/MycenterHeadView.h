@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface MycenterHeadView : UIView
-
+@property(nonatomic,strong)UILabel * zjlabel;
+@property(nonatomic,strong)UILabel * rzjLabel;
+@property(nonatomic,strong)UIButton * czButton;
+@property(nonatomic,strong)UIButton * txButton;
 @end
