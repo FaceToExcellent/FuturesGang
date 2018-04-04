@@ -12,6 +12,7 @@
 @interface LoginViewController ()<UITextFieldDelegate>
 @property(nonatomic,strong)UITextField * zhTextview;
 @property(nonatomic,strong) UITextField * mmTextview;
+@property(nonatomic,strong) UIButton * dlbutton;
 @end
 
 @implementation LoginViewController
@@ -36,78 +37,24 @@
     
     
     //账号 切圆角
-    _zhTextview = [[UITextField alloc]init];
-    _zhTextview.frame = CGRectMake((SCREEN_WIDTH-580*wb)/2, 520*hb, 580*wb, 88*hb);
-    [self.view addSubview:_zhTextview];
-    _zhTextview.delegate = self;
-    _zhTextview.tag = 101;
+    _zhTextview = [self textFieldMakewithtext:@"账号" placeholder:@"用户名或手机号" withframe:CGRectMake((SCREEN_WIDTH-580*wb)/2, 520*hb, 580*wb, 88*hb) backgroundColor:RGBA(66, 69, 87, 1) andtag:101 andleftViewframe: CGRectMake(0, 0, 155*wb, 90*hb)];
+    _zhTextview.delegate = self ;
     _zhTextview.returnKeyType = UIReturnKeyNext;
+    [self.view addSubview:_zhTextview];
     _zhTextview.layer.masksToBounds = YES;
     _zhTextview.layer.cornerRadius  = _zhTextview.frame.size.height/16;
     
-    _zhTextview.backgroundColor = RGBA(66, 69, 87, 1);
-    
-    UIView * leftview = [[UIView alloc]init];
-    leftview.frame = CGRectMake(0, 0, 155*wb, 90*hb);
-    leftview.backgroundColor =RGBA(66, 69, 87, 1);
-    [_zhTextview addSubview:leftview];
-    
-    UILabel * label = [[UILabel alloc]init];
-    label.frame =CGRectMake(60*wb, 28*hb, 75*wb, 30*hb);
-    label.textColor = [UIColor whiteColor];
-    label.text =@"账号";
-    if (SCREEN_WIDTH == 320) {
-        label.font = [UIFont systemFontOfSize:14];
-    }else
-    {
-    label.font = [UIFont systemFontOfSize:16];
-    }
-    label.textAlignment = NSTextAlignmentLeft;
-    [leftview addSubview:label];
-    _zhTextview.leftView = leftview;
-    _zhTextview.leftViewMode=UITextFieldViewModeAlways;
-    
    
-    _zhTextview.placeholder =@"用户名或手机号";
-    [_zhTextview setValue:RGBA(150, 160, 190, 1) forKeyPath:@"_placeholderLabel.textColor"];
-    [_zhTextview setValue:[UIFont systemFontOfSize:13] forKeyPath:@"_placeholderLabel.font"];
     
     //密码
-    _mmTextview = [[UITextField alloc]init];
-    _mmTextview.frame = CGRectMake((SCREEN_WIDTH-580*wb)/2, 520*hb+90*hb, 580*wb, 88*hb);
-    [self.view addSubview:_mmTextview];
-    _mmTextview.delegate = self;
-    _mmTextview.tag = 102;
+    
+    _mmTextview = [self textFieldMakewithtext:@"密码" placeholder:@"请输入登录密码" withframe:CGRectMake((SCREEN_WIDTH-580*wb)/2, 520*hb+90*hb, 580*wb, 88*hb) backgroundColor:RGBA(66, 69, 87, 1) andtag:102 andleftViewframe: CGRectMake(0, 0, 155*wb, 90*hb)];
+    _mmTextview.delegate = self ;
     _mmTextview.returnKeyType = UIReturnKeyDone;
+    [self.view addSubview:_mmTextview];
     _mmTextview.layer.masksToBounds = YES;
     _mmTextview.layer.cornerRadius  = _mmTextview.frame.size.height/16;
-    
-    _mmTextview.backgroundColor = RGBA(66, 69, 87, 1);
-    
-    UIView * mleftview = [[UIView alloc]init];
-    mleftview.frame = CGRectMake(0, 0, 155*wb, 90*hb);
-    mleftview.backgroundColor =RGBA(66, 69, 87, 1);
-    [_mmTextview addSubview:mleftview];
-    
-    UILabel * mlabel = [[UILabel alloc]init];
-    mlabel.frame =CGRectMake(60*wb, 28*hb, 75*wb, 30*hb);
-    mlabel.textColor = [UIColor whiteColor];
-    mlabel.text =@"密码";
-    if (SCREEN_WIDTH == 320) {
-        mlabel.font = [UIFont systemFontOfSize:14];
-    }else
-    {
-        mlabel.font = [UIFont systemFontOfSize:16];
-    }
-    mlabel.textAlignment = NSTextAlignmentLeft;
-    [mleftview addSubview:mlabel];
-    _mmTextview.leftView = mleftview;
-    _mmTextview.leftViewMode=UITextFieldViewModeAlways;
-    
-    
-    _mmTextview.placeholder =@"请输入登录密码";
-    [_mmTextview setValue:RGBA(150, 160, 190, 1) forKeyPath:@"_placeholderLabel.textColor"];
-    [_mmTextview setValue:[UIFont systemFontOfSize:13] forKeyPath:@"_placeholderLabel.font"];
+ 
     
 
     //忘记密码
@@ -148,23 +95,17 @@
     
     //登录按钮
     
-    UIButton * dlbutton = [[UIButton alloc]init];
-    dlbutton.frame = CGRectMake((SCREEN_WIDTH-580*wb)/2, 520*hb+90*hb+88*hb+190*hb, 580*wb, 80*hb);
-    [dlbutton setBackgroundColor:APP_BLUE];
-    [dlbutton setTitle:@"登录" forState:UIControlStateNormal];
-    [dlbutton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    if (SCREEN_WIDTH == 320) {
-         dlbutton.titleLabel.font = [UIFont systemFontOfSize: 16.0];
-    }else
-    {
-        dlbutton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
-    }
-    [dlbutton addTarget:self action:@selector(loginClick) forControlEvents:UIControlEventTouchUpInside];
-    dlbutton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
     
-    dlbutton.layer.masksToBounds =YES;
-    dlbutton.layer.cornerRadius = dlbutton.frame.size.width/64;
-    [self.view addSubview:dlbutton];
+    _dlbutton = [self APPButtonmaker:@"登录" andtitleColor:[UIColor whiteColor]  backColor:APP_BLUE andfont:18.0];
+    _dlbutton.frame = CGRectMake((SCREEN_WIDTH-580*wb)/2, 520*hb+90*hb+88*hb+190*hb, 580*wb, 80*hb);
+    [_dlbutton addTarget:self action:@selector(loginClick) forControlEvents:UIControlEventTouchUpInside];
+    _dlbutton.layer.masksToBounds = YES;
+    _dlbutton.layer.cornerRadius = _dlbutton.frame.size.width/64;
+    
+    [self.view addSubview:_dlbutton];
+    
+    
+  
     
     
     

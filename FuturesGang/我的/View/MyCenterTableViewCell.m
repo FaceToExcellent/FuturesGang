@@ -12,7 +12,7 @@
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        self.backgroundColor = RGBA(38, 40, 52, 1);
+        self.backgroundColor = APP_TEXTFEILD_BACKCOLOR;
         [self cellMakeUI];
     }
     
