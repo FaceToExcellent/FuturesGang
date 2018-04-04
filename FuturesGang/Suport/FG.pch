@@ -44,4 +44,7 @@
 
 #define CACHE_FILE_PATH(file)       [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:file];
 
+
+#define APP_BLUE RGBA(49,111,204,1)
+#define APP_BACKCOLOR RGBA(31,33,44,1)
 #endif /* FG_pch */

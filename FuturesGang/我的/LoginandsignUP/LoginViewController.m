@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = RGBA(31, 33,44, 1.0f);
+    self.view.backgroundColor = APP_BACKCOLOR;
     
     [self loginUIMake];
 }
@@ -150,7 +150,7 @@
     
     UIButton * dlbutton = [[UIButton alloc]init];
     dlbutton.frame = CGRectMake((SCREEN_WIDTH-580*wb)/2, 520*hb+90*hb+88*hb+190*hb, 580*wb, 80*hb);
-    [dlbutton setBackgroundColor:RGBA(63, 111, 198, 1)];
+    [dlbutton setBackgroundColor:APP_BLUE];
     [dlbutton setTitle:@"登录" forState:UIControlStateNormal];
     [dlbutton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     if (SCREEN_WIDTH == 320) {

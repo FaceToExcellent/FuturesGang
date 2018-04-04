@@ -23,7 +23,7 @@
         self.edgesForExtendedLayout = UIRectEdgeNone;
         self.extendedLayoutIncludesOpaqueBars = NO;
         self.modalPresentationCapturesStatusBarAppearance = NO;
-        self.navigationController.navigationBar.barTintColor = RGBA(31, 33,44, 1.0f);
+        self.navigationController.navigationBar.barTintColor = APP_BACKCOLOR;
         self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
 
         //设置导航栏背景色不变淡

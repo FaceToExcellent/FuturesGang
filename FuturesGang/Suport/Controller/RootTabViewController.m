@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[UITabBar appearance] setBarTintColor:RGBA(31, 33,44, 1.0f)];
+    [[UITabBar appearance] setBarTintColor:APP_BACKCOLOR];
     [UITabBar appearance].translucent = NO;
     [self setVCs];
 
