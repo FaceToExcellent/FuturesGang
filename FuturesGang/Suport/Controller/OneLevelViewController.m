@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self setBackBtnWithImgName:@"back_btn"];
+    [self setBackBtnWithImgName:@"FH"];
     self.navigationController.fd_fullscreenPopGestureRecognizer.enabled = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
 }

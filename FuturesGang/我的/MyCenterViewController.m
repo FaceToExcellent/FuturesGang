@@ -18,6 +18,8 @@
 #import "AboutUsViewController.h"
 #import "SpreadViewController.h"
 
+#import "LoginViewController.h"
+
 @interface MyCenterViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView * mycenterTableView;
 
@@ -169,6 +171,9 @@
     if (indexPath.section == 2) {
         if (indexPath.row == 0) {
             //退出登录
+            
+            LoginViewController * lvc= [[LoginViewController alloc]init];
+            [self presentViewController:lvc animated:YES completion:nil];
         }
     }
     
