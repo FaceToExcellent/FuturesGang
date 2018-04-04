@@ -105,15 +105,11 @@
 		467DE9802073155A00183731 /* 我的 */ = {
 			isa = PBXGroup;
 			children = (
+				46FE66F3207460260027C8B9 /* CenterChildVCs */,
+				46FE66F2207460000027C8B9 /* LoginandsignUP */,
 				46A2414620736C8300EFA8B4 /* View */,
 				467DE984207315BD00183731 /* MyCenterViewController.h */,
 				467DE985207315BD00183731 /* MyCenterViewController.m */,
-				46A24141207360F300EFA8B4 /* SignUPViewController.h */,
-				46A24142207360F300EFA8B4 /* SignUPViewController.m */,
-				46A2413B2073214500EFA8B4 /* LoginViewController.h */,
-				46A2413C2073214500EFA8B4 /* LoginViewController.m */,
-				46A2413E20735F3E00EFA8B4 /* ForgetWordViewController.h */,
-				46A2413F20735F3E00EFA8B4 /* ForgetWordViewController.m */,
 			);
 			path = "我的";
 			sourceTree = "<group>";
@@ -184,6 +180,26 @@
 				46A2414B2073740F00EFA8B4 /* MycenterHeadView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		46FE66F2207460000027C8B9 /* LoginandsignUP */ = {
+			isa = PBXGroup;
+			children = (
+				46A24141207360F300EFA8B4 /* SignUPViewController.h */,
+				46A24142207360F300EFA8B4 /* SignUPViewController.m */,
+				46A2413B2073214500EFA8B4 /* LoginViewController.h */,
+				46A2413C2073214500EFA8B4 /* LoginViewController.m */,
+				46A2413E20735F3E00EFA8B4 /* ForgetWordViewController.h */,
+				46A2413F20735F3E00EFA8B4 /* ForgetWordViewController.m */,
+			);
+			path = LoginandsignUP;
+			sourceTree = "<group>";
+		};
+		46FE66F3207460260027C8B9 /* CenterChildVCs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CenterChildVCs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

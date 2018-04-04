@@ -25,7 +25,7 @@
     [self setnaviTitle:@"我的"];
     [self atrrayset];
     
-    [self addRightBtn];
+    //[self addRightBtn];
     
     [self mycenterTabviewMake];
     
@@ -36,15 +36,15 @@
     _imageArray= @[@"ZJMX",@"JSD",@"CJJL",@"GRXX",@"GYWM",@"TGZQ",@"TCDL"];
     
 }
-- (void)addRightBtn {
-    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:@"客服" style:UIBarButtonItemStylePlain target:self action:@selector(onClickedOKbtn)];
-    [rightBarItem setTintColor:[UIColor whiteColor]];
-    self.navigationItem.rightBarButtonItem = rightBarItem;
-}
-
-- (void)onClickedOKbtn {
-    NSLog(@"客服");
-}
+//- (void)addRightBtn {
+//    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:@"客服" style:UIBarButtonItemStylePlain target:self action:@selector(onClickedOKbtn)];
+//    [rightBarItem setTintColor:[UIColor whiteColor]];
+//    self.navigationItem.rightBarButtonItem = rightBarItem;
+//}
+//
+//- (void)onClickedOKbtn {
+//    NSLog(@"客服");
+//}
 
 -(void)mycenterTabviewMake{
     _mycenterTableView = [[UITableView alloc]init];
@@ -120,6 +120,40 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            //资金明细
+            
+        }
+        if (indexPath.row == 1) {
+            //结算单
+            
+        }
+        if (indexPath.row == 2) {
+            //成交记录
+            
+        }
+        if (indexPath.row == 3) {
+            //个人信息
+            
+        }
+        if (indexPath.row == 4) {
+            //关于我们
+            
+        }
+        
+    }
+    if(indexPath.section == 1){
+        if (indexPath.row == 0) {
+            //推广赚钱
+        }
+    }
+    if (indexPath.section == 2) {
+        if (indexPath.row == 0) {
+            //退出登录
+        }
+    }
+    
     
 }
 
