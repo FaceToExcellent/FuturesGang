@@ -24,6 +24,12 @@
 		46A24143207360F300EFA8B4 /* SignUPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A24142207360F300EFA8B4 /* SignUPViewController.m */; };
 		46A2414920736CAC00EFA8B4 /* MyCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A2414820736CAC00EFA8B4 /* MyCenterTableViewCell.m */; };
 		46A2414C2073740F00EFA8B4 /* MycenterHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A2414B2073740F00EFA8B4 /* MycenterHeadView.m */; };
+		46FE66F6207460AE0027C8B9 /* CashDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE66F5207460AE0027C8B9 /* CashDetailViewController.m */; };
+		46FE66F9207461120027C8B9 /* SettlementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE66F8207461120027C8B9 /* SettlementViewController.m */; };
+		46FE66FC207461670027C8B9 /* DealRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE66FB207461670027C8B9 /* DealRecordViewController.m */; };
+		46FE66FF207461AC0027C8B9 /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE66FE207461AC0027C8B9 /* PersonalViewController.m */; };
+		46FE6702207461D30027C8B9 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE6701207461D30027C8B9 /* AboutUsViewController.m */; };
+		46FE6705207462190027C8B9 /* SpreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE6704207462190027C8B9 /* SpreadViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +67,18 @@
 		46A2414820736CAC00EFA8B4 /* MyCenterTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCenterTableViewCell.m; sourceTree = "<group>"; };
 		46A2414A2073740F00EFA8B4 /* MycenterHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MycenterHeadView.h; sourceTree = "<group>"; };
 		46A2414B2073740F00EFA8B4 /* MycenterHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MycenterHeadView.m; sourceTree = "<group>"; };
+		46FE66F4207460AE0027C8B9 /* CashDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CashDetailViewController.h; sourceTree = "<group>"; };
+		46FE66F5207460AE0027C8B9 /* CashDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CashDetailViewController.m; sourceTree = "<group>"; };
+		46FE66F7207461120027C8B9 /* SettlementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettlementViewController.h; sourceTree = "<group>"; };
+		46FE66F8207461120027C8B9 /* SettlementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettlementViewController.m; sourceTree = "<group>"; };
+		46FE66FA207461670027C8B9 /* DealRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DealRecordViewController.h; sourceTree = "<group>"; };
+		46FE66FB207461670027C8B9 /* DealRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DealRecordViewController.m; sourceTree = "<group>"; };
+		46FE66FD207461AC0027C8B9 /* PersonalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
+		46FE66FE207461AC0027C8B9 /* PersonalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
+		46FE6700207461D30027C8B9 /* AboutUsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
+		46FE6701207461D30027C8B9 /* AboutUsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
+		46FE6703207462190027C8B9 /* SpreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpreadViewController.h; sourceTree = "<group>"; };
+		46FE6704207462190027C8B9 /* SpreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpreadViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +216,18 @@
 		46FE66F3207460260027C8B9 /* CenterChildVCs */ = {
 			isa = PBXGroup;
 			children = (
+				46FE66F4207460AE0027C8B9 /* CashDetailViewController.h */,
+				46FE66F5207460AE0027C8B9 /* CashDetailViewController.m */,
+				46FE66F7207461120027C8B9 /* SettlementViewController.h */,
+				46FE66F8207461120027C8B9 /* SettlementViewController.m */,
+				46FE66FA207461670027C8B9 /* DealRecordViewController.h */,
+				46FE66FB207461670027C8B9 /* DealRecordViewController.m */,
+				46FE66FD207461AC0027C8B9 /* PersonalViewController.h */,
+				46FE66FE207461AC0027C8B9 /* PersonalViewController.m */,
+				46FE6700207461D30027C8B9 /* AboutUsViewController.h */,
+				46FE6701207461D30027C8B9 /* AboutUsViewController.m */,
+				46FE6703207462190027C8B9 /* SpreadViewController.h */,
+				46FE6704207462190027C8B9 /* SpreadViewController.m */,
 			);
 			path = CenterChildVCs;
 			sourceTree = "<group>";
@@ -271,19 +301,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46FE6702207461D30027C8B9 /* AboutUsViewController.m in Sources */,
 				467DE99B20731A0B00183731 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				467DE97D20730BF500183731 /* RootTabViewController.m in Sources */,
+				46FE66FF207461AC0027C8B9 /* PersonalViewController.m in Sources */,
 				467DE986207315BD00183731 /* MyCenterViewController.m in Sources */,
 				467DE9972073195F00183731 /* RootViewController.m in Sources */,
 				46A2414C2073740F00EFA8B4 /* MycenterHeadView.m in Sources */,
+				46FE6705207462190027C8B9 /* SpreadViewController.m in Sources */,
 				46A2414920736CAC00EFA8B4 /* MyCenterTableViewCell.m in Sources */,
+				46FE66F6207460AE0027C8B9 /* CashDetailViewController.m in Sources */,
 				467DE9752073096F00183731 /* main.m in Sources */,
 				467DE98A2073160D00183731 /* TransactionViewController.m in Sources */,
+				46FE66F9207461120027C8B9 /* SettlementViewController.m in Sources */,
 				467DE9982073195F00183731 /* OneLevelViewController.m in Sources */,
 				467DE98D2073162600183731 /* OptionalViewController.m in Sources */,
 				467DE9902073165E00183731 /* QuotationViewController.m in Sources */,
 				46A24143207360F300EFA8B4 /* SignUPViewController.m in Sources */,
 				46A2413D2073214500EFA8B4 /* LoginViewController.m in Sources */,
+				46FE66FC207461670027C8B9 /* DealRecordViewController.m in Sources */,
 				467DE9672073096E00183731 /* AppDelegate.m in Sources */,
 				46A2414020735F3E00EFA8B4 /* ForgetWordViewController.m in Sources */,
 			);

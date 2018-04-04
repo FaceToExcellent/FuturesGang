@@ -9,6 +9,15 @@
 #import "MyCenterViewController.h"
 #import "MyCenterTableViewCell.h"
 #import "MycenterHeadView.h"
+
+
+#import "CashDetailViewController.h"
+#import "SettlementViewController.h"
+#import "DealRecordViewController.h"
+#import "PersonalViewController.h"
+#import "AboutUsViewController.h"
+#import "SpreadViewController.h"
+
 @interface MyCenterViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView * mycenterTableView;
 
@@ -124,28 +133,37 @@
         if (indexPath.row == 0) {
             //资金明细
             
+            CashDetailViewController * vc = [[CashDetailViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+            
         }
         if (indexPath.row == 1) {
             //结算单
-            
+            SettlementViewController * vc = [[SettlementViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
         }
         if (indexPath.row == 2) {
             //成交记录
-            
+            DealRecordViewController * vc = [[DealRecordViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
         }
         if (indexPath.row == 3) {
             //个人信息
-            
+            PersonalViewController * vc = [[PersonalViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
         }
         if (indexPath.row == 4) {
             //关于我们
-            
+            AboutUsViewController * vc = [[AboutUsViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
         }
         
     }
     if(indexPath.section == 1){
         if (indexPath.row == 0) {
             //推广赚钱
+            SpreadViewController * vc = [[SpreadViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
         }
     }
     if (indexPath.section == 2) {
