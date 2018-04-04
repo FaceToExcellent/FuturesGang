@@ -30,6 +30,10 @@
 		46FE66FF207461AC0027C8B9 /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE66FE207461AC0027C8B9 /* PersonalViewController.m */; };
 		46FE6702207461D30027C8B9 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE6701207461D30027C8B9 /* AboutUsViewController.m */; };
 		46FE6705207462190027C8B9 /* SpreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE6704207462190027C8B9 /* SpreadViewController.m */; };
+		46FE67092074ACC50027C8B9 /* ChargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE67082074ACC50027C8B9 /* ChargeViewController.m */; };
+		46FE670C2074B0500027C8B9 /* GetCashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE670B2074B0500027C8B9 /* GetCashViewController.m */; };
+		46FE670F2074B1F10027C8B9 /* ChargeHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE670E2074B1F10027C8B9 /* ChargeHistoryViewController.m */; };
+		46FE67122074B2350027C8B9 /* GetCashHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE67112074B2350027C8B9 /* GetCashHistoryViewController.m */; };
 		820F954FC46CB08D1F79EECA /* libPods-FuturesGang.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F33C2A8D90DC200CE9A4B00F /* libPods-FuturesGang.a */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +84,14 @@
 		46FE6701207461D30027C8B9 /* AboutUsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
 		46FE6703207462190027C8B9 /* SpreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpreadViewController.h; sourceTree = "<group>"; };
 		46FE6704207462190027C8B9 /* SpreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpreadViewController.m; sourceTree = "<group>"; };
+		46FE67072074ACC50027C8B9 /* ChargeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChargeViewController.h; sourceTree = "<group>"; };
+		46FE67082074ACC50027C8B9 /* ChargeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChargeViewController.m; sourceTree = "<group>"; };
+		46FE670A2074B0500027C8B9 /* GetCashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetCashViewController.h; sourceTree = "<group>"; };
+		46FE670B2074B0500027C8B9 /* GetCashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetCashViewController.m; sourceTree = "<group>"; };
+		46FE670D2074B1F10027C8B9 /* ChargeHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChargeHistoryViewController.h; sourceTree = "<group>"; };
+		46FE670E2074B1F10027C8B9 /* ChargeHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChargeHistoryViewController.m; sourceTree = "<group>"; };
+		46FE67102074B2350027C8B9 /* GetCashHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetCashHistoryViewController.h; sourceTree = "<group>"; };
+		46FE67112074B2350027C8B9 /* GetCashHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetCashHistoryViewController.m; sourceTree = "<group>"; };
 		735FB660DFD3EB594DDBC15F /* Pods-FuturesGang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuturesGang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FuturesGang/Pods-FuturesGang.debug.xcconfig"; sourceTree = "<group>"; };
 		876D1B10A00EA68653EC0ACD /* Pods-FuturesGang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuturesGang.release.xcconfig"; path = "Pods/Target Support Files/Pods-FuturesGang/Pods-FuturesGang.release.xcconfig"; sourceTree = "<group>"; };
 		F33C2A8D90DC200CE9A4B00F /* libPods-FuturesGang.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FuturesGang.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -252,6 +264,14 @@
 				46FE6701207461D30027C8B9 /* AboutUsViewController.m */,
 				46FE6703207462190027C8B9 /* SpreadViewController.h */,
 				46FE6704207462190027C8B9 /* SpreadViewController.m */,
+				46FE67072074ACC50027C8B9 /* ChargeViewController.h */,
+				46FE67082074ACC50027C8B9 /* ChargeViewController.m */,
+				46FE670D2074B1F10027C8B9 /* ChargeHistoryViewController.h */,
+				46FE670E2074B1F10027C8B9 /* ChargeHistoryViewController.m */,
+				46FE670A2074B0500027C8B9 /* GetCashViewController.h */,
+				46FE670B2074B0500027C8B9 /* GetCashViewController.m */,
+				46FE67102074B2350027C8B9 /* GetCashHistoryViewController.h */,
+				46FE67112074B2350027C8B9 /* GetCashHistoryViewController.m */,
 			);
 			path = CenterChildVCs;
 			sourceTree = "<group>";
@@ -390,14 +410,18 @@
 				467DE9972073195F00183731 /* RootViewController.m in Sources */,
 				46A2414C2073740F00EFA8B4 /* MycenterHeadView.m in Sources */,
 				46FE6705207462190027C8B9 /* SpreadViewController.m in Sources */,
+				46FE67092074ACC50027C8B9 /* ChargeViewController.m in Sources */,
 				46A2414920736CAC00EFA8B4 /* MyCenterTableViewCell.m in Sources */,
 				46FE66F6207460AE0027C8B9 /* CashDetailViewController.m in Sources */,
+				46FE670F2074B1F10027C8B9 /* ChargeHistoryViewController.m in Sources */,
 				467DE9752073096F00183731 /* main.m in Sources */,
 				467DE98A2073160D00183731 /* TransactionViewController.m in Sources */,
 				46FE66F9207461120027C8B9 /* SettlementViewController.m in Sources */,
 				467DE9982073195F00183731 /* OneLevelViewController.m in Sources */,
+				46FE670C2074B0500027C8B9 /* GetCashViewController.m in Sources */,
 				467DE98D2073162600183731 /* OptionalViewController.m in Sources */,
 				467DE9902073165E00183731 /* QuotationViewController.m in Sources */,
+				46FE67122074B2350027C8B9 /* GetCashHistoryViewController.m in Sources */,
 				46A24143207360F300EFA8B4 /* SignUPViewController.m in Sources */,
 				46A2413D2073214500EFA8B4 /* LoginViewController.m in Sources */,
 				46FE66FC207461670027C8B9 /* DealRecordViewController.m in Sources */,
@@ -528,7 +552,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FuturesGang/Suport/FG.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/FuturesGang/Suport/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.maien.www.FuturesGang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -544,7 +571,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FuturesGang/Suport/FG.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/FuturesGang/Suport/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.maien.www.FuturesGang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

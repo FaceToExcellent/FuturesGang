@@ -48,6 +48,17 @@
 {
     [super viewWillAppear:animated];
 }
+
+
+- (void)addRightBtn:(NSString*)title{
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(onClickedOKbtn)];
+    [rightBarItem setTintColor:[UIColor whiteColor]];
+    self.navigationItem.rightBarButtonItem = rightBarItem;
+}
+
+- (void)onClickedOKbtn {
+    
+}
 /*
 #pragma mark - Navigation
 

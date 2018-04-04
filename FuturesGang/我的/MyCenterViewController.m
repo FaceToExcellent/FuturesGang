@@ -20,7 +20,10 @@
 
 #import "LoginViewController.h"
 
-@interface MyCenterViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "ChargeViewController.h"
+#import "GetCashViewController.h"
+
+@interface MyCenterViewController ()<UITableViewDelegate,UITableViewDataSource,MycenterHeadViewDelegate>
 @property(nonatomic,strong)UITableView * mycenterTableView;
 
 @property(nonatomic,strong)NSArray * namearray;
@@ -72,6 +75,7 @@
     
     MycenterHeadView * view = [[MycenterHeadView alloc]init];
     view.frame =CGRectMake(0, 0, SCREEN_WIDTH, 345*hb);
+    view.delegate = self;
     _mycenterTableView.tableHeaderView = view;
 }
 
@@ -136,27 +140,32 @@
             //资金明细
             
             CashDetailViewController * vc = [[CashDetailViewController alloc]init];
+            vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
             
         }
         if (indexPath.row == 1) {
             //结算单
             SettlementViewController * vc = [[SettlementViewController alloc]init];
+            vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
         }
         if (indexPath.row == 2) {
             //成交记录
             DealRecordViewController * vc = [[DealRecordViewController alloc]init];
+            vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
         }
         if (indexPath.row == 3) {
             //个人信息
             PersonalViewController * vc = [[PersonalViewController alloc]init];
+            vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
         }
         if (indexPath.row == 4) {
             //关于我们
             AboutUsViewController * vc = [[AboutUsViewController alloc]init];
+            vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
         }
         
@@ -165,6 +174,7 @@
         if (indexPath.row == 0) {
             //推广赚钱
             SpreadViewController * vc = [[SpreadViewController alloc]init];
+            vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
         }
     }
@@ -178,6 +188,18 @@
     }
     
     
+}
+#pragma mark  MycenterHeadViewDelegate
+-(void)czButtonpushToDetail{
+     ChargeViewController * vc = [[ChargeViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)txButtonpushToDetail{
+    GetCashViewController * VC = [[GetCashViewController alloc]init];
+    VC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:VC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -78,6 +78,8 @@
     _czButton.layer.cornerRadius = _czButton.frame.size.width/32;
     [self addSubview:_czButton];
     
+    [_czButton addTarget:self action:@selector(czButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    
     
     //提现
     
@@ -92,9 +94,22 @@
     _txButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
     [self addSubview:_txButton];
     
-    
+     [_txButton addTarget:self action:@selector(txButtonClick) forControlEvents:UIControlEventTouchUpInside];
     
     
     
 }
+
+-(void)czButtonClick{
+    if (_delegate) {
+        [_delegate czButtonpushToDetail];
+    }
+    
+}
+-(void)txButtonClick{
+    if (_delegate) {
+        [_delegate txButtonpushToDetail];
+    }
+}
+
 @end

@@ -10,7 +10,10 @@
 #import "UINavigationController+FDFullscreenPopGesture.h"
 
 @interface OneLevelViewController : RootViewController
-
+//左侧
 - (void)backBtnClick;
 - (void)setBackBtnWithImgName:(NSString *)imgName;
+//右侧
+- (void)addRightBtn:(NSString*)title;
+- (void)onClickedOKbtn;
 @end
