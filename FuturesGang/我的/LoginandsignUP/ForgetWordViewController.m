@@ -27,7 +27,7 @@
     [super viewDidLoad];
     
     self.title =@"忘记密码";
-    self.view.backgroundColor = RGBA(31, 33, 44, 1);
+    self.view.backgroundColor = APP_BACKCOLOR;
     [self FWUImake];
     NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
     NSString * timeIfOn = [def objectForKey:@"mytimer"];
@@ -310,7 +310,7 @@
             [mytextField becomeFirstResponder];
         }else
         {
-            
+            [mytextField resignFirstResponder];
         }
     }
   
