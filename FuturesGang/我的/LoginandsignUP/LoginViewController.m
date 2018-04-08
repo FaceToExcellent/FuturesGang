@@ -13,6 +13,8 @@
 @property(nonatomic,strong)UITextField * zhTextview;
 @property(nonatomic,strong) UITextField * mmTextview;
 @property(nonatomic,strong) UIButton * dlbutton;
+@property(nonatomic,strong) UIButton * wjbutton;
+@property(nonatomic,strong) UIButton * mfbutton;
 @end
 
 @implementation LoginViewController
@@ -58,38 +60,38 @@
     
 
     //忘记密码
-    UIButton * wjbutton = [[UIButton alloc]init];
-    wjbutton.frame = CGRectMake(86*wb,  520*hb+90*hb+88*hb, 250*wb, 60*hb);
-    [wjbutton setTitleColor:RGBA(63, 111, 198, 1) forState:UIControlStateNormal];
-    [wjbutton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    [wjbutton setTitle:@"忘记密码" forState:UIControlStateNormal];
+    _wjbutton = [[UIButton alloc]init];
+    _wjbutton.frame = CGRectMake(86*wb,  520*hb+90*hb+88*hb, 250*wb, 60*hb);
+    [_wjbutton setTitleColor:RGBA(63, 111, 198, 1) forState:UIControlStateNormal];
+    [_wjbutton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [_wjbutton setTitle:@"忘记密码" forState:UIControlStateNormal];
     if (SCREEN_WIDTH == 320) {
-        wjbutton.titleLabel.font = [UIFont systemFontOfSize: 16.0];
+        _wjbutton.titleLabel.font = [UIFont systemFontOfSize: 16.0];
     }else
     {
-        wjbutton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
+        _wjbutton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
     }
-    [wjbutton addTarget:self action:@selector(wordforgetAndGetBack) forControlEvents:UIControlEventTouchUpInside];
+    [_wjbutton addTarget:self action:@selector(wordforgetAndGetBack) forControlEvents:UIControlEventTouchUpInside];
     
-    wjbutton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    [self.view addSubview:wjbutton];
+    _wjbutton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    [self.view addSubview:_wjbutton];
     
     //免费注册
     
-    UIButton * mfbutton = [[UIButton alloc]init];
-    mfbutton.frame = CGRectMake(SCREEN_WIDTH-86*wb-250*wb,  520*hb+90*hb+88*hb, 250*wb, 60*hb);
-    [mfbutton setTitleColor:RGBA(63, 111, 198, 1) forState:UIControlStateNormal];
-     [mfbutton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    [mfbutton setTitle:@"免费注册" forState:UIControlStateNormal];
+    _mfbutton = [[UIButton alloc]init];
+    _mfbutton.frame = CGRectMake(SCREEN_WIDTH-86*wb-250*wb,  520*hb+90*hb+88*hb, 250*wb, 60*hb);
+    [_mfbutton setTitleColor:RGBA(63, 111, 198, 1) forState:UIControlStateNormal];
+     [_mfbutton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [_mfbutton setTitle:@"免费注册" forState:UIControlStateNormal];
     if (SCREEN_WIDTH == 320) {
-        mfbutton.titleLabel.font = [UIFont systemFontOfSize: 16.0];
+        _mfbutton.titleLabel.font = [UIFont systemFontOfSize: 16.0];
     }else
     {
-        mfbutton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
+        _mfbutton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
     }
-     [mfbutton addTarget:self action:@selector(registeForFree) forControlEvents:UIControlEventTouchUpInside];
-    mfbutton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-    [self.view addSubview:mfbutton];
+     [_mfbutton addTarget:self action:@selector(registeForFree) forControlEvents:UIControlEventTouchUpInside];
+    _mfbutton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    [self.view addSubview:_mfbutton];
     
     
     
@@ -152,7 +154,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 - (void)didReceiveMemoryWarning {
