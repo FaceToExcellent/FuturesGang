@@ -37,6 +37,7 @@
     
     self.view.backgroundColor = RGBA(31, 33, 44, 1);
     [self setnaviTitle:@"我的"];
+    [self  gradientLayerset];
     [self atrrayset];
     
     //[self addRightBtn];
@@ -55,7 +56,7 @@
 -(void)mycenterTabviewMake{
     _mycenterTableView = [[UITableView alloc]init];
     _mycenterTableView.backgroundColor =RGBA(31, 33, 44, 1);
-    _mycenterTableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-StatusBarAndNavigationBarHeight-TabbarHeight);
+    _mycenterTableView.frame = CGRectMake(0, 3, SCREEN_WIDTH, SCREEN_HEIGHT-StatusBarAndNavigationBarHeight-TabbarHeight-3);
     
     _mycenterTableView.delegate = self;
     _mycenterTableView.dataSource =self;

@@ -16,4 +16,7 @@
 //右侧
 - (void)addRightBtn:(NSString*)title;
 - (void)onClickedOKbtn;
+
+
+-(void)gradientLayerset;
 @end

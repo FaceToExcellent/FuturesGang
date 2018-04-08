@@ -26,13 +26,6 @@
 
 
 -(void)makeUI{
-    //line
-    UIView * lineview = [[UIView alloc]init];
-    lineview.frame = CGRectMake(0, 0, SCREEN_WIDTH, 2);
-    lineview.backgroundColor = RGBA(23, 24, 34, 1);
-    [self addSubview:lineview];
-    
-    
     //我的资金
     
     _zjlabel = [[UILabel alloc]init];

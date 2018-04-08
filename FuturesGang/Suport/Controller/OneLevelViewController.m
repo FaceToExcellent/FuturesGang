@@ -22,6 +22,20 @@
     [self setBackBtnWithImgName:@"FH"];
     self.navigationController.fd_fullscreenPopGestureRecognizer.enabled = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    
+    
+    
+}
+
+-(void)gradientLayerset{
+    //渐变
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = CGRectMake(0,0, SCREEN_WIDTH,3);  // 设置显示的frame
+    gradientLayer.colors = @[(id)RGBA(23, 22, 33, 1).CGColor,(id)APP_BACKCOLOR.CGColor];  // 设置渐变颜色
+    gradientLayer.startPoint = CGPointMake(0, 0);   //
+    gradientLayer.endPoint = CGPointMake(0, 1);     //
+    [self.view.layer addSublayer:gradientLayer];
 }
 - (void)setBackBtnWithImgName:(NSString *)imgName
 {
