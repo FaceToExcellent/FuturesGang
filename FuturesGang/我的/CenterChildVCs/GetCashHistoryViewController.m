@@ -22,7 +22,6 @@
     [self setnaviTitle:@"提现记录"];
     NSArray * arr = @[@[@"Done",@"2018-4-2",@"210000.00"],@[@"not",@"2018-4-2",@"18000.00"]];
     _dataArray = [[NSMutableArray alloc]initWithArray:arr];
-    [self gradientLayerset];
     [self GetCashHistoryMakeUI];
 }
 

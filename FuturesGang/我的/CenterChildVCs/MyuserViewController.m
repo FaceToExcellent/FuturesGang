@@ -22,7 +22,6 @@
     [self setnaviTitle:@"我的用户"];
     NSArray * arr = @[@[@"123456",@"2000",@"2018-1-1"],@[@"567432",@"2",@"2018-4-4"]];
     _dataArray = [[NSMutableArray alloc]initWithArray:arr];
-    [self gradientLayerset];
     [self MyuserMakeUI];
 }
 -(void)MyuserMakeUI{

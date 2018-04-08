@@ -24,7 +24,8 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     
-    
+    [self gradientLayerset];
+    self.view.backgroundColor = APP_BACKCOLOR;
     
 }
 
