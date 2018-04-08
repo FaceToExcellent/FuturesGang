@@ -7,9 +7,9 @@
 //
 
 #import "TransactionViewController.h"
-
+#import "NNValidationView.h"
 @interface TransactionViewController ()
-
+@property (nonatomic, strong) NNValidationView *testView;
 @end
 
 @implementation TransactionViewController
@@ -17,10 +17,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setnaviTitle:@"交易"];
-    
-    // Do any additional setup after loading the view.
+    [self setupViews];
 }
 
+
+- (void)setupViews {
+    _testView = [[NNValidationView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 100) / 2, 200, 100, 40) andCharCount:4 andLineCount:4];
+    [self.view addSubview:_testView];
+    
+    __weak typeof(self) weakSelf = self;
+    /// 返回验证码数字
+    _testView.changeValidationCodeBlock = ^(void){
+        NSLog(@"验证码被点击了：%@", weakSelf.testView.charString);
+    };
+    NSLog(@"第一次打印：%@", self.testView.charString);
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

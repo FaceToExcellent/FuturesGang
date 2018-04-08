@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    [self setnaviTitle:@"银行卡"];
+    [self setnaviTitle:@"银行卡绑定"];
    
     
 }
