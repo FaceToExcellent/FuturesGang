@@ -20,10 +20,7 @@
     
     return self;
 }
-/*@property(nonatomic,strong)UIImageView * UPorDown;
- @property(nonatomic,strong)UILabel *    celltitle;
- @property(nonatomic,strong)UILabel *    timelabel;
- @property(nonatomic,strong)UILabel *    cashLabel;*/
+
 -(void)cellMakeUI{
     
     
