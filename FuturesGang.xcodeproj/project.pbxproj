@@ -31,6 +31,7 @@
 		46FCE2722079F3B2004F0DB7 /* MyuserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FCE2712079F3B2004F0DB7 /* MyuserViewController.m */; };
 		46FCE2752079F529004F0DB7 /* MyuserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FCE2742079F529004F0DB7 /* MyuserTableViewCell.m */; };
 		46FCE27A207A08F3004F0DB7 /* NNValidationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FCE278207A08F2004F0DB7 /* NNValidationView.m */; };
+		46FCE27E207A0C01004F0DB7 /* ColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FCE27D207A0C01004F0DB7 /* ColorButton.m */; };
 		46FE66F6207460AE0027C8B9 /* CashDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE66F5207460AE0027C8B9 /* CashDetailViewController.m */; };
 		46FE66F9207461120027C8B9 /* SettlementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE66F8207461120027C8B9 /* SettlementViewController.m */; };
 		46FE66FC207461670027C8B9 /* DealRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE66FB207461670027C8B9 /* DealRecordViewController.m */; };
@@ -93,6 +94,8 @@
 		46FCE2742079F529004F0DB7 /* MyuserTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyuserTableViewCell.m; sourceTree = "<group>"; };
 		46FCE278207A08F2004F0DB7 /* NNValidationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNValidationView.m; sourceTree = "<group>"; };
 		46FCE279207A08F3004F0DB7 /* NNValidationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNValidationView.h; sourceTree = "<group>"; };
+		46FCE27C207A0C01004F0DB7 /* ColorButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorButton.h; sourceTree = "<group>"; };
+		46FCE27D207A0C01004F0DB7 /* ColorButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorButton.m; sourceTree = "<group>"; };
 		46FE66F4207460AE0027C8B9 /* CashDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CashDetailViewController.h; sourceTree = "<group>"; };
 		46FE66F5207460AE0027C8B9 /* CashDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CashDetailViewController.m; sourceTree = "<group>"; };
 		46FE66F7207461120027C8B9 /* SettlementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettlementViewController.h; sourceTree = "<group>"; };
@@ -286,6 +289,7 @@
 		46FCE276207A08B4004F0DB7 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				46FCE27B207A0BBE004F0DB7 /* 色彩视图 */,
 				46FCE277207A08C3004F0DB7 /* 图片验证码 */,
 			);
 			path = Tool;
@@ -298,6 +302,15 @@
 				46FCE278207A08F2004F0DB7 /* NNValidationView.m */,
 			);
 			path = "图片验证码";
+			sourceTree = "<group>";
+		};
+		46FCE27B207A0BBE004F0DB7 /* 色彩视图 */ = {
+			isa = PBXGroup;
+			children = (
+				46FCE27C207A0C01004F0DB7 /* ColorButton.h */,
+				46FCE27D207A0C01004F0DB7 /* ColorButton.m */,
+			);
+			path = "色彩视图";
 			sourceTree = "<group>";
 		};
 		46FE66F2207460000027C8B9 /* LoginandsignUP */ = {
@@ -494,6 +507,7 @@
 				467DE98D2073162600183731 /* OptionalViewController.m in Sources */,
 				467DE9902073165E00183731 /* QuotationViewController.m in Sources */,
 				46FE67122074B2350027C8B9 /* GetCashHistoryViewController.m in Sources */,
+				46FCE27E207A0C01004F0DB7 /* ColorButton.m in Sources */,
 				46A24143207360F300EFA8B4 /* SignUPViewController.m in Sources */,
 				46A2413D2073214500EFA8B4 /* LoginViewController.m in Sources */,
 				46FE66FC207461670027C8B9 /* DealRecordViewController.m in Sources */,

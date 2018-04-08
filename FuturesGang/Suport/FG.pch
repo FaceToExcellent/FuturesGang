@@ -51,5 +51,6 @@
 
 #define APP_Green RGBA(76,168,74,1)
 #define APP_RED   RGBA(232,83,74,1)
+#define APP_Gray   RGBA(145,154,181,1)
 
 #endif /* FG_pch */
