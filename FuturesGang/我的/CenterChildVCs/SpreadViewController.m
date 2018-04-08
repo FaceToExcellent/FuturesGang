@@ -17,7 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      self.title = @"推广赚钱";
+    
+    [self addRightBtn:@"我的用户"];
     // Do any additional setup after loading the view.
+}
+
+-(void)onClickedOKbtn{
+    //跳转我的用户
 }
 
 - (void)didReceiveMemoryWarning {

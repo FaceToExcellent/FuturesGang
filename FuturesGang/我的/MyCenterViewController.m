@@ -50,15 +50,7 @@
     _imageArray= @[@"ZJMX",@"JSD",@"CJJL",@"GRXX",@"GYWM",@"TGZQ",@"TCDL"];
     
 }
-//- (void)addRightBtn {
-//    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:@"客服" style:UIBarButtonItemStylePlain target:self action:@selector(onClickedOKbtn)];
-//    [rightBarItem setTintColor:[UIColor whiteColor]];
-//    self.navigationItem.rightBarButtonItem = rightBarItem;
-//}
-//
-//- (void)onClickedOKbtn {
-//    NSLog(@"客服");
-//}
+
 
 -(void)mycenterTabviewMake{
     _mycenterTableView = [[UITableView alloc]init];

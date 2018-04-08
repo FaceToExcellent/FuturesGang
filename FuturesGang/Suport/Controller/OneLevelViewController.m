@@ -51,9 +51,22 @@
 
 
 - (void)addRightBtn:(NSString*)title{
-    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(onClickedOKbtn)];
-    [rightBarItem setTintColor:[UIColor whiteColor]];
-    self.navigationItem.rightBarButtonItem = rightBarItem;
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    //! 这里需要根据内容大小来调整宽度
+    button.frame = CGRectMake(0, 0, 44, 44);
+    button.titleLabel.textColor = [UIColor redColor];
+    button.titleLabel.font = [UIFont systemFontOfSize:14];
+    button.titleLabel.textAlignment = NSTextAlignmentRight;
+    [button setTitle:title forState:UIControlStateNormal];
+//    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]
+//                                       initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+//                                       target:nil action:nil];
+//    negativeSpacer.width = -15;
+    
+    [button addTarget:self action:@selector(onClickedOKbtn) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = backItem;
+   // self.navigationItem.rightBarButtonItems = @[negativeSpacer, backItem];
 }
 
 - (void)onClickedOKbtn {
