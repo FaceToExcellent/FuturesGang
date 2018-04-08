@@ -164,19 +164,6 @@
 			path = NetWork;
 			sourceTree = "<group>";
 		};
-		4603CE612079BCDE003F2332 /* view */ = {
-			isa = PBXGroup;
-			children = (
-				4603CE622079BD95003F2332 /* CashTableViewCell.h */,
-				4603CE632079BD95003F2332 /* CashTableViewCell.m */,
-				46FCE26D2079CB08004F0DB7 /* GetCashHistoryCell.h */,
-				46FCE26E2079CB08004F0DB7 /* GetCashHistoryCell.m */,
-				46FCE2732079F529004F0DB7 /* MyuserTableViewCell.h */,
-				46FCE2742079F529004F0DB7 /* MyuserTableViewCell.m */,
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
 		467DE9592073096E00183731 = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +303,116 @@
 			path = "色彩视图";
 			sourceTree = "<group>";
 		};
+		46FCE282207A1B9E004F0DB7 /* 资金明细 */ = {
+			isa = PBXGroup;
+			children = (
+				46FCE28B207A1C9E004F0DB7 /* view */,
+				46FE66F4207460AE0027C8B9 /* CashDetailViewController.h */,
+				46FE66F5207460AE0027C8B9 /* CashDetailViewController.m */,
+			);
+			path = "资金明细";
+			sourceTree = "<group>";
+		};
+		46FCE283207A1BC0004F0DB7 /* 结算单 */ = {
+			isa = PBXGroup;
+			children = (
+				46FE66F7207461120027C8B9 /* SettlementViewController.h */,
+				46FE66F8207461120027C8B9 /* SettlementViewController.m */,
+			);
+			path = "结算单";
+			sourceTree = "<group>";
+		};
+		46FCE284207A1BD0004F0DB7 /* 成交记录 */ = {
+			isa = PBXGroup;
+			children = (
+				46FE66FA207461670027C8B9 /* DealRecordViewController.h */,
+				46FE66FB207461670027C8B9 /* DealRecordViewController.m */,
+			);
+			path = "成交记录";
+			sourceTree = "<group>";
+		};
+		46FCE285207A1BE9004F0DB7 /* 银行卡 */ = {
+			isa = PBXGroup;
+			children = (
+				46FE66FD207461AC0027C8B9 /* PersonalViewController.h */,
+				46FE66FE207461AC0027C8B9 /* PersonalViewController.m */,
+				46FCE27F207A1A3F004F0DB7 /* BankCardViewController.h */,
+				46FCE280207A1A3F004F0DB7 /* BankCardViewController.m */,
+			);
+			path = "银行卡";
+			sourceTree = "<group>";
+		};
+		46FCE286207A1C00004F0DB7 /* 关于我们 */ = {
+			isa = PBXGroup;
+			children = (
+				46FE6700207461D30027C8B9 /* AboutUsViewController.h */,
+				46FE6701207461D30027C8B9 /* AboutUsViewController.m */,
+			);
+			path = "关于我们";
+			sourceTree = "<group>";
+		};
+		46FCE287207A1C19004F0DB7 /* 推广赚钱 */ = {
+			isa = PBXGroup;
+			children = (
+				46FCE28A207A1C66004F0DB7 /* view */,
+				46FE6703207462190027C8B9 /* SpreadViewController.h */,
+				46FE6704207462190027C8B9 /* SpreadViewController.m */,
+				46FCE2702079F3B2004F0DB7 /* MyuserViewController.h */,
+				46FCE2712079F3B2004F0DB7 /* MyuserViewController.m */,
+			);
+			path = "推广赚钱";
+			sourceTree = "<group>";
+		};
+		46FCE288207A1C32004F0DB7 /* 充值 */ = {
+			isa = PBXGroup;
+			children = (
+				46FE67072074ACC50027C8B9 /* ChargeViewController.h */,
+				46FE67082074ACC50027C8B9 /* ChargeViewController.m */,
+				46FE670D2074B1F10027C8B9 /* ChargeHistoryViewController.h */,
+				46FE670E2074B1F10027C8B9 /* ChargeHistoryViewController.m */,
+			);
+			path = "充值";
+			sourceTree = "<group>";
+		};
+		46FCE289207A1C43004F0DB7 /* 提现 */ = {
+			isa = PBXGroup;
+			children = (
+				46FCE28C207A1CBD004F0DB7 /* view */,
+				46FE670A2074B0500027C8B9 /* GetCashViewController.h */,
+				46FE670B2074B0500027C8B9 /* GetCashViewController.m */,
+				46FE67102074B2350027C8B9 /* GetCashHistoryViewController.h */,
+				46FE67112074B2350027C8B9 /* GetCashHistoryViewController.m */,
+			);
+			path = "提现";
+			sourceTree = "<group>";
+		};
+		46FCE28A207A1C66004F0DB7 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				46FCE2732079F529004F0DB7 /* MyuserTableViewCell.h */,
+				46FCE2742079F529004F0DB7 /* MyuserTableViewCell.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		46FCE28B207A1C9E004F0DB7 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				4603CE622079BD95003F2332 /* CashTableViewCell.h */,
+				4603CE632079BD95003F2332 /* CashTableViewCell.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		46FCE28C207A1CBD004F0DB7 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				46FCE26D2079CB08004F0DB7 /* GetCashHistoryCell.h */,
+				46FCE26E2079CB08004F0DB7 /* GetCashHistoryCell.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		46FE66F2207460000027C8B9 /* LoginandsignUP */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,31 +429,14 @@
 		46FE66F3207460260027C8B9 /* CenterChildVCs */ = {
 			isa = PBXGroup;
 			children = (
-				4603CE612079BCDE003F2332 /* view */,
-				46FE66F4207460AE0027C8B9 /* CashDetailViewController.h */,
-				46FE66F5207460AE0027C8B9 /* CashDetailViewController.m */,
-				46FE66F7207461120027C8B9 /* SettlementViewController.h */,
-				46FE66F8207461120027C8B9 /* SettlementViewController.m */,
-				46FE66FA207461670027C8B9 /* DealRecordViewController.h */,
-				46FE66FB207461670027C8B9 /* DealRecordViewController.m */,
-				46FE66FD207461AC0027C8B9 /* PersonalViewController.h */,
-				46FE66FE207461AC0027C8B9 /* PersonalViewController.m */,
-				46FCE27F207A1A3F004F0DB7 /* BankCardViewController.h */,
-				46FCE280207A1A3F004F0DB7 /* BankCardViewController.m */,
-				46FE6700207461D30027C8B9 /* AboutUsViewController.h */,
-				46FE6701207461D30027C8B9 /* AboutUsViewController.m */,
-				46FE6703207462190027C8B9 /* SpreadViewController.h */,
-				46FE6704207462190027C8B9 /* SpreadViewController.m */,
-				46FCE2702079F3B2004F0DB7 /* MyuserViewController.h */,
-				46FCE2712079F3B2004F0DB7 /* MyuserViewController.m */,
-				46FE67072074ACC50027C8B9 /* ChargeViewController.h */,
-				46FE67082074ACC50027C8B9 /* ChargeViewController.m */,
-				46FE670D2074B1F10027C8B9 /* ChargeHistoryViewController.h */,
-				46FE670E2074B1F10027C8B9 /* ChargeHistoryViewController.m */,
-				46FE670A2074B0500027C8B9 /* GetCashViewController.h */,
-				46FE670B2074B0500027C8B9 /* GetCashViewController.m */,
-				46FE67102074B2350027C8B9 /* GetCashHistoryViewController.h */,
-				46FE67112074B2350027C8B9 /* GetCashHistoryViewController.m */,
+				46FCE289207A1C43004F0DB7 /* 提现 */,
+				46FCE288207A1C32004F0DB7 /* 充值 */,
+				46FCE287207A1C19004F0DB7 /* 推广赚钱 */,
+				46FCE286207A1C00004F0DB7 /* 关于我们 */,
+				46FCE285207A1BE9004F0DB7 /* 银行卡 */,
+				46FCE284207A1BD0004F0DB7 /* 成交记录 */,
+				46FCE283207A1BC0004F0DB7 /* 结算单 */,
+				46FCE282207A1B9E004F0DB7 /* 资金明细 */,
 			);
 			path = CenterChildVCs;
 			sourceTree = "<group>";
