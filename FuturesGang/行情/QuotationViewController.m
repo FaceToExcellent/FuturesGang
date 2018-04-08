@@ -7,7 +7,7 @@
 //
 
 #import "QuotationViewController.h"
-
+#import "SRNetworkTool.h"
 @interface QuotationViewController ()
 
 @end
@@ -18,7 +18,12 @@
     [super viewDidLoad];
    [self setnaviTitle:@"行情"];
     
-    
+    //暂时如此 无法验证
+    [SRNetworkTool getSRMessageWithUrl:@"www.baidu.com" success:^(id dict) {
+        
+    } fail:^(NSError *error) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

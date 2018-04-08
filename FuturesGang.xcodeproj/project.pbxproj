@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4603CE5C2079A4E8003F2332 /* SRNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4603CE5B2079A4E8003F2332 /* SRNetworkTool.m */; };
+		4603CE5F2079A993003F2332 /* SocketRocketUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4603CE5E2079A993003F2332 /* SocketRocketUtility.m */; };
 		467DE9672073096E00183731 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE9662073096E00183731 /* AppDelegate.m */; };
 		467DE96F2073096F00183731 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467DE96E2073096F00183731 /* Assets.xcassets */; };
 		467DE9752073096F00183731 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE9742073096F00183731 /* main.m */; };
@@ -38,6 +40,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4603CE5A2079A4E8003F2332 /* SRNetworkTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRNetworkTool.h; sourceTree = "<group>"; };
+		4603CE5B2079A4E8003F2332 /* SRNetworkTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRNetworkTool.m; sourceTree = "<group>"; };
+		4603CE5D2079A993003F2332 /* SocketRocketUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketRocketUtility.h; sourceTree = "<group>"; };
+		4603CE5E2079A993003F2332 /* SocketRocketUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketRocketUtility.m; sourceTree = "<group>"; };
 		467DE9622073096E00183731 /* FuturesGang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuturesGang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		467DE9652073096E00183731 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		467DE9662073096E00183731 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -126,6 +132,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4603CE592079A468003F2332 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				4603CE5A2079A4E8003F2332 /* SRNetworkTool.h */,
+				4603CE5B2079A4E8003F2332 /* SRNetworkTool.m */,
+				4603CE5D2079A993003F2332 /* SocketRocketUtility.h */,
+				4603CE5E2079A993003F2332 /* SocketRocketUtility.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
 		467DE9592073096E00183731 = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +215,7 @@
 		467DE9912073179200183731 /* Suport */ = {
 			isa = PBXGroup;
 			children = (
+				4603CE592079A468003F2332 /* NetWork */,
 				46A241442073631B00EFA8B4 /* Controller */,
 				467DE9652073096E00183731 /* AppDelegate.h */,
 				467DE9662073096E00183731 /* AppDelegate.m */,
@@ -403,8 +421,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				46FE6702207461D30027C8B9 /* AboutUsViewController.m in Sources */,
+				4603CE5F2079A993003F2332 /* SocketRocketUtility.m in Sources */,
 				467DE99B20731A0B00183731 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				467DE97D20730BF500183731 /* RootTabViewController.m in Sources */,
+				4603CE5C2079A4E8003F2332 /* SRNetworkTool.m in Sources */,
 				46FE66FF207461AC0027C8B9 /* PersonalViewController.m in Sources */,
 				467DE986207315BD00183731 /* MyCenterViewController.m in Sources */,
 				467DE9972073195F00183731 /* RootViewController.m in Sources */,
