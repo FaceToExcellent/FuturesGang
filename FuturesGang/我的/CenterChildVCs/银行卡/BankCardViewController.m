@@ -17,7 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
       [self setnaviTitle:@"银行卡"];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = APP_BACKCOLOR;
+    
 }
 
 - (void)didReceiveMemoryWarning {
