@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.title = @"成交记录";
+
+     [self setnaviTitle:@"成交记录"];
     // Do any additional setup after loading the view.
 }
 

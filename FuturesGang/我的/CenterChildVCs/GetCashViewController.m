@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-       self.title = @"提现";
+    
+    [self setnaviTitle:@"提现"];
     [self addRightBtn:@"提现记录"];
     [self GetCashMakeUI];
 }

@@ -25,7 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"注册";
+
+    [self setnaviTitle:@"注册"];
     self.view.backgroundColor = APP_BACKCOLOR;
     [self SignUPUImake];
     NSUserDefaults * def = [NSUserDefaults standardUserDefaults];

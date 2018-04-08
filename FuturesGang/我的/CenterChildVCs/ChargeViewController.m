@@ -16,8 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"充值";
-    
+   
+    [self setnaviTitle:@"充值"];
     [self addRightBtn:@"充值记录"];
     
     [self ChargeMakeUI];

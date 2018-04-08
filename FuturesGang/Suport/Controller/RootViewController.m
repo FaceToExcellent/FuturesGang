@@ -101,13 +101,13 @@
 {
 //     CGSize titleSize = [title sizeWithFont:[UIFont boldSystemFontOfSize:18] constrainedToSize:CGSizeMake(200, 30)];
     
-    NSDictionary *attribute = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18]};
+    NSDictionary *attribute = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:16]};
     CGSize titleSize = [title boundingRectWithSize:CGSizeMake(200, 30) options: NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
     
     _navTitleView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, titleSize.width+30, 44)];
     _navTitleLebel=[[UILabel alloc]initWithFrame:CGRectMake(15, 0, titleSize.width, 44)];
     _navTitleLebel.text=title;
-    _navTitleLebel.font=[UIFont boldSystemFontOfSize:18];
+    _navTitleLebel.font=[UIFont fontWithName:LIST_FOUNT size:16];
     _navTitleLebel.backgroundColor=[UIColor clearColor];
     _navTitleLebel.textColor=[UIColor whiteColor];
     [_navTitleView addSubview:_navTitleLebel];

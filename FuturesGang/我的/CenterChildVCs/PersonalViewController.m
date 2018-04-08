@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"个人信息";
+   
+    [self setnaviTitle:@"个人信息"];
     // Do any additional setup after loading the view.
 }
 

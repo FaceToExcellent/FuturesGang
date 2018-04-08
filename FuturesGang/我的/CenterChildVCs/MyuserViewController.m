@@ -1,33 +1,32 @@
 //
-//  GetCashHistoryViewController.m
+//  MyuserViewController.m
 //  FuturesGang
 //
-//  Created by yuzhen hua on 2018/4/4.
+//  Created by yuzhen hua on 2018/4/8.
 //  Copyright © 2018年 yuzhen hua. All rights reserved.
 //
 
-#import "GetCashHistoryViewController.h"
-#import "GetCashHistoryCell.h"
-@interface GetCashHistoryViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "MyuserViewController.h"
+#import "MyuserTableViewCell.h"
+
+@interface MyuserViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray * dataArray;
 @end
 
-@implementation GetCashHistoryViewController
+@implementation MyuserViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    [self setnaviTitle:@"提现记录"];
-    NSArray * arr = @[@[@"Done",@"2018-4-2",@"210000.00"],@[@"not",@"2018-4-2",@"18000.00"]];
+    [self setnaviTitle:@"我的用户"];
+    NSArray * arr = @[@[@"123456",@"2000",@"2018-1-1"],@[@"567432",@"2",@"2018-4-4"]];
     _dataArray = [[NSMutableArray alloc]initWithArray:arr];
     [self gradientLayerset];
-    [self GetCashHistoryMakeUI];
+    [self MyuserMakeUI];
 }
-
-
--(void)GetCashHistoryMakeUI{
+-(void)MyuserMakeUI{
+    
     
     _tableView = [[UITableView alloc]init];
     _tableView.frame =CGRectMake(0, 3, SCREEN_WIDTH, SCREEN_HEIGHT -StatusBarAndNavigationBarHeight-3);
@@ -35,13 +34,10 @@
     _tableView.dataSource =self;
     _tableView.tableFooterView = [[UIView alloc]init];
     _tableView.backgroundColor = APP_TEXTFEILD_BACKCOLOR;
-     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_tableView];
     
     _tableView.tableHeaderView = [self headviewmaker];
-    
-    
-    
     
 }
 
@@ -51,23 +47,23 @@
     view.backgroundColor =  APP_BACKCOLOR;
     
     
-   
+    
     //shijian
     UILabel * timelabel = [[UILabel alloc]init];
     timelabel.frame = CGRectMake(30*wb, 35*wb, 240*wb, 30*hb);
-    timelabel.text = @"时间";
+    timelabel.text = @"用户";
     timelabel.textColor = [UIColor whiteColor];
     [view addSubview:timelabel];
     //金额
     UILabel * cashLabel = [[UILabel alloc]init];
     cashLabel.frame = CGRectMake(270*wb, 35*hb, 270*wb, 30*hb);
-    cashLabel.text = @"金额";
+    cashLabel.text = @"交易手数";
     cashLabel.textColor = [UIColor whiteColor];
     [view addSubview:cashLabel];
     //状态
     UILabel * stateLabel = [[UILabel alloc]init];
     stateLabel.frame = CGRectMake(540*wb, 35*hb, 270*wb, 30*hb);
-    stateLabel.text = @"状态";
+    stateLabel.text = @"注册时间";
     stateLabel.textColor = [UIColor whiteColor];
     [view addSubview:stateLabel];
     
@@ -96,20 +92,35 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    GetCashHistoryCell * cell = [tableView dequeueReusableCellWithIdentifier:@"GetCashHistoryCell"];
+    MyuserTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"MyuserCell"];
     if (!cell) {
-        cell = [[GetCashHistoryCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"GetCashHistoryCell"];
-          cell.selectionStyle =  UITableViewCellSelectionStyleNone;
+        cell = [[MyuserTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MyuserCell"];
+        cell.selectionStyle =  UITableViewCellSelectionStyleNone;
     }
     NSArray * arr = [_dataArray objectAtIndex:indexPath.row];
     
-    [cell setstateofIsDoneornot:[arr objectAtIndex:0]];
-    cell.timelabel.text = arr[1];
-    cell.cashLabel.text = arr[2];
+    
+    cell.usertitle.text = arr[0];
+    cell.timeslabel.text = arr[1];
+    cell.signinLabel.text = arr[2];
     
     
     return cell;
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

@@ -25,8 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title =@"忘记密码";
+    [self setnaviTitle:@"忘记密码"];
     self.view.backgroundColor = APP_BACKCOLOR;
     [self FWUImake];
     NSUserDefaults * def = [NSUserDefaults standardUserDefaults];

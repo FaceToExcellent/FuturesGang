@@ -7,7 +7,7 @@
 //
 
 #import "SpreadViewController.h"
-
+#import "MyuserViewController.h"
 @interface SpreadViewController ()
 
 @end
@@ -16,14 +16,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.title = @"推广赚钱";
+   
     
+    [self setnaviTitle:@"推广赚钱"];
     [self addRightBtn:@"我的用户"];
-    // Do any additional setup after loading the view.
+   
+    
 }
 
 -(void)onClickedOKbtn{
     //跳转我的用户
+    MyuserViewController *vc = [[MyuserViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

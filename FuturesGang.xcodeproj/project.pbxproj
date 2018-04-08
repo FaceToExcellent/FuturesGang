@@ -28,6 +28,8 @@
 		46A2414920736CAC00EFA8B4 /* MyCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A2414820736CAC00EFA8B4 /* MyCenterTableViewCell.m */; };
 		46A2414C2073740F00EFA8B4 /* MycenterHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A2414B2073740F00EFA8B4 /* MycenterHeadView.m */; };
 		46FCE26F2079CB08004F0DB7 /* GetCashHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FCE26E2079CB08004F0DB7 /* GetCashHistoryCell.m */; };
+		46FCE2722079F3B2004F0DB7 /* MyuserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FCE2712079F3B2004F0DB7 /* MyuserViewController.m */; };
+		46FCE2752079F529004F0DB7 /* MyuserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FCE2742079F529004F0DB7 /* MyuserTableViewCell.m */; };
 		46FE66F6207460AE0027C8B9 /* CashDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE66F5207460AE0027C8B9 /* CashDetailViewController.m */; };
 		46FE66F9207461120027C8B9 /* SettlementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE66F8207461120027C8B9 /* SettlementViewController.m */; };
 		46FE66FC207461670027C8B9 /* DealRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE66FB207461670027C8B9 /* DealRecordViewController.m */; };
@@ -84,6 +86,10 @@
 		46A2414B2073740F00EFA8B4 /* MycenterHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MycenterHeadView.m; sourceTree = "<group>"; };
 		46FCE26D2079CB08004F0DB7 /* GetCashHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetCashHistoryCell.h; sourceTree = "<group>"; };
 		46FCE26E2079CB08004F0DB7 /* GetCashHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetCashHistoryCell.m; sourceTree = "<group>"; };
+		46FCE2702079F3B2004F0DB7 /* MyuserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyuserViewController.h; sourceTree = "<group>"; };
+		46FCE2712079F3B2004F0DB7 /* MyuserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyuserViewController.m; sourceTree = "<group>"; };
+		46FCE2732079F529004F0DB7 /* MyuserTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyuserTableViewCell.h; sourceTree = "<group>"; };
+		46FCE2742079F529004F0DB7 /* MyuserTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyuserTableViewCell.m; sourceTree = "<group>"; };
 		46FE66F4207460AE0027C8B9 /* CashDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CashDetailViewController.h; sourceTree = "<group>"; };
 		46FE66F5207460AE0027C8B9 /* CashDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CashDetailViewController.m; sourceTree = "<group>"; };
 		46FE66F7207461120027C8B9 /* SettlementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettlementViewController.h; sourceTree = "<group>"; };
@@ -156,6 +162,8 @@
 				4603CE632079BD95003F2332 /* CashTableViewCell.m */,
 				46FCE26D2079CB08004F0DB7 /* GetCashHistoryCell.h */,
 				46FCE26E2079CB08004F0DB7 /* GetCashHistoryCell.m */,
+				46FCE2732079F529004F0DB7 /* MyuserTableViewCell.h */,
+				46FCE2742079F529004F0DB7 /* MyuserTableViewCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -300,6 +308,8 @@
 				46FE6701207461D30027C8B9 /* AboutUsViewController.m */,
 				46FE6703207462190027C8B9 /* SpreadViewController.h */,
 				46FE6704207462190027C8B9 /* SpreadViewController.m */,
+				46FCE2702079F3B2004F0DB7 /* MyuserViewController.h */,
+				46FCE2712079F3B2004F0DB7 /* MyuserViewController.m */,
 				46FE67072074ACC50027C8B9 /* ChargeViewController.h */,
 				46FE67082074ACC50027C8B9 /* ChargeViewController.m */,
 				46FE670D2074B1F10027C8B9 /* ChargeHistoryViewController.h */,
@@ -465,7 +475,9 @@
 				46A24143207360F300EFA8B4 /* SignUPViewController.m in Sources */,
 				46A2413D2073214500EFA8B4 /* LoginViewController.m in Sources */,
 				46FE66FC207461670027C8B9 /* DealRecordViewController.m in Sources */,
+				46FCE2722079F3B2004F0DB7 /* MyuserViewController.m in Sources */,
 				467DE9672073096E00183731 /* AppDelegate.m in Sources */,
+				46FCE2752079F529004F0DB7 /* MyuserTableViewCell.m in Sources */,
 				46A2414020735F3E00EFA8B4 /* ForgetWordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

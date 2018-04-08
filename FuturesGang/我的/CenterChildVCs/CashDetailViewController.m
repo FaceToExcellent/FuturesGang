@@ -17,7 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"资金明细";
+ 
+    [self setnaviTitle:@"资金明细"];
     self.view.backgroundColor = APP_BACKCOLOR;
     // Do any additional setup after loading the view.
     

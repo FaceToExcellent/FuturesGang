@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"结算单";
+  
+     [self setnaviTitle:@"结算单"];
     // Do any additional setup after loading the view.
 }
 
