@@ -17,8 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    [self setnaviTitle:@"个人信息"];
-    // Do any additional setup after loading the view.
+    [self setnaviTitle:@"银行卡"];
+   
+    
 }
 
 - (void)didReceiveMemoryWarning {
