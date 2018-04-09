@@ -23,6 +23,8 @@
 #import "ChargeViewController.h"
 #import "GetCashViewController.h"
 
+#import "AppDelegate.h"
+
 @interface MyCenterViewController ()<UITableViewDelegate,UITableViewDataSource,MycenterHeadViewDelegate>
 @property(nonatomic,strong)UITableView * mycenterTableView;
 
@@ -176,9 +178,18 @@
             //退出登录
            
             LoginViewController * lvc= [[LoginViewController alloc]init];
-            //因为 loginVC 需要push VC 所以在present 之前要声明 导航控制器 
+            //因为 loginVC 需要push VC 所以在present 之前要声明 导航控制器
             UINavigationController * VC = [[UINavigationController alloc]initWithRootViewController:lvc];
-            [self presentViewController:VC animated:YES completion:nil];
+            
+            //之所以这样做 是为了防止  whose view is not in the window hierarchy 错误
+            AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            UIWindow *_window = appDelegate.window;
+
+            _window.rootViewController = VC ;
+            
+            [_window makeKeyAndVisible];
+            
+        
         }
     }
     
