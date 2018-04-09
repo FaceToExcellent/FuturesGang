@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol BankCardTableViewCellDelegate <NSObject>
+
+//预留
+@end
+
 @interface BankCardTableViewCell : UITableViewCell
 @property(nonatomic,strong)UITextField * textfeild;
+
+-(void)setcellTextfeild:(NSString*)text placeholder:(NSString*)placeholder andtag:(NSInteger)tag;
 @end

@@ -7,10 +7,11 @@
 //
 
 #import "BankCardViewController.h"
-
-@interface BankCardViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "BankCardTableViewCell.h"
+@interface BankCardViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray * dataArray;
+@property(nonatomic,strong)NSArray * placeholderArray;
 @end
 
 @implementation BankCardViewController
@@ -21,7 +22,7 @@
     self.view.backgroundColor = APP_BACKCOLOR;
     
     NSArray * nameArray =@[@"持卡人",@"身份证号",@"手机号码",@"开户银行",@"开户所在省市",@"开户支行",@"银行卡号",@"确认卡号",@"登录密码",@"确认密码",];
-    NSArray * placeholderArray =@[@"请输入真实姓名",@"请输入身份证号",@"请输入银行预留手机号码",@"请选择银行",@"开户所在省市",@"请填写开户行",@"请输入银行卡号",@"请再次输入银行卡号",@"6-16位数字或字母组成",@"请输入确认密码",];
+   _placeholderArray = @[@"请输入真实姓名",@"请输入身份证号",@"请输入银行预留手机号码",@"请选择银行",@"开户所在省市",@"请填写开户行",@"请输入银行卡号",@"请再次输入银行卡号",@"6-16位数字或字母组成",@"请输入确认密码",];
     
     
     _dataArray = [[NSMutableArray alloc]initWithArray:nameArray];
@@ -55,19 +56,49 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString * Identifier = @"BankCardCell";
-    UITableViewCell * cell = [tableView  dequeueReusableCellWithIdentifier:Identifier];
+    BankCardTableViewCell * cell = [tableView  dequeueReusableCellWithIdentifier:Identifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
+        cell = [[BankCardTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
         
         cell.selectionStyle  = UITableViewCellSelectionStyleNone;
         cell.backgroundColor = APP_TEXTFEILD_BACKCOLOR;
     }
     
+    [cell setcellTextfeild:_dataArray[indexPath.row] placeholder:_placeholderArray[indexPath.row] andtag:indexPath.row];
+    cell.textfeild.delegate = self;
+    cell.tag = indexPath.row +100;
+    if (_dataArray.count-1 == indexPath.row) {
+        cell.textfeild.returnKeyType = UIReturnKeyDone;
+    }
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 50;
+}
+
+
+#pragma mark textField delegate
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [textField becomeFirstResponder];
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    for (BankCardTableViewCell * cell in _tableView.subviews) {
+        if (cell.tag  == textField.tag) {
+            
+            [textField resignFirstResponder];
+            
+            for (BankCardTableViewCell * cell2 in _tableView.subviews) {
+                if (cell2.tag == cell.tag +1) {
+                    [cell2.textfeild becomeFirstResponder];
+                }
+            }
+        }
+    }
+    
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {
