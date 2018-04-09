@@ -25,7 +25,7 @@
 -(void)DidBandViewMakeUI{
     UIButton * addButton = [[UIButton alloc]init];
     addButton.frame = CGRectMake(30*wb, 30*hb, SCREEN_WIDTH-60*wb, 320*hb);
-    [addButton addTarget:self action:@selector(addButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    //[addButton addTarget:self action:@selector(addButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:addButton];
     [addButton setBackgroundColor:APP_RED];
     
