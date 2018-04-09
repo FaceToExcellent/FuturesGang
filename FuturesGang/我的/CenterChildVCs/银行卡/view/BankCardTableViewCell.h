@@ -16,5 +16,5 @@
 @interface BankCardTableViewCell : UITableViewCell
 @property(nonatomic,strong)UITextField * textfeild;
 
--(void)setcellTextfeild:(NSString*)text placeholder:(NSString*)placeholder andtag:(NSInteger)tag;
+-(void)setcellTextfeild:(NSString*)text placeholder:(NSString*)placeholder andtag:(NSInteger)tag  withEXframe:(CGFloat)exWidth;
 @end
