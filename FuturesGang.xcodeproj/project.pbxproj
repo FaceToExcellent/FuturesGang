@@ -10,6 +10,9 @@
 		4603CE5C2079A4E8003F2332 /* SRNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4603CE5B2079A4E8003F2332 /* SRNetworkTool.m */; };
 		4603CE5F2079A993003F2332 /* SocketRocketUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4603CE5E2079A993003F2332 /* SocketRocketUtility.m */; };
 		4603CE642079BD95003F2332 /* CashTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4603CE632079BD95003F2332 /* CashTableViewCell.m */; };
+		46599CB8207AFB6C002BC96E /* BankCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CB7207AFB6C002BC96E /* BankCardTableViewCell.m */; };
+		46599CBC207AFCCD002BC96E /* UIView+MYViewinit.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CBB207AFCCD002BC96E /* UIView+MYViewinit.m */; };
+		46599CBF207AFD82002BC96E /* UIViewController+MYViewinit.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CBE207AFD82002BC96E /* UIViewController+MYViewinit.m */; };
 		467DE9672073096E00183731 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE9662073096E00183731 /* AppDelegate.m */; };
 		467DE96F2073096F00183731 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467DE96E2073096F00183731 /* Assets.xcassets */; };
 		467DE9752073096F00183731 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE9742073096F00183731 /* main.m */; };
@@ -53,6 +56,12 @@
 		4603CE5E2079A993003F2332 /* SocketRocketUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketRocketUtility.m; sourceTree = "<group>"; };
 		4603CE622079BD95003F2332 /* CashTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CashTableViewCell.h; sourceTree = "<group>"; };
 		4603CE632079BD95003F2332 /* CashTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CashTableViewCell.m; sourceTree = "<group>"; };
+		46599CB6207AFB6C002BC96E /* BankCardTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BankCardTableViewCell.h; sourceTree = "<group>"; };
+		46599CB7207AFB6C002BC96E /* BankCardTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BankCardTableViewCell.m; sourceTree = "<group>"; };
+		46599CBA207AFCCD002BC96E /* UIView+MYViewinit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+MYViewinit.h"; sourceTree = "<group>"; };
+		46599CBB207AFCCD002BC96E /* UIView+MYViewinit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+MYViewinit.m"; sourceTree = "<group>"; };
+		46599CBD207AFD82002BC96E /* UIViewController+MYViewinit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MYViewinit.h"; sourceTree = "<group>"; };
+		46599CBE207AFD82002BC96E /* UIViewController+MYViewinit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MYViewinit.m"; sourceTree = "<group>"; };
 		467DE9622073096E00183731 /* FuturesGang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuturesGang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		467DE9652073096E00183731 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		467DE9662073096E00183731 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -162,6 +171,26 @@
 				4603CE5E2079A993003F2332 /* SocketRocketUtility.m */,
 			);
 			path = NetWork;
+			sourceTree = "<group>";
+		};
+		46599CB5207AFB36002BC96E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				46599CB6207AFB6C002BC96E /* BankCardTableViewCell.h */,
+				46599CB7207AFB6C002BC96E /* BankCardTableViewCell.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		46599CB9207AFC2F002BC96E /* 通用封装方法 */ = {
+			isa = PBXGroup;
+			children = (
+				46599CBA207AFCCD002BC96E /* UIView+MYViewinit.h */,
+				46599CBB207AFCCD002BC96E /* UIView+MYViewinit.m */,
+				46599CBD207AFD82002BC96E /* UIViewController+MYViewinit.h */,
+				46599CBE207AFD82002BC96E /* UIViewController+MYViewinit.m */,
+			);
+			path = "通用封装方法";
 			sourceTree = "<group>";
 		};
 		467DE9592073096E00183731 = {
@@ -279,6 +308,7 @@
 		46FCE276207A08B4004F0DB7 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				46599CB9207AFC2F002BC96E /* 通用封装方法 */,
 				46FCE27B207A0BBE004F0DB7 /* 色彩视图 */,
 				46FCE277207A08C3004F0DB7 /* 图片验证码 */,
 			);
@@ -334,6 +364,7 @@
 		46FCE285207A1BE9004F0DB7 /* 银行卡 */ = {
 			isa = PBXGroup;
 			children = (
+				46599CB5207AFB36002BC96E /* view */,
 				46FE66FD207461AC0027C8B9 /* PersonalViewController.h */,
 				46FE66FE207461AC0027C8B9 /* PersonalViewController.m */,
 				46FCE27F207A1A3F004F0DB7 /* BankCardViewController.h */,
@@ -571,8 +602,10 @@
 				4603CE5F2079A993003F2332 /* SocketRocketUtility.m in Sources */,
 				467DE99B20731A0B00183731 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				467DE97D20730BF500183731 /* RootTabViewController.m in Sources */,
+				46599CB8207AFB6C002BC96E /* BankCardTableViewCell.m in Sources */,
 				4603CE642079BD95003F2332 /* CashTableViewCell.m in Sources */,
 				4603CE5C2079A4E8003F2332 /* SRNetworkTool.m in Sources */,
+				46599CBC207AFCCD002BC96E /* UIView+MYViewinit.m in Sources */,
 				46FE66FF207461AC0027C8B9 /* PersonalViewController.m in Sources */,
 				467DE986207315BD00183731 /* MyCenterViewController.m in Sources */,
 				467DE9972073195F00183731 /* RootViewController.m in Sources */,
@@ -595,6 +628,7 @@
 				46FCE27E207A0C01004F0DB7 /* ColorButton.m in Sources */,
 				46A24143207360F300EFA8B4 /* SignUPViewController.m in Sources */,
 				46A2413D2073214500EFA8B4 /* LoginViewController.m in Sources */,
+				46599CBF207AFD82002BC96E /* UIViewController+MYViewinit.m in Sources */,
 				46FE66FC207461670027C8B9 /* DealRecordViewController.m in Sources */,
 				46FCE2722079F3B2004F0DB7 /* MyuserViewController.m in Sources */,
 				467DE9672073096E00183731 /* AppDelegate.m in Sources */,

@@ -13,6 +13,8 @@
 #import "RootViewController.h"
 #import "OneLevelViewController.h"
 #import "RootTabViewController.h"
+#import "UIViewController+MYViewinit.h"
+#import "UIView+MYViewinit.h"
 
 
 
