@@ -19,6 +19,7 @@
     [super viewDidLoad];
     [self setnaviTitle:@"交易"];
    
+    
    // [self setupViews];
 }
 
@@ -38,12 +39,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 -(void)viewDidAppear:(BOOL)animated
 {
     TransactionSigninViewController * sign = [[TransactionSigninViewController alloc]init];
     sign.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:sign animated:YES];
 }
+
 /*
 #pragma mark - Navigation
 

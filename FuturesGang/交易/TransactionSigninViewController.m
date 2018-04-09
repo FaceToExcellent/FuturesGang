@@ -20,6 +20,16 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)backBtnClick
+{
+
+    RootTabViewController * vc = [[RootTabViewController alloc]init];
+    //  [self presentModalViewController:vc animated:YES];
+    [vc setSelectedIndex:0];
+    [self presentViewController:vc animated:YES completion:nil];
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

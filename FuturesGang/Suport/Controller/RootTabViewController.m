@@ -56,6 +56,7 @@
    // [bbsNav.tabBarItem setTitle:@"交易"];
     bbsNav.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
     [bbsNav.tabBarItem setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:12.0F], NSForegroundColorAttributeName :RGBA(24, 22, 22, 1.0f) } forState:UIControlStateSelected];
+    
     //
     UINavigationController *myCenterNav = [[UINavigationController alloc] initWithRootViewController:myCenterVC];
     [myCenterNav.tabBarItem setImage:[UIImage imageNamed:@"wode"]];
