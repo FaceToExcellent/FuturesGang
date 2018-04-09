@@ -174,9 +174,11 @@
     if (indexPath.section == 2) {
         if (indexPath.row == 0) {
             //退出登录
-            
+           
             LoginViewController * lvc= [[LoginViewController alloc]init];
-            [self presentViewController:lvc animated:YES completion:nil];
+            //因为 loginVC 需要push VC 所以在present 之前要声明 导航控制器 
+            UINavigationController * VC = [[UINavigationController alloc]initWithRootViewController:lvc];
+            [self presentViewController:VC animated:YES completion:nil];
         }
     }
     
