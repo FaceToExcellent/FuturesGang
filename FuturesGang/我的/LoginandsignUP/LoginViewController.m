@@ -32,7 +32,8 @@
     //logo
     UIImageView * image = [[UIImageView alloc]init];
     image.frame = CGRectMake((SCREEN_WIDTH-220*wb)/2, 184*hb, 220*wb, 220*wb);
-    image.backgroundColor = RGBA(218, 84, 54, 1);
+    //image.backgroundColor = RGBA(218, 84, 54, 1);
+    image.image = [UIImage imageNamed:@"FuturesGang"];
     image.layer.masksToBounds = YES;
     image.layer.cornerRadius =  image.frame.size.width/2;
     [self.view addSubview:image];
