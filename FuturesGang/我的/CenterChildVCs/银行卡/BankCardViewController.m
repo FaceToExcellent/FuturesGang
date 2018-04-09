@@ -146,9 +146,9 @@
   
     
     //计算出键盘顶端到inputTextView panel底端的距离(加上自定义的缓冲距离INTERVAL_KEYBOARD)
-    CGFloat offset = (textView.frame.origin.y+textView.frame.size.height+5) - (_tableView.frame.size.height - _kbHeight);
-    
-    
+    CGFloat offset = ((textView.tag-100)*50 +textView.frame.size.height+5) - (_tableView.frame.size.height - _kbHeight);
+//    NSLog(@"textView%f",((textView.tag-100)*50 +textView.frame.size.height+5));
+//    NSLog(@"%f",offset);
     //将视图上移计算好的偏移
     if(offset > 0) {
         [UIView animateWithDuration:_duration animations:^{
