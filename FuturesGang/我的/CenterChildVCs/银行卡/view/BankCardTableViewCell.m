@@ -39,6 +39,14 @@
 -(void)setcellTextfeild:(NSString*)text placeholder:(NSString*)placeholder andtag:(NSInteger)tag  withEXframe:(CGFloat)exWidth{
     
      _textfeild = [self textFieldMakewithtext:text placeholder:placeholder withframe:CGRectMake(0, 5, SCREEN_WIDTH, 100*hb) backgroundColor:APP_TEXTFEILD_BACKCOLOR andtag:tag+100 andleftViewframe: CGRectMake(0, 0,175*wb+exWidth, 100*hb)];
+    
+    if (SCREEN_WIDTH == 320) {
+        _textfeild.font = [UIFont systemFontOfSize:13];
+    }else
+    {
+        _textfeild.font = [UIFont systemFontOfSize:15];
+    }
+    _textfeild.textColor = [UIColor whiteColor];
      [self addSubview:_textfeild];
     
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4601A068207B1C4A00D174F4 /* BankCardDTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4601A067207B1C4A00D174F4 /* BankCardDTableViewCell.m */; };
+		4601A06B207B382300D174F4 /* Province.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4601A06A207B382300D174F4 /* Province.plist */; };
+		4601A06E207B40C900D174F4 /* MyPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4601A06D207B40C900D174F4 /* MyPickerView.m */; };
 		4603CE5C2079A4E8003F2332 /* SRNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4603CE5B2079A4E8003F2332 /* SRNetworkTool.m */; };
 		4603CE5F2079A993003F2332 /* SocketRocketUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4603CE5E2079A993003F2332 /* SocketRocketUtility.m */; };
 		4603CE642079BD95003F2332 /* CashTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4603CE632079BD95003F2332 /* CashTableViewCell.m */; };
@@ -53,6 +55,9 @@
 /* Begin PBXFileReference section */
 		4601A066207B1C4A00D174F4 /* BankCardDTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BankCardDTableViewCell.h; sourceTree = "<group>"; };
 		4601A067207B1C4A00D174F4 /* BankCardDTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BankCardDTableViewCell.m; sourceTree = "<group>"; };
+		4601A06A207B382300D174F4 /* Province.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Province.plist; sourceTree = "<group>"; };
+		4601A06C207B40C900D174F4 /* MyPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyPickerView.h; sourceTree = "<group>"; };
+		4601A06D207B40C900D174F4 /* MyPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyPickerView.m; sourceTree = "<group>"; };
 		4603CE5A2079A4E8003F2332 /* SRNetworkTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRNetworkTool.h; sourceTree = "<group>"; };
 		4603CE5B2079A4E8003F2332 /* SRNetworkTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRNetworkTool.m; sourceTree = "<group>"; };
 		4603CE5D2079A993003F2332 /* SocketRocketUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketRocketUtility.h; sourceTree = "<group>"; };
@@ -165,6 +170,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4601A069207B381300D174F4 /* 省市区列表 */ = {
+			isa = PBXGroup;
+			children = (
+				4601A06A207B382300D174F4 /* Province.plist */,
+			);
+			path = "省市区列表";
+			sourceTree = "<group>";
+		};
 		4603CE592079A468003F2332 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +196,8 @@
 				46599CB7207AFB6C002BC96E /* BankCardTableViewCell.m */,
 				4601A066207B1C4A00D174F4 /* BankCardDTableViewCell.h */,
 				4601A067207B1C4A00D174F4 /* BankCardDTableViewCell.m */,
+				4601A06C207B40C900D174F4 /* MyPickerView.h */,
+				4601A06D207B40C900D174F4 /* MyPickerView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -313,6 +328,7 @@
 		46FCE276207A08B4004F0DB7 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				4601A069207B381300D174F4 /* 省市区列表 */,
 				46599CB9207AFC2F002BC96E /* 通用封装方法 */,
 				46FCE27B207A0BBE004F0DB7 /* 色彩视图 */,
 				46FCE277207A08C3004F0DB7 /* 图片验证码 */,
@@ -539,6 +555,7 @@
 			files = (
 				467DE96F2073096F00183731 /* Assets.xcassets in Resources */,
 				467DE97F2073143B00183731 /* Default-568h@2x.png in Resources */,
+				4601A06B207B382300D174F4 /* Province.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +623,7 @@
 				46FE6702207461D30027C8B9 /* AboutUsViewController.m in Sources */,
 				4603CE5F2079A993003F2332 /* SocketRocketUtility.m in Sources */,
 				467DE99B20731A0B00183731 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				4601A06E207B40C900D174F4 /* MyPickerView.m in Sources */,
 				467DE97D20730BF500183731 /* RootTabViewController.m in Sources */,
 				46599CB8207AFB6C002BC96E /* BankCardTableViewCell.m in Sources */,
 				4603CE642079BD95003F2332 /* CashTableViewCell.m in Sources */,

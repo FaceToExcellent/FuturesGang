@@ -9,12 +9,16 @@
 #import "BankCardViewController.h"
 #import "BankCardTableViewCell.h"
 #import "BankCardDTableViewCell.h"
+#import "MyPickerView.h"
+#define PICKER_HEIGHT   216
 @interface BankCardViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,BankCardDDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray * dataArray;
 @property(nonatomic,strong)NSArray * placeholderArray;
 @property(nonatomic,assign)CGFloat kbHeight ;
 @property(nonatomic,assign) double duration;
+
+@property(nonatomic,strong) MyPickerView * picker;
 @end
 
 @implementation BankCardViewController
@@ -32,6 +36,10 @@
     [self BankCardMakeUI];
     
     [self addNoticeForKeyboard];
+    
+    
+    
+   
 }
 
 
@@ -86,6 +94,7 @@
     }
         if (indexPath.row == 4) {
              [cell setcellTextfeild:_dataArray[indexPath.row] placeholder:_placeholderArray[indexPath.row] andtag:indexPath.row withEXframe:40];
+           cell.textfeild.inputView =  self.picker;
         }else
         {
              [cell setcellTextfeild:_dataArray[indexPath.row] placeholder:_placeholderArray[indexPath.row] andtag:indexPath.row withEXframe:0];
@@ -199,6 +208,36 @@
 -(void)pushToPersonnal
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+#pragma mark UIPickerView
+
+
+-(MyPickerView*)picker{
+    if (!_picker) {
+        _picker=[[MyPickerView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - PICKER_HEIGHT, SCREEN_WIDTH, PICKER_HEIGHT)];
+        _picker.backgroundColor= APP_Gray;
+        
+        [_picker getSuccessBlock:^(NSString * address) {
+            for ( BankCardTableViewCell * cell in self.tableView.subviews) {
+                if (cell.tag == 104) {
+                    cell.textfeild.text = address;
+                    [cell.textfeild resignFirstResponder];
+                    
+                    for (BankCardTableViewCell * cell2 in self.tableView.subviews) {
+                        if (cell2.tag == cell.tag +1) {
+                            [cell2.textfeild becomeFirstResponder];
+                            
+                            [self keyboardMove:cell2.textfeild];
+                        }
+                    }
+                    
+                }
+            }
+            
+        }];
+    }
+    
+    return _picker;
 }
 
 
