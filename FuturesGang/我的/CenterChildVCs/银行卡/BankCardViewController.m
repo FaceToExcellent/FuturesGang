@@ -8,7 +8,8 @@
 
 #import "BankCardViewController.h"
 #import "BankCardTableViewCell.h"
-@interface BankCardViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
+#import "BankCardDTableViewCell.h"
+@interface BankCardViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,BankCardDDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray * dataArray;
 @property(nonatomic,strong)NSArray * placeholderArray;
@@ -48,17 +49,33 @@
 }
 
 #pragma mark  tableView.delegate
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _dataArray.count;
+    return _dataArray.count+1;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row == _dataArray.count) {
+        //最后一个
+        NSString * Identifier = @"BankCardCellD";
+        BankCardDTableViewCell * cell = [tableView  dequeueReusableCellWithIdentifier:Identifier];
+        if (!cell) {
+            cell = [[BankCardDTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
+            
+            cell.selectionStyle  = UITableViewCellSelectionStyleNone;
+            cell.delegate =self;
+            cell.backgroundColor = APP_TEXTFEILD_BACKCOLOR;
+        }
+        
+        return  cell;
+    }else{
+        
     NSString * Identifier = @"BankCardCell";
     BankCardTableViewCell * cell = [tableView  dequeueReusableCellWithIdentifier:Identifier];
     if (!cell) {
@@ -75,11 +92,24 @@
         cell.textfeild.returnKeyType = UIReturnKeyDone;
     }
    
+    
+    
+    
+    
     return cell;
+    }
+    
+    return nil;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    if (indexPath.row == _dataArray.count) {
+        //最后一个
+        return 300*hb;
+    }else
     return 50;
+    
 }
 
 
@@ -159,7 +189,11 @@
   
 }
 
-
+#pragma mark BankCardDDelegate
+-(void)pushToPersonnal
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 
 

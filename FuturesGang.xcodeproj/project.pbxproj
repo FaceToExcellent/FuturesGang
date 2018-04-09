@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4601A068207B1C4A00D174F4 /* BankCardDTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4601A067207B1C4A00D174F4 /* BankCardDTableViewCell.m */; };
 		4603CE5C2079A4E8003F2332 /* SRNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4603CE5B2079A4E8003F2332 /* SRNetworkTool.m */; };
 		4603CE5F2079A993003F2332 /* SocketRocketUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4603CE5E2079A993003F2332 /* SocketRocketUtility.m */; };
 		4603CE642079BD95003F2332 /* CashTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4603CE632079BD95003F2332 /* CashTableViewCell.m */; };
@@ -50,6 +51,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4601A066207B1C4A00D174F4 /* BankCardDTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BankCardDTableViewCell.h; sourceTree = "<group>"; };
+		4601A067207B1C4A00D174F4 /* BankCardDTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BankCardDTableViewCell.m; sourceTree = "<group>"; };
 		4603CE5A2079A4E8003F2332 /* SRNetworkTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRNetworkTool.h; sourceTree = "<group>"; };
 		4603CE5B2079A4E8003F2332 /* SRNetworkTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRNetworkTool.m; sourceTree = "<group>"; };
 		4603CE5D2079A993003F2332 /* SocketRocketUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketRocketUtility.h; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 			children = (
 				46599CB6207AFB6C002BC96E /* BankCardTableViewCell.h */,
 				46599CB7207AFB6C002BC96E /* BankCardTableViewCell.m */,
+				4601A066207B1C4A00D174F4 /* BankCardDTableViewCell.h */,
+				4601A067207B1C4A00D174F4 /* BankCardDTableViewCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -608,6 +613,7 @@
 				46599CBC207AFCCD002BC96E /* UIView+MYViewinit.m in Sources */,
 				46FE66FF207461AC0027C8B9 /* PersonalViewController.m in Sources */,
 				467DE986207315BD00183731 /* MyCenterViewController.m in Sources */,
+				4601A068207B1C4A00D174F4 /* BankCardDTableViewCell.m in Sources */,
 				467DE9972073195F00183731 /* RootViewController.m in Sources */,
 				46A2414C2073740F00EFA8B4 /* MycenterHeadView.m in Sources */,
 				46FE6705207462190027C8B9 /* SpreadViewController.m in Sources */,

@@ -38,7 +38,7 @@
 
 -(void)setcellTextfeild:(NSString*)text placeholder:(NSString*)placeholder andtag:(NSInteger)tag {
     
-     _textfeild = [self textFieldMakewithtext:text placeholder:placeholder withframe:CGRectMake(0, 0, SCREEN_WIDTH, 100*hb) backgroundColor:APP_TEXTFEILD_BACKCOLOR andtag:tag+100 andleftViewframe: CGRectMake(0, 0,175*wb, 100*hb)];
+     _textfeild = [self textFieldMakewithtext:text placeholder:placeholder withframe:CGRectMake(0, 5, SCREEN_WIDTH, 100*hb) backgroundColor:APP_TEXTFEILD_BACKCOLOR andtag:tag+100 andleftViewframe: CGRectMake(0, 0,175*wb, 100*hb)];
      [self addSubview:_textfeild];
     
 }
