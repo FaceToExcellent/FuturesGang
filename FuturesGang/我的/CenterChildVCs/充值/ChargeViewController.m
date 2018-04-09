@@ -8,6 +8,7 @@
 
 #import "ChargeViewController.h"
 #import "ChargeHistoryViewController.h"
+#import "PersonalViewController.h"
 @interface ChargeViewController ()
 @property(nonatomic,strong)UIButton * czButton;
 @end
@@ -20,10 +21,49 @@
     [self setnaviTitle:@"充值"];
     [self addRightBtn:@"充值记录"];
     
-    [self ChargeMakeUI];
+   // [self ChargeMakeUI];
+    
+    [self noBandCard];
     
 }
 
+-(void)noBandCard{
+    
+    UIButton * noBandButton = [[UIButton alloc]init];
+    noBandButton.frame = CGRectMake(0, 3, SCREEN_WIDTH, 100*hb);
+    [noBandButton setBackgroundColor: APP_TEXTFEILD_BACKCOLOR];
+    [noBandButton addTarget:self action:@selector(noBandButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:noBandButton];
+    
+    
+    UIButton * plusButton = [[UIButton alloc]init];
+    plusButton.frame = CGRectMake(30*wb, 30*hb, 40*wb, 40*hb);
+    [plusButton setBackgroundImage:[UIImage imageNamed:@"plus"] forState:UIControlStateNormal];
+    [noBandButton addSubview:plusButton];
+    
+    
+    UILabel * buttonlabel = [[UILabel alloc]init];
+    buttonlabel.frame =  CGRectMake(100*wb, 35*hb, 250*wb, 30*hb);
+    buttonlabel.text = @"请添加银行卡";
+    buttonlabel.font = [UIFont systemFontOfSize:14];
+    buttonlabel.textColor = [UIColor whiteColor];
+    [noBandButton addSubview:buttonlabel];
+    
+    UIImageView * _goright = [[UIImageView alloc]init];
+    _goright.frame= CGRectMake(SCREEN_WIDTH -45*wb, 35*hb, 20*wb, 30*wb);
+    _goright.image =  [UIImage imageNamed:@"ZXJT"];
+    //_goright.backgroundColor = [UIColor blueColor];
+    [noBandButton addSubview:_goright];
+    
+    
+}
+
+-(void)noBandButtonClick{
+    
+    PersonalViewController * vc = [[PersonalViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
 
 -(void)onClickedOKbtn
 {
