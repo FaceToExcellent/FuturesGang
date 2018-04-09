@@ -33,6 +33,7 @@
 		46A24143207360F300EFA8B4 /* SignUPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A24142207360F300EFA8B4 /* SignUPViewController.m */; };
 		46A2414920736CAC00EFA8B4 /* MyCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A2414820736CAC00EFA8B4 /* MyCenterTableViewCell.m */; };
 		46A2414C2073740F00EFA8B4 /* MycenterHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A2414B2073740F00EFA8B4 /* MycenterHeadView.m */; };
+		46ECCF8F207B6803000CC19E /* TransactionSigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46ECCF8E207B6803000CC19E /* TransactionSigninViewController.m */; };
 		46FCE26F2079CB08004F0DB7 /* GetCashHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FCE26E2079CB08004F0DB7 /* GetCashHistoryCell.m */; };
 		46FCE2722079F3B2004F0DB7 /* MyuserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FCE2712079F3B2004F0DB7 /* MyuserViewController.m */; };
 		46FCE2752079F529004F0DB7 /* MyuserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FCE2742079F529004F0DB7 /* MyuserTableViewCell.m */; };
@@ -104,6 +105,8 @@
 		46A2414820736CAC00EFA8B4 /* MyCenterTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCenterTableViewCell.m; sourceTree = "<group>"; };
 		46A2414A2073740F00EFA8B4 /* MycenterHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MycenterHeadView.h; sourceTree = "<group>"; };
 		46A2414B2073740F00EFA8B4 /* MycenterHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MycenterHeadView.m; sourceTree = "<group>"; };
+		46ECCF8D207B6803000CC19E /* TransactionSigninViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionSigninViewController.h; sourceTree = "<group>"; };
+		46ECCF8E207B6803000CC19E /* TransactionSigninViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransactionSigninViewController.m; sourceTree = "<group>"; };
 		46FCE26D2079CB08004F0DB7 /* GetCashHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetCashHistoryCell.h; sourceTree = "<group>"; };
 		46FCE26E2079CB08004F0DB7 /* GetCashHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetCashHistoryCell.m; sourceTree = "<group>"; };
 		46FCE2702079F3B2004F0DB7 /* MyuserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyuserViewController.h; sourceTree = "<group>"; };
@@ -260,6 +263,8 @@
 			children = (
 				467DE9882073160D00183731 /* TransactionViewController.h */,
 				467DE9892073160D00183731 /* TransactionViewController.m */,
+				46ECCF8D207B6803000CC19E /* TransactionSigninViewController.h */,
+				46ECCF8E207B6803000CC19E /* TransactionSigninViewController.m */,
 			);
 			path = "交易";
 			sourceTree = "<group>";
@@ -631,6 +636,7 @@
 				46599CBC207AFCCD002BC96E /* UIView+MYViewinit.m in Sources */,
 				46FE66FF207461AC0027C8B9 /* PersonalViewController.m in Sources */,
 				467DE986207315BD00183731 /* MyCenterViewController.m in Sources */,
+				46ECCF8F207B6803000CC19E /* TransactionSigninViewController.m in Sources */,
 				4601A068207B1C4A00D174F4 /* BankCardDTableViewCell.m in Sources */,
 				467DE9972073195F00183731 /* RootViewController.m in Sources */,
 				46A2414C2073740F00EFA8B4 /* MycenterHeadView.m in Sources */,
