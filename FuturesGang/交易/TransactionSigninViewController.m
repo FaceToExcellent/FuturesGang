@@ -7,7 +7,7 @@
 //
 
 #import "TransactionSigninViewController.h"
-
+#import "BubbleView.h"
 @interface TransactionSigninViewController ()
 
 @end
@@ -42,6 +42,12 @@
 }
 
 - (void)onClickedOKbtns {
+    //弹出菜单栏
+    
+    BubbleView * view  =[[BubbleView alloc]init];
+    view.backgroundColor = [UIColor clearColor];
+    view.frame =CGRectMake(SCREEN_WIDTH-350*wb,0, 350*wb, 430*hb);
+    [self.view addSubview:view];
     
 }
 

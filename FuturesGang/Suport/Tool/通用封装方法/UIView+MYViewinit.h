@@ -11,4 +11,5 @@
 @interface UIView (MYViewinit)
 -(UITextField*)textFieldMakewithtext:(NSString *)text placeholder:(NSString *)placeholder withframe:(CGRect)rect backgroundColor:(UIColor*)color andtag:(NSInteger)tag andleftViewframe:(CGRect)leftframe;
 -(UIButton*)APPButtonmaker:(NSString*)title andtitleColor:(UIColor*)titleColor  backColor:(UIColor*)color andfont:(float)font;
+- (UIImage *)image:(UIImage *)image WithColor:(UIColor *)color;
 @end
