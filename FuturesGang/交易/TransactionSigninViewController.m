@@ -8,8 +8,13 @@
 
 #import "TransactionSigninViewController.h"
 #import "BubbleView.h"
-@interface TransactionSigninViewController ()
 
+#import "TransactionCashDetailViewController.h"
+#import "TransactionSettingViewController.h"
+#import "LoginViewController.h"
+#import "AppDelegate.h"
+@interface TransactionSigninViewController ()<BubbleViewDelegate>
+@property(nonatomic,strong)BubbleView * BubbleView ;
 @end
 
 @implementation TransactionSigninViewController
@@ -17,8 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      [self setnaviTitle:@"交易"];
+    self.view.backgroundColor = APP_BACKCOLOR;
     
     [self addRightBtns:nil];
+    [self BubbleViewMakeUI];
 }
 
 - (void)addRightBtns:(NSString*)title{
@@ -40,14 +47,24 @@
     self.navigationItem.rightBarButtonItems = @[backItem,backItem2];
     // self.navigationItem.rightBarButtonItems = @[negativeSpacer, backItem];
 }
-
-- (void)onClickedOKbtns {
+-(void)BubbleViewMakeUI{
     //弹出菜单栏
     
-    BubbleView * view  =[[BubbleView alloc]init];
-    view.backgroundColor = [UIColor clearColor];
-    view.frame =CGRectMake(SCREEN_WIDTH-350*wb,0, 350*wb, 430*hb);
-    [self.view addSubview:view];
+    _BubbleView  =[[BubbleView alloc]init];
+    _BubbleView.backgroundColor = [UIColor clearColor];
+    _BubbleView.delegate = self;
+    _BubbleView.frame =CGRectMake(SCREEN_WIDTH-350*wb,0, 350*wb, 430*hb);
+    [self.view addSubview:_BubbleView];
+    _BubbleView.hidden  = YES;
+    
+    
+ 
+}
+
+- (void)onClickedOKbtns {
+    //这一句不设置就会无响应 
+    _BubbleView.userInteractionEnabled = YES;
+    _BubbleView.hidden  = ! _BubbleView.hidden;
     
 }
 
@@ -58,6 +75,44 @@
     //  [self presentModalViewController:vc animated:YES];
     [vc setSelectedIndex:0];
     [self presentViewController:vc animated:YES completion:nil];
+    
+}
+
+#pragma  mark BubbleViewDelegate
+-(void)BubbleViewDelegatePushWithTag:(NSInteger)tag
+{
+    //资金详情
+    if (tag == 1001) {
+        TransactionCashDetailViewController * vc  = [[TransactionCashDetailViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    //出入金
+    if (tag == 1002) {
+        
+    }
+    //交易设置
+    if (tag == 1003) {
+        
+        TransactionSettingViewController * vc  = [[TransactionSettingViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+        
+    }
+    //退出登录
+    if (tag == 1004) {
+        //退出登录
+        
+        LoginViewController * lvc= [[LoginViewController alloc]init];
+        //因为 loginVC 需要push VC 所以在present 之前要声明 导航控制器
+        UINavigationController * VC = [[UINavigationController alloc]initWithRootViewController:lvc];
+        
+        //之所以这样做 是为了防止  whose view is not in the window hierarchy 错误
+        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        UIWindow *_window = appDelegate.window;
+        
+        _window.rootViewController = VC ;
+        
+        [_window makeKeyAndVisible];
+    }
     
 }
 

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol BubbleViewDelegate <NSObject>
+
+-(void)BubbleViewDelegatePushWithTag:(NSInteger)tag ;
+@end
+
 
 @interface BubbleView : UIImageView
-
+@property(nonatomic,weak)id <BubbleViewDelegate>delegate;
 @end

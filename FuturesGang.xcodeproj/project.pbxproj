@@ -14,6 +14,8 @@
 		4603CE5F2079A993003F2332 /* SocketRocketUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4603CE5E2079A993003F2332 /* SocketRocketUtility.m */; };
 		4603CE642079BD95003F2332 /* CashTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4603CE632079BD95003F2332 /* CashTableViewCell.m */; };
 		46172D71207C6B0200BADCDE /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46172D70207C6B0200BADCDE /* BubbleView.m */; };
+		46172D74207C8F5C00BADCDE /* TransactionCashDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46172D73207C8F5C00BADCDE /* TransactionCashDetailViewController.m */; };
+		46172D77207C8FBE00BADCDE /* TransactionSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46172D76207C8FBE00BADCDE /* TransactionSettingViewController.m */; };
 		46599CB8207AFB6C002BC96E /* BankCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CB7207AFB6C002BC96E /* BankCardTableViewCell.m */; };
 		46599CBC207AFCCD002BC96E /* UIView+MYViewinit.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CBB207AFCCD002BC96E /* UIView+MYViewinit.m */; };
 		46599CBF207AFD82002BC96E /* UIViewController+MYViewinit.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CBE207AFD82002BC96E /* UIViewController+MYViewinit.m */; };
@@ -68,6 +70,10 @@
 		4603CE632079BD95003F2332 /* CashTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CashTableViewCell.m; sourceTree = "<group>"; };
 		46172D6F207C6B0200BADCDE /* BubbleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BubbleView.h; sourceTree = "<group>"; };
 		46172D70207C6B0200BADCDE /* BubbleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BubbleView.m; sourceTree = "<group>"; };
+		46172D72207C8F5C00BADCDE /* TransactionCashDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionCashDetailViewController.h; sourceTree = "<group>"; };
+		46172D73207C8F5C00BADCDE /* TransactionCashDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransactionCashDetailViewController.m; sourceTree = "<group>"; };
+		46172D75207C8FBE00BADCDE /* TransactionSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionSettingViewController.h; sourceTree = "<group>"; };
+		46172D76207C8FBE00BADCDE /* TransactionSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransactionSettingViewController.m; sourceTree = "<group>"; };
 		46599CB6207AFB6C002BC96E /* BankCardTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BankCardTableViewCell.h; sourceTree = "<group>"; };
 		46599CB7207AFB6C002BC96E /* BankCardTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BankCardTableViewCell.m; sourceTree = "<group>"; };
 		46599CBA207AFCCD002BC96E /* UIView+MYViewinit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+MYViewinit.h"; sourceTree = "<group>"; };
@@ -278,6 +284,10 @@
 				467DE9892073160D00183731 /* TransactionViewController.m */,
 				46ECCF8D207B6803000CC19E /* TransactionSigninViewController.h */,
 				46ECCF8E207B6803000CC19E /* TransactionSigninViewController.m */,
+				46172D72207C8F5C00BADCDE /* TransactionCashDetailViewController.h */,
+				46172D73207C8F5C00BADCDE /* TransactionCashDetailViewController.m */,
+				46172D75207C8FBE00BADCDE /* TransactionSettingViewController.h */,
+				46172D76207C8FBE00BADCDE /* TransactionSettingViewController.m */,
 			);
 			path = "交易";
 			sourceTree = "<group>";
@@ -646,6 +656,7 @@
 				46599CB8207AFB6C002BC96E /* BankCardTableViewCell.m in Sources */,
 				4603CE642079BD95003F2332 /* CashTableViewCell.m in Sources */,
 				46172D71207C6B0200BADCDE /* BubbleView.m in Sources */,
+				46172D74207C8F5C00BADCDE /* TransactionCashDetailViewController.m in Sources */,
 				4603CE5C2079A4E8003F2332 /* SRNetworkTool.m in Sources */,
 				46599CBC207AFCCD002BC96E /* UIView+MYViewinit.m in Sources */,
 				46FE66FF207461AC0027C8B9 /* PersonalViewController.m in Sources */,
@@ -678,6 +689,7 @@
 				467DE9672073096E00183731 /* AppDelegate.m in Sources */,
 				46FCE2752079F529004F0DB7 /* MyuserTableViewCell.m in Sources */,
 				46FCE281207A1A3F004F0DB7 /* BankCardViewController.m in Sources */,
+				46172D77207C8FBE00BADCDE /* TransactionSettingViewController.m in Sources */,
 				46A2414020735F3E00EFA8B4 /* ForgetWordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
