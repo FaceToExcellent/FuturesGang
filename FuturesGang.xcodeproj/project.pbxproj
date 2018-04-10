@@ -786,7 +786,8 @@
 			baseConfigurationReference = 735FB660DFD3EB594DDBC15F /* Pods-FuturesGang.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 6B46W24Y76;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FuturesGang/Suport/FG.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/FuturesGang/Suport/Info.plist";
@@ -794,8 +795,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.maien.www.FuturesGang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maien.FuturesGang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2f82c493-3e8b-48fa-8db1-15c86bc96a72";
+				PROVISIONING_PROFILE_SPECIFIER = text003;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -805,7 +808,8 @@
 			baseConfigurationReference = 876D1B10A00EA68653EC0ACD /* Pods-FuturesGang.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 6B46W24Y76;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FuturesGang/Suport/FG.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/FuturesGang/Suport/Info.plist";
@@ -813,8 +817,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.maien.www.FuturesGang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maien.FuturesGang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2f82c493-3e8b-48fa-8db1-15c86bc96a72";
+				PROVISIONING_PROFILE_SPECIFIER = text003;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
