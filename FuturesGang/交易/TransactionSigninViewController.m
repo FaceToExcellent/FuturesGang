@@ -16,8 +16,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     [self setnaviTitle:@"交易登录"];
-    // Do any additional setup after loading the view.
+     [self setnaviTitle:@"交易"];
+    
+    [self addRightBtns:nil];
+}
+
+- (void)addRightBtns:(NSString*)title{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    //! 这里需要根据内容大小来调整宽度
+    button.frame = CGRectMake(0, 0, 44/2, 33/2);
+ 
+    [button setBackgroundImage:[UIImage imageNamed:@"CD"] forState:UIControlStateNormal];
+    
+    [button addTarget:self action:@selector(onClickedOKbtns) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    
+    UIButton * tjbutton = [UIButton buttonWithType:UIButtonTypeCustom];
+    tjbutton.frame = CGRectMake(0, 0, 87/2, 20);
+    [tjbutton setBackgroundImage:[UIImage imageNamed:@"TIAOJIAN"] forState:UIControlStateNormal];
+    UIBarButtonItem *backItem2 = [[UIBarButtonItem alloc] initWithCustomView:tjbutton];
+    
+    
+    self.navigationItem.rightBarButtonItems = @[backItem,backItem2];
+    // self.navigationItem.rightBarButtonItems = @[negativeSpacer, backItem];
+}
+
+- (void)onClickedOKbtns {
+    
 }
 
 - (void)backBtnClick
@@ -35,14 +60,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
