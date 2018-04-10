@@ -16,6 +16,7 @@
 		46172D71207C6B0200BADCDE /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46172D70207C6B0200BADCDE /* BubbleView.m */; };
 		46172D74207C8F5C00BADCDE /* TransactionCashDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46172D73207C8F5C00BADCDE /* TransactionCashDetailViewController.m */; };
 		46172D77207C8FBE00BADCDE /* TransactionSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46172D76207C8FBE00BADCDE /* TransactionSettingViewController.m */; };
+		46172D7B207C9C0200BADCDE /* MyAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46172D7A207C9C0200BADCDE /* MyAlertView.m */; };
 		46599CB8207AFB6C002BC96E /* BankCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CB7207AFB6C002BC96E /* BankCardTableViewCell.m */; };
 		46599CBC207AFCCD002BC96E /* UIView+MYViewinit.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CBB207AFCCD002BC96E /* UIView+MYViewinit.m */; };
 		46599CBF207AFD82002BC96E /* UIViewController+MYViewinit.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CBE207AFD82002BC96E /* UIViewController+MYViewinit.m */; };
@@ -74,6 +75,8 @@
 		46172D73207C8F5C00BADCDE /* TransactionCashDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransactionCashDetailViewController.m; sourceTree = "<group>"; };
 		46172D75207C8FBE00BADCDE /* TransactionSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionSettingViewController.h; sourceTree = "<group>"; };
 		46172D76207C8FBE00BADCDE /* TransactionSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransactionSettingViewController.m; sourceTree = "<group>"; };
+		46172D79207C9C0200BADCDE /* MyAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyAlertView.h; sourceTree = "<group>"; };
+		46172D7A207C9C0200BADCDE /* MyAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAlertView.m; sourceTree = "<group>"; };
 		46599CB6207AFB6C002BC96E /* BankCardTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BankCardTableViewCell.h; sourceTree = "<group>"; };
 		46599CB7207AFB6C002BC96E /* BankCardTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BankCardTableViewCell.m; sourceTree = "<group>"; };
 		46599CBA207AFCCD002BC96E /* UIView+MYViewinit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+MYViewinit.h"; sourceTree = "<group>"; };
@@ -208,6 +211,15 @@
 				46172D70207C6B0200BADCDE /* BubbleView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		46172D78207C9BD000BADCDE /* 提示框 */ = {
+			isa = PBXGroup;
+			children = (
+				46172D79207C9C0200BADCDE /* MyAlertView.h */,
+				46172D7A207C9C0200BADCDE /* MyAlertView.m */,
+			);
+			path = "提示框";
 			sourceTree = "<group>";
 		};
 		46599CB5207AFB36002BC96E /* view */ = {
@@ -356,6 +368,7 @@
 		46FCE276207A08B4004F0DB7 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				46172D78207C9BD000BADCDE /* 提示框 */,
 				4601A069207B381300D174F4 /* 省市区列表 */,
 				46599CB9207AFC2F002BC96E /* 通用封装方法 */,
 				46FCE27B207A0BBE004F0DB7 /* 色彩视图 */,
@@ -649,6 +662,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46FE6702207461D30027C8B9 /* AboutUsViewController.m in Sources */,
+				46172D7B207C9C0200BADCDE /* MyAlertView.m in Sources */,
 				4603CE5F2079A993003F2332 /* SocketRocketUtility.m in Sources */,
 				467DE99B20731A0B00183731 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				4601A06E207B40C900D174F4 /* MyPickerView.m in Sources */,
