@@ -10,7 +10,7 @@
 
 @protocol DropDownMenuDelegate <NSObject>
 
--(void)DropDownMenuTap;
+//预留
 @end
 
 @interface DropDownMenu : UIView<UITableViewDelegate,UITableViewDataSource>
@@ -31,7 +31,7 @@
 
 
 @property(nonatomic,strong) UIView * bgView2;
-@property(nonatomic,weak)id<DropDownMenuDelegate> delegate;
+//@property(nonatomic,weak)id<DropDownMenuDelegate> delegate;
 
 -(void)setMytopViewlabel:(NSString*)topViewlabel;
 -(void)setMyleftImage:(UIImage*)image;
