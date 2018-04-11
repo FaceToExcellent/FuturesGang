@@ -33,7 +33,7 @@
     [bgView addSubview:_topView];
     
     bgView.layer.masksToBounds = YES;
-    bgView.layer.cornerRadius = 3;
+    bgView.layer.cornerRadius = 3.5;
     
     _topView.layer.masksToBounds = YES;
     _topView.layer.cornerRadius = 4;

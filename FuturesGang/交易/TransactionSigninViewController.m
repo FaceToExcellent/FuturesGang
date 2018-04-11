@@ -49,8 +49,7 @@
     _menu.frame = CGRectMake(30*wb, 27*hb, 390*wb,_menuRowHeight+reH);
     [_menu setMyleftImage:[UIImage imageNamed:@"xia"]];
     
-    _menu.layer.masksToBounds = YES;
-    _menu.layer.cornerRadius  = _menuRowHeight/4;
+    
   
     [self.view addSubview:_menu];
     
