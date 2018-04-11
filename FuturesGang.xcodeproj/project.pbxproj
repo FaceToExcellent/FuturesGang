@@ -18,6 +18,8 @@
 		46172D77207C8FBE00BADCDE /* TransactionSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46172D76207C8FBE00BADCDE /* TransactionSettingViewController.m */; };
 		46172D7B207C9C0200BADCDE /* MyAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46172D7A207C9C0200BADCDE /* MyAlertView.m */; };
 		4645CD8F207D986E00939B8F /* SinglePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4645CD8E207D986E00939B8F /* SinglePickerView.m */; };
+		4645CD93207DB18E00939B8F /* DropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4645CD92207DB18E00939B8F /* DropDownMenu.m */; };
+		4645CD96207DD3F700939B8F /* DropDownMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4645CD95207DD3F700939B8F /* DropDownMenuCell.m */; };
 		46599CB8207AFB6C002BC96E /* BankCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CB7207AFB6C002BC96E /* BankCardTableViewCell.m */; };
 		46599CBC207AFCCD002BC96E /* UIView+MYViewinit.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CBB207AFCCD002BC96E /* UIView+MYViewinit.m */; };
 		46599CBF207AFD82002BC96E /* UIViewController+MYViewinit.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CBE207AFD82002BC96E /* UIViewController+MYViewinit.m */; };
@@ -80,6 +82,10 @@
 		46172D7A207C9C0200BADCDE /* MyAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAlertView.m; sourceTree = "<group>"; };
 		4645CD8D207D986E00939B8F /* SinglePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SinglePickerView.h; sourceTree = "<group>"; };
 		4645CD8E207D986E00939B8F /* SinglePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SinglePickerView.m; sourceTree = "<group>"; };
+		4645CD91207DB18E00939B8F /* DropDownMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropDownMenu.h; sourceTree = "<group>"; };
+		4645CD92207DB18E00939B8F /* DropDownMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropDownMenu.m; sourceTree = "<group>"; };
+		4645CD94207DD3F700939B8F /* DropDownMenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropDownMenuCell.h; sourceTree = "<group>"; };
+		4645CD95207DD3F700939B8F /* DropDownMenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropDownMenuCell.m; sourceTree = "<group>"; };
 		46599CB6207AFB6C002BC96E /* BankCardTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BankCardTableViewCell.h; sourceTree = "<group>"; };
 		46599CB7207AFB6C002BC96E /* BankCardTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BankCardTableViewCell.m; sourceTree = "<group>"; };
 		46599CBA207AFCCD002BC96E /* UIView+MYViewinit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+MYViewinit.h"; sourceTree = "<group>"; };
@@ -225,6 +231,17 @@
 				46172D7A207C9C0200BADCDE /* MyAlertView.m */,
 			);
 			path = "提示框";
+			sourceTree = "<group>";
+		};
+		4645CD90207DB13200939B8F /* 下拉菜单框 */ = {
+			isa = PBXGroup;
+			children = (
+				4645CD91207DB18E00939B8F /* DropDownMenu.h */,
+				4645CD92207DB18E00939B8F /* DropDownMenu.m */,
+				4645CD94207DD3F700939B8F /* DropDownMenuCell.h */,
+				4645CD95207DD3F700939B8F /* DropDownMenuCell.m */,
+			);
+			path = "下拉菜单框";
 			sourceTree = "<group>";
 		};
 		46599CB5207AFB36002BC96E /* view */ = {
@@ -373,6 +390,7 @@
 		46FCE276207A08B4004F0DB7 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				4645CD90207DB13200939B8F /* 下拉菜单框 */,
 				46172D78207C9BD000BADCDE /* 提示框 */,
 				4601A069207B381300D174F4 /* 省市区列表 */,
 				46599CB9207AFC2F002BC96E /* 通用封装方法 */,
@@ -695,10 +713,12 @@
 				467DE9752073096F00183731 /* main.m in Sources */,
 				467DE98A2073160D00183731 /* TransactionViewController.m in Sources */,
 				46FE66F9207461120027C8B9 /* SettlementViewController.m in Sources */,
+				4645CD96207DD3F700939B8F /* DropDownMenuCell.m in Sources */,
 				467DE9982073195F00183731 /* OneLevelViewController.m in Sources */,
 				46FE670C2074B0500027C8B9 /* GetCashViewController.m in Sources */,
 				467DE98D2073162600183731 /* OptionalViewController.m in Sources */,
 				467DE9902073165E00183731 /* QuotationViewController.m in Sources */,
+				4645CD93207DB18E00939B8F /* DropDownMenu.m in Sources */,
 				46FE67122074B2350027C8B9 /* GetCashHistoryViewController.m in Sources */,
 				46FCE27E207A0C01004F0DB7 /* ColorButton.m in Sources */,
 				46A24143207360F300EFA8B4 /* SignUPViewController.m in Sources */,
