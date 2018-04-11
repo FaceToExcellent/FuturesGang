@@ -15,13 +15,12 @@
 #import "AppDelegate.h"
 
 
-#import "DropDownMenu.h"
-@interface TransactionSigninViewController ()<BubbleViewDelegate,DropDownMenuDelegate>
+#import "TransactionView.h"
+
+@interface TransactionSigninViewController ()<BubbleViewDelegate>
 @property(nonatomic,strong)BubbleView * BubbleView ;
-@property(nonatomic,strong)DropDownMenu * menu;
-@property(nonatomic)CGFloat menuRowHeight;
-@property(nonatomic)CGFloat reH;
-@property(nonatomic)BOOL  isOpen;
+
+
 @end
 
 @implementation TransactionSigninViewController
@@ -32,27 +31,15 @@
      [self setnaviTitle:@"交易"];
     self.view.backgroundColor = APP_BACKCOLOR;
     
-    _isOpen = YES;
     [self addRightBtns:nil];
     [self BubbleViewMakeUI];
     [self MainUIMake];
 }
 -(void)MainUIMake{
-    _menuRowHeight = 65*hb;
-    _menu = [[DropDownMenu alloc]initWithFrame:CGRectMake(30*wb, 27*hb, 390*wb, _menuRowHeight+300)];
-    [_menu setMyheightForRow:_menuRowHeight];
-    _menu.delegate =self;
-    NSMutableArray * arr = [[NSMutableArray alloc]initWithArray:@[@"狐金1806",@"狐金1802",@"狐金1803",@"狐金1804",@"狐金1805",@"狐金1807",@"狐金1808"]];
-    [_menu setMydatearray:arr];
-    [_menu setMytopViewlabel:arr[0]];
-    CGFloat reH =  [_menu setMytableViewHeight:300.0];
-    _menu.frame = CGRectMake(30*wb, 27*hb, 390*wb,_menuRowHeight+reH);
-    [_menu setMyleftImage:[UIImage imageNamed:@"xia"]];
-    
-    
   
-    [self.view addSubview:_menu];
-    
+    TransactionView * view = [[TransactionView alloc]init];
+    view.frame =CGRectMake(0, 3, SCREEN_WIDTH, 500);
+    [self.view addSubview:view];
 }
 - (void)addRightBtns:(NSString*)title{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -142,11 +129,7 @@
     
 }
 
--(void)DropDownMenuTap
-{
-    _menu.bgView2.hidden = !_menu.bgView2.hidden;
-    
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

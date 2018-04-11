@@ -20,6 +20,7 @@
 		4645CD8F207D986E00939B8F /* SinglePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4645CD8E207D986E00939B8F /* SinglePickerView.m */; };
 		4645CD93207DB18E00939B8F /* DropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4645CD92207DB18E00939B8F /* DropDownMenu.m */; };
 		4645CD96207DD3F700939B8F /* DropDownMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4645CD95207DD3F700939B8F /* DropDownMenuCell.m */; };
+		4645CD99207DEB8F00939B8F /* TransactionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4645CD98207DEB8F00939B8F /* TransactionView.m */; };
 		46599CB8207AFB6C002BC96E /* BankCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CB7207AFB6C002BC96E /* BankCardTableViewCell.m */; };
 		46599CBC207AFCCD002BC96E /* UIView+MYViewinit.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CBB207AFCCD002BC96E /* UIView+MYViewinit.m */; };
 		46599CBF207AFD82002BC96E /* UIViewController+MYViewinit.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CBE207AFD82002BC96E /* UIViewController+MYViewinit.m */; };
@@ -86,6 +87,8 @@
 		4645CD92207DB18E00939B8F /* DropDownMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropDownMenu.m; sourceTree = "<group>"; };
 		4645CD94207DD3F700939B8F /* DropDownMenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropDownMenuCell.h; sourceTree = "<group>"; };
 		4645CD95207DD3F700939B8F /* DropDownMenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropDownMenuCell.m; sourceTree = "<group>"; };
+		4645CD97207DEB8F00939B8F /* TransactionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionView.h; sourceTree = "<group>"; };
+		4645CD98207DEB8F00939B8F /* TransactionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransactionView.m; sourceTree = "<group>"; };
 		46599CB6207AFB6C002BC96E /* BankCardTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BankCardTableViewCell.h; sourceTree = "<group>"; };
 		46599CB7207AFB6C002BC96E /* BankCardTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BankCardTableViewCell.m; sourceTree = "<group>"; };
 		46599CBA207AFCCD002BC96E /* UIView+MYViewinit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+MYViewinit.h"; sourceTree = "<group>"; };
@@ -220,6 +223,8 @@
 				46172D70207C6B0200BADCDE /* BubbleView.m */,
 				4645CD8D207D986E00939B8F /* SinglePickerView.h */,
 				4645CD8E207D986E00939B8F /* SinglePickerView.m */,
+				4645CD97207DEB8F00939B8F /* TransactionView.h */,
+				4645CD98207DEB8F00939B8F /* TransactionView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -713,6 +718,7 @@
 				467DE9752073096F00183731 /* main.m in Sources */,
 				467DE98A2073160D00183731 /* TransactionViewController.m in Sources */,
 				46FE66F9207461120027C8B9 /* SettlementViewController.m in Sources */,
+				4645CD99207DEB8F00939B8F /* TransactionView.m in Sources */,
 				4645CD96207DD3F700939B8F /* DropDownMenuCell.m in Sources */,
 				467DE9982073195F00183731 /* OneLevelViewController.m in Sources */,
 				46FE670C2074B0500027C8B9 /* GetCashViewController.m in Sources */,

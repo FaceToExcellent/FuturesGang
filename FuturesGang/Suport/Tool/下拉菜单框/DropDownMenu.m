@@ -187,23 +187,9 @@
 
 -(void)tapView:(UITapGestureRecognizer *)sender{
     
-    if (_delegate) {
-        [_delegate DropDownMenuTap];
-    }
-    
+    _bgView2.hidden = !_bgView2.hidden;
 }
 
 
-//-(void)drawRect:(CGRect)rect{
-//    [super drawRect:rect];
-//
-//    UIBezierPath * maskPath  = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(8, 8)];
-//    CAShapeLayer * masklayer = [[CAShapeLayer alloc]init];
-//
-//    masklayer.frame = self.bounds;
-//    masklayer.path = maskPath.CGPath;
-//    self.layer.mask = masklayer;
-//
-//}
 
 @end
