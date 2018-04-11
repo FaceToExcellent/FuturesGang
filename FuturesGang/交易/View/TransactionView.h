@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DropDownMenu.h"
-@interface TransactionView : UIView<DropDownMenuDelegate>
+@interface TransactionView : UIView
 @property(nonatomic,strong)DropDownMenu * menu;
 @property(nonatomic)CGFloat menuRowHeight;
 @property(nonatomic)CGFloat reH;

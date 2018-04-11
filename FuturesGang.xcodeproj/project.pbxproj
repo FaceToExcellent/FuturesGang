@@ -219,10 +219,6 @@
 		46172D6E207C6AAF00BADCDE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				46172D6F207C6B0200BADCDE /* BubbleView.h */,
-				46172D70207C6B0200BADCDE /* BubbleView.m */,
-				4645CD8D207D986E00939B8F /* SinglePickerView.h */,
-				4645CD8E207D986E00939B8F /* SinglePickerView.m */,
 				4645CD97207DEB8F00939B8F /* TransactionView.h */,
 				4645CD98207DEB8F00939B8F /* TransactionView.m */,
 			);
@@ -247,6 +243,24 @@
 				4645CD95207DD3F700939B8F /* DropDownMenuCell.m */,
 			);
 			path = "下拉菜单框";
+			sourceTree = "<group>";
+		};
+		4645CD9B207DEDBF00939B8F /* 水滴菜单 */ = {
+			isa = PBXGroup;
+			children = (
+				46172D6F207C6B0200BADCDE /* BubbleView.h */,
+				46172D70207C6B0200BADCDE /* BubbleView.m */,
+			);
+			path = "水滴菜单";
+			sourceTree = "<group>";
+		};
+		4645CD9D207DEDD800939B8F /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				4645CD8D207D986E00939B8F /* SinglePickerView.h */,
+				4645CD8E207D986E00939B8F /* SinglePickerView.m */,
+			);
+			path = Picker;
 			sourceTree = "<group>";
 		};
 		46599CB5207AFB36002BC96E /* view */ = {
@@ -395,6 +409,8 @@
 		46FCE276207A08B4004F0DB7 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				4645CD9D207DEDD800939B8F /* Picker */,
+				4645CD9B207DEDBF00939B8F /* 水滴菜单 */,
 				4645CD90207DB13200939B8F /* 下拉菜单框 */,
 				46172D78207C9BD000BADCDE /* 提示框 */,
 				4601A069207B381300D174F4 /* 省市区列表 */,
