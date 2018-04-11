@@ -31,6 +31,7 @@
 
 
 @property(nonatomic,strong) UIView * bgView2;
+@property(nonatomic,strong) UIView * bgView3;
 //@property(nonatomic,weak)id<DropDownMenuDelegate> delegate;
 
 -(void)setMytopViewlabel:(NSString*)topViewlabel;

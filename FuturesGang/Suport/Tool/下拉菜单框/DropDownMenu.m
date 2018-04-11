@@ -79,15 +79,21 @@
     _bgView2.frame = CGRectMake(0, _heightForRow-1, self.frame.size.width, 0);
     [_bgView2 setBackgroundColor:APP_Gray];
     [self addSubview:_bgView2];
+    
+    _bgView3 = [[UIView alloc]init];
+    _bgView3.frame = CGRectMake(1,_heightForRow+1, self.frame.size.width-2, 0);
+    [_bgView3 setBackgroundColor:APP_Gray];
+    [_bgView2 addSubview:_bgView3];
+   
     _tableView = [[UITableView alloc]init];
-    _tableView.frame = CGRectMake(1,_heightForRow+1, self.frame.size.width-2, 0);
+    _tableView.frame = CGRectMake(0,_heightForRow, self.frame.size.width-2, 0);
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.backgroundColor = APP_TEXTFEILD_BACKCOLOR;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
   
-    [_bgView2 addSubview:_tableView];
+    [_bgView3 addSubview:_tableView];
    //默认 隐藏
    _bgView2.hidden = YES;
     
@@ -112,11 +118,14 @@
     if (tableViewHeight > _datearray.count * _heightForRow) {
         
         _bgView2.frame = CGRectMake(0, _heightForRow-1, self.frame.size.width, _datearray.count * _heightForRow);
-        _tableView.frame = CGRectMake(1, 1, self.frame.size.width-2, _datearray.count * _heightForRow-2);
+        _bgView3.frame  = CGRectMake(1, 1, self.frame.size.width-2, _datearray.count * _heightForRow-2);
+        _tableView.frame = CGRectMake(0, 0, self.frame.size.width-2, _datearray.count * _heightForRow-2);
       reH = _datearray.count * _heightForRow;
     }else
     {
      _bgView2.frame = CGRectMake(0, _heightForRow-1, self.frame.size.width, tableViewHeight);
+        _bgView3.frame  = CGRectMake(1, 1, self.frame.size.width-2, tableViewHeight-2);
+        _tableView.frame = CGRectMake(0, 0, self.frame.size.width-2, tableViewHeight-2);
       _tableView.frame = CGRectMake(1, 1, self.frame.size.width-2, tableViewHeight-2);
        reH =   tableViewHeight;
     }
@@ -129,11 +138,11 @@
     _bgView2.layer.mask = maskLayer;
     
     
-    UIBezierPath *maskPath2 = [UIBezierPath bezierPathWithRoundedRect:_tableView.bounds byRoundingCorners:UIRectCornerBottomLeft | UIRectCornerBottomRight cornerRadii:CGSizeMake(5, 5)];
+    UIBezierPath *maskPath2 = [UIBezierPath bezierPathWithRoundedRect:_bgView3.bounds byRoundingCorners:UIRectCornerBottomLeft | UIRectCornerBottomRight cornerRadii:CGSizeMake(5, 5)];
     CAShapeLayer *maskLayer2 = [[CAShapeLayer alloc] init];
-    maskLayer2.frame = _tableView.bounds;
+    maskLayer2.frame = _bgView3.bounds;
     maskLayer2.path = maskPath2.CGPath;
-    _tableView.layer.mask = maskLayer2;
+    _bgView3.layer.mask = maskLayer2;
     
     
     
