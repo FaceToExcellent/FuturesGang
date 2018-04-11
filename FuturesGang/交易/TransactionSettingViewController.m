@@ -44,8 +44,15 @@
      _arr1 = @[@"-5",@"-10",@"对手价",@"+5",@"+10"];
     _arr2  = @[@"10秒",@"20秒",@"30秒",@"40秒",@"50秒",@"60秒",@"70秒",];
     _arr3  = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10"];
+    //默认数据
+    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+    [def setObject:@"对手价" forKey:@"快捷反手自动撤单时间"];
+    [def setObject:@"10秒" forKey:@"快捷反手自动撤单时间"];
+    [def setObject:@"1" forKey:@"交易数量默认加量"];
 
 }
+
+
 
 -(void)makeUI{
     
@@ -100,6 +107,7 @@
     
     
     _tex = [[UITextField alloc]init];
+    
     _tex.text =[def objectForKey:@"快捷反手默认委托价格"];
     _tex.delegate = self;
     _tex.tag = 101;
