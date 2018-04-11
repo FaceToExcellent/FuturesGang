@@ -59,8 +59,10 @@
     //获取验证码
     
     _hqyzmButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _hqyzmButton.frame = CGRectMake(SCREEN_WIDTH-215*wb + 2, 0, 210*wb, 100*hb);
-    _hqyzmButton.backgroundColor = APP_TEXTFEILD_BACKCOLOR;
+    _hqyzmButton.frame = CGRectMake(SCREEN_WIDTH-230*wb, 15*hb, 200*wb, 70*hb);
+    _hqyzmButton.backgroundColor = APP_BLUE;
+    _hqyzmButton.layer.masksToBounds  = YES;
+    _hqyzmButton.layer.cornerRadius  = _hqyzmButton.frame.size.width/32;
     [_hqyzmButton setTitle:@"获取验证码" forState:UIControlStateNormal];
     if (SCREEN_WIDTH ==320) {
         _hqyzmButton.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -68,7 +70,7 @@
     {
         _hqyzmButton.titleLabel.font = [UIFont systemFontOfSize:16];
     }
-    [_hqyzmButton setTitleColor:APP_BLUE forState:UIControlStateNormal];
+    [_hqyzmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_yzm addSubview:_hqyzmButton];
     
     [_hqyzmButton addTarget:self action:@selector(openCountdown) forControlEvents:UIControlEventTouchUpInside];
@@ -120,7 +122,7 @@
                 
                 //设置按钮的样式
                 [self.hqyzmButton setTitle:@"获取验证码" forState:UIControlStateNormal];
-                [self.hqyzmButton setTitleColor:RGBA(63, 111, 198, 1) forState:UIControlStateNormal];
+                self.hqyzmButton.backgroundColor = APP_BLUE;
                 self.hqyzmButton.userInteractionEnabled = YES;
             });
             
@@ -131,6 +133,7 @@
                 
                 //设置按钮显示读秒效果
                 [self.hqyzmButton setTitle:[NSString stringWithFormat:@"重新发送(%.2d)", seconds] forState:UIControlStateNormal];
+                [self.hqyzmButton setBackgroundColor:APP_Gray];
                 [self.hqyzmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
                 self.hqyzmButton.userInteractionEnabled = NO;
             });
