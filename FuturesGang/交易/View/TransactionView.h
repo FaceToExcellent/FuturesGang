@@ -28,10 +28,13 @@
 
 //最新
 @property(nonatomic,strong)UILabel * freshLabel;
+@property(nonatomic,strong)UILabel * freshnum;
 //卖价
 @property(nonatomic,strong)UILabel * shellLabel;
+@property(nonatomic,strong)UILabel * shellnum;
 //买价
 @property(nonatomic,strong)UILabel * buyLabel;
+@property(nonatomic,strong)UILabel * buynum;
 
 //红绿灰 三个按钮
 @property(nonatomic,strong)UIButton * redButton;
