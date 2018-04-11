@@ -22,11 +22,24 @@
 
 -(void)makeUI{
     //顶部topView
+    UIView * bgView = [[UIView alloc]init];
+    bgView.frame = CGRectMake(0, 0, self.frame.size.width, _heightForRow);
+    [bgView setBackgroundColor:APP_Gray];
+    [self addSubview:bgView];
+    
     _topView = [[UIView alloc]init];
-    _topView.frame = CGRectMake(0, 0, self.frame.size.width, _heightForRow);
-    _topView.layer.borderWidth = 1;
-    _topView.layer.borderColor = APP_Gray.CGColor;
-    [self addSubview:_topView];
+    _topView.frame = CGRectMake(1, 1, self.frame.size.width-2, _heightForRow-2);
+    _topView.backgroundColor = APP_BACKCOLOR;
+    [bgView addSubview:_topView];
+    
+    bgView.layer.masksToBounds = YES;
+    bgView.layer.cornerRadius = bgView.frame.size.width/32;
+    
+    _topView.layer.masksToBounds = YES;
+    _topView.layer.cornerRadius = bgView.frame.size.width/32;
+   
+    
+    
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapView:)];
     
@@ -61,20 +74,22 @@
     
     
     //table
+    
+    _bgView2 = [[UIView alloc]init];
+    _bgView2.frame = CGRectMake(0, _heightForRow-1, self.frame.size.width, 0);
+    [_bgView2 setBackgroundColor:APP_Gray];
+    [self addSubview:_bgView2];
     _tableView = [[UITableView alloc]init];
-    _tableView.frame = CGRectMake(0,_heightForRow, self.frame.size.width, 0);
+    _tableView.frame = CGRectMake(1,_heightForRow+1, self.frame.size.width-2, 0);
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.backgroundColor = APP_TEXTFEILD_BACKCOLOR;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
   
-    [self addSubview:_tableView];
-    
-    _tableView.layer.masksToBounds = YES;
-    _tableView.layer.cornerRadius  = _tableView.frame.size.width/32;
-    _tableView.layer.borderWidth = 1;
-    _tableView.layer.borderColor = APP_Gray.CGColor;
+    [_bgView2 addSubview:_tableView];
+
+
     
     
 }
@@ -92,14 +107,37 @@
     _leftImage.image = image;
 }
 -(CGFloat)setMytableViewHeight:(CGFloat)tableViewHeight{
+    
+    CGFloat  reH;
     if (tableViewHeight > _datearray.count * _heightForRow) {
-        _tableView.frame = CGRectMake(0, _heightForRow, self.frame.size.width, _datearray.count * _heightForRow);
-        return _datearray.count * _heightForRow;
+        
+        _bgView2.frame = CGRectMake(0, _heightForRow-1, self.frame.size.width, _datearray.count * _heightForRow);
+        _tableView.frame = CGRectMake(1, 1, self.frame.size.width-2, _datearray.count * _heightForRow-2);
+      reH = _datearray.count * _heightForRow;
     }else
     {
-      _tableView.frame = CGRectMake(0, _heightForRow, self.frame.size.width, tableViewHeight);
-        return  tableViewHeight;
+     _bgView2.frame = CGRectMake(0, _heightForRow-1, self.frame.size.width, tableViewHeight);
+      _tableView.frame = CGRectMake(1, 1, self.frame.size.width-2, tableViewHeight-2);
+       reH =   tableViewHeight;
     }
+    
+    
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:_bgView2.bounds byRoundingCorners:UIRectCornerBottomLeft | UIRectCornerBottomRight cornerRadii:CGSizeMake(3.5, 3.5)];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = _bgView2.bounds;
+    maskLayer.path = maskPath.CGPath;
+    _bgView2.layer.mask = maskLayer;
+    
+    
+    UIBezierPath *maskPath2 = [UIBezierPath bezierPathWithRoundedRect:_tableView.bounds byRoundingCorners:UIRectCornerBottomLeft | UIRectCornerBottomRight cornerRadii:CGSizeMake(5, 5)];
+    CAShapeLayer *maskLayer2 = [[CAShapeLayer alloc] init];
+    maskLayer2.frame = _tableView.bounds;
+    maskLayer2.path = maskPath2.CGPath;
+    _tableView.layer.mask = maskLayer2;
+    
+    
+    
+    return  reH;
     
     
     
@@ -155,5 +193,17 @@
     
 }
 
+
+//-(void)drawRect:(CGRect)rect{
+//    [super drawRect:rect];
+//
+//    UIBezierPath * maskPath  = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(8, 8)];
+//    CAShapeLayer * masklayer = [[CAShapeLayer alloc]init];
+//
+//    masklayer.frame = self.bounds;
+//    masklayer.path = maskPath.CGPath;
+//    self.layer.mask = masklayer;
+//
+//}
 
 @end

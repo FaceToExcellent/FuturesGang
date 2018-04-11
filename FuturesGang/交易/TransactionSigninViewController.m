@@ -48,6 +48,10 @@
     CGFloat reH =  [_menu setMytableViewHeight:300.0];
     _menu.frame = CGRectMake(30*wb, 27*hb, 390*wb,_menuRowHeight+reH);
     [_menu setMyleftImage:[UIImage imageNamed:@"xia"]];
+    
+    _menu.layer.masksToBounds = YES;
+    _menu.layer.cornerRadius  = _menuRowHeight/4;
+  
     [self.view addSubview:_menu];
     
 }
@@ -141,7 +145,7 @@
 
 -(void)DropDownMenuTap
 {
-    _menu.tableView.hidden = !_menu.tableView.hidden;
+    _menu.bgView2.hidden = !_menu.bgView2.hidden;
     
 }
 

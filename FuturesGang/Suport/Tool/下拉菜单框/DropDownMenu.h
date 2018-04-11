@@ -30,6 +30,7 @@
 @property(nonatomic,strong)UILabel  * topViewlabel;//顶部 label
 
 
+@property(nonatomic,strong) UIView * bgView2;
 @property(nonatomic,weak)id<DropDownMenuDelegate> delegate;
 
 -(void)setMytopViewlabel:(NSString*)topViewlabel;
