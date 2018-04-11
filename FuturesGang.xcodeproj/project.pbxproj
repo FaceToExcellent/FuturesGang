@@ -21,6 +21,8 @@
 		4645CD93207DB18E00939B8F /* DropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4645CD92207DB18E00939B8F /* DropDownMenu.m */; };
 		4645CD96207DD3F700939B8F /* DropDownMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4645CD95207DD3F700939B8F /* DropDownMenuCell.m */; };
 		4645CD99207DEB8F00939B8F /* TransactionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4645CD98207DEB8F00939B8F /* TransactionView.m */; };
+		4645CDA0207DF4E400939B8F /* TransactionKlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4645CD9F207DF4E400939B8F /* TransactionKlineView.m */; };
+		4645CDA3207DF50700939B8F /* TransctionFSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4645CDA2207DF50700939B8F /* TransctionFSView.m */; };
 		46599CB8207AFB6C002BC96E /* BankCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CB7207AFB6C002BC96E /* BankCardTableViewCell.m */; };
 		46599CBC207AFCCD002BC96E /* UIView+MYViewinit.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CBB207AFCCD002BC96E /* UIView+MYViewinit.m */; };
 		46599CBF207AFD82002BC96E /* UIViewController+MYViewinit.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CBE207AFD82002BC96E /* UIViewController+MYViewinit.m */; };
@@ -89,6 +91,10 @@
 		4645CD95207DD3F700939B8F /* DropDownMenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropDownMenuCell.m; sourceTree = "<group>"; };
 		4645CD97207DEB8F00939B8F /* TransactionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionView.h; sourceTree = "<group>"; };
 		4645CD98207DEB8F00939B8F /* TransactionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransactionView.m; sourceTree = "<group>"; };
+		4645CD9E207DF4E400939B8F /* TransactionKlineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionKlineView.h; sourceTree = "<group>"; };
+		4645CD9F207DF4E400939B8F /* TransactionKlineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransactionKlineView.m; sourceTree = "<group>"; };
+		4645CDA1207DF50700939B8F /* TransctionFSView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransctionFSView.h; sourceTree = "<group>"; };
+		4645CDA2207DF50700939B8F /* TransctionFSView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransctionFSView.m; sourceTree = "<group>"; };
 		46599CB6207AFB6C002BC96E /* BankCardTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BankCardTableViewCell.h; sourceTree = "<group>"; };
 		46599CB7207AFB6C002BC96E /* BankCardTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BankCardTableViewCell.m; sourceTree = "<group>"; };
 		46599CBA207AFCCD002BC96E /* UIView+MYViewinit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+MYViewinit.h"; sourceTree = "<group>"; };
@@ -221,6 +227,10 @@
 			children = (
 				4645CD97207DEB8F00939B8F /* TransactionView.h */,
 				4645CD98207DEB8F00939B8F /* TransactionView.m */,
+				4645CD9E207DF4E400939B8F /* TransactionKlineView.h */,
+				4645CD9F207DF4E400939B8F /* TransactionKlineView.m */,
+				4645CDA1207DF50700939B8F /* TransctionFSView.h */,
+				4645CDA2207DF50700939B8F /* TransctionFSView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -725,8 +735,10 @@
 				467DE9972073195F00183731 /* RootViewController.m in Sources */,
 				46A2414C2073740F00EFA8B4 /* MycenterHeadView.m in Sources */,
 				46FE6705207462190027C8B9 /* SpreadViewController.m in Sources */,
+				4645CDA3207DF50700939B8F /* TransctionFSView.m in Sources */,
 				46FE67092074ACC50027C8B9 /* ChargeViewController.m in Sources */,
 				46A2414920736CAC00EFA8B4 /* MyCenterTableViewCell.m in Sources */,
+				4645CDA0207DF4E400939B8F /* TransactionKlineView.m in Sources */,
 				46FCE26F2079CB08004F0DB7 /* GetCashHistoryCell.m in Sources */,
 				46FE66F6207460AE0027C8B9 /* CashDetailViewController.m in Sources */,
 				46FCE27A207A08F3004F0DB7 /* NNValidationView.m in Sources */,

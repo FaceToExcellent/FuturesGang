@@ -88,8 +88,8 @@
     
   
     [_bgView2 addSubview:_tableView];
-
-
+   //默认 隐藏
+   _bgView2.hidden = YES;
     
     
 }

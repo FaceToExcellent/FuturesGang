@@ -15,11 +15,23 @@
 #import "AppDelegate.h"
 
 
-#import "TransactionView.h"
+#import "TransactionView.h"//交易
+#import "TransctionFSView.h"//分时
+#import "TransactionKlineView.h"//K线
+
 
 @interface TransactionSigninViewController ()<BubbleViewDelegate>
 @property(nonatomic,strong)BubbleView * BubbleView ;
 
+@property(nonatomic,strong)UIButton * zixuanButton;
+@property(nonatomic,strong)UIButton * fenshiButton;
+@property(nonatomic,strong)UIButton * KxianButton;
+@property(nonatomic,strong)UIButton * jiaoyiButton;
+
+
+@property(nonatomic,strong)TransactionView * transactionView;
+@property(nonatomic,strong)TransctionFSView * FSView;
+@property(nonatomic,strong)TransactionKlineView * KLineView;
 
 @end
 
@@ -29,18 +41,145 @@
     [super viewDidLoad];
     
      [self setnaviTitle:@"交易"];
-    self.view.backgroundColor = APP_BACKCOLOR;
+    self.view.backgroundColor = APP_TEXTFEILD_BACKCOLOR;
     
     [self addRightBtns:nil];
-    [self BubbleViewMakeUI];
+    
     [self MainUIMake];
+    //默认选中交易
+    [self jiaoyiButtonCLick];
+    //放到最后保证菜单在最上层
+    [self BubbleViewMakeUI];
 }
 -(void)MainUIMake{
   
-    TransactionView * view = [[TransactionView alloc]init];
-    view.frame =CGRectMake(0, 3, SCREEN_WIDTH, 500);
-    [self.view addSubview:view];
+   
+    //底部四个按钮
+    [self DownButton];
+    [self fourView];
+    
 }
+
+-(void)fourView{
+    _transactionView = [[TransactionView alloc]init];
+    _transactionView.frame =CGRectMake(0, 3, SCREEN_WIDTH, SCREEN_HEIGHT- StatusBarAndNavigationBarHeight-100*hb-3);
+    _transactionView.backgroundColor =  APP_TEXTFEILD_BACKCOLOR;
+    
+    _FSView = [[TransctionFSView alloc]init];
+    _FSView.frame =CGRectMake(0, 3, SCREEN_WIDTH, SCREEN_HEIGHT- StatusBarAndNavigationBarHeight-100*hb-3);
+    _FSView.backgroundColor =  [UIColor greenColor];
+    
+    
+    _KLineView = [[TransactionKlineView alloc]init];
+    _KLineView.frame =CGRectMake(0, 3, SCREEN_WIDTH, SCREEN_HEIGHT- StatusBarAndNavigationBarHeight-100*hb-3);
+    _KLineView.backgroundColor =  [UIColor orangeColor];
+    
+}
+
+-(void)DownButton{
+    
+    UIView * conView  =[[UIView alloc]init];
+    conView.frame = CGRectMake(0, SCREEN_HEIGHT -100*hb-StatusBarAndNavigationBarHeight, SCREEN_WIDTH, 100*hb);
+    [conView setBackgroundColor:APP_BACKCOLOR];
+    [self.view addSubview:conView];
+    
+    //自选
+    _zixuanButton = [[UIButton alloc]init];
+    _zixuanButton.frame = CGRectMake(0, 0, SCREEN_WIDTH/4, 100*hb);
+    
+    [_zixuanButton setTitle:@"自选" forState:UIControlStateNormal];
+    [_zixuanButton setBackgroundImage:[UIImage imageNamed:@"lanse"] forState:UIControlStateSelected];
+    [_zixuanButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [_zixuanButton setTitleColor:APP_Gray forState:UIControlStateNormal];
+    [_zixuanButton addTarget:self action:@selector(zixuanButtonCLick) forControlEvents:UIControlEventTouchUpInside];
+    [conView addSubview:_zixuanButton];
+    //分时
+    _fenshiButton = [[UIButton alloc]init];
+    _fenshiButton.frame = CGRectMake(SCREEN_WIDTH/4, 0, SCREEN_WIDTH/4, 100*hb);
+    
+    [_fenshiButton setTitle:@"分时" forState:UIControlStateNormal];
+    [_fenshiButton setBackgroundImage:[UIImage imageNamed:@"lanse"] forState:UIControlStateSelected];
+    [_fenshiButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [_fenshiButton setTitleColor:APP_Gray forState:UIControlStateNormal];
+    [_fenshiButton addTarget:self action:@selector(fenshiButtonCLick) forControlEvents:UIControlEventTouchUpInside];
+    [conView addSubview:_fenshiButton];
+    
+    //K line
+    _KxianButton = [[UIButton alloc]init];
+    _KxianButton.frame = CGRectMake(SCREEN_WIDTH/4 *2, 0, SCREEN_WIDTH/4, 100*hb);
+    
+    [_KxianButton setTitle:@"K线" forState:UIControlStateNormal];
+    [_KxianButton setBackgroundImage:[UIImage imageNamed:@"lanse"] forState:UIControlStateSelected];
+    [_KxianButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [_KxianButton setTitleColor:APP_Gray forState:UIControlStateNormal];
+    [_KxianButton addTarget:self action:@selector(KxianButtonCLick) forControlEvents:UIControlEventTouchUpInside];
+    [conView addSubview:_KxianButton];
+    //交易
+    _jiaoyiButton = [[UIButton alloc]init];
+    _jiaoyiButton.frame = CGRectMake(SCREEN_WIDTH/4 *3 , 0, SCREEN_WIDTH/4, 100*hb);
+    
+    [_jiaoyiButton setTitle:@"交易" forState:UIControlStateNormal];
+    [_jiaoyiButton setBackgroundImage:[UIImage imageNamed:@"lanse"] forState:UIControlStateSelected];
+    [_jiaoyiButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [_jiaoyiButton setTitleColor:APP_Gray forState:UIControlStateNormal];
+    [_jiaoyiButton addTarget:self action:@selector(jiaoyiButtonCLick) forControlEvents:UIControlEventTouchUpInside];
+    [conView addSubview:_jiaoyiButton];
+    
+    
+}
+-(void)zixuanButtonCLick{
+    _zixuanButton.selected  = !_zixuanButton.selected;
+    if (_zixuanButton.selected) {
+        _fenshiButton.selected = NO;
+        _KxianButton.selected  = NO;
+        _jiaoyiButton.selected  = NO;
+    }
+    
+    RootTabViewController * vc = [[RootTabViewController alloc]init];
+    [vc setSelectedIndex:1];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+-(void)fenshiButtonCLick{
+    _fenshiButton.selected  = !_fenshiButton.selected;
+    if (_fenshiButton.selected) {
+        _zixuanButton.selected = NO;
+        _KxianButton.selected  = NO;
+        _jiaoyiButton.selected  = NO;
+    }
+    
+    [self.view addSubview:_FSView];
+    [_transactionView removeFromSuperview];
+    [_KLineView removeFromSuperview];
+}
+
+-(void)KxianButtonCLick{
+    _KxianButton.selected  = !_KxianButton.selected;
+    if (_KxianButton.selected) {
+        _zixuanButton.selected = NO;
+        _fenshiButton.selected  = NO;
+        _jiaoyiButton.selected  = NO;
+    }
+    
+    [self.view addSubview:_KLineView];
+    [_transactionView removeFromSuperview];
+    [_FSView removeFromSuperview];
+}
+-(void)jiaoyiButtonCLick{
+    _jiaoyiButton.selected  = !_jiaoyiButton.selected;
+    if (_jiaoyiButton.selected) {
+        _zixuanButton.selected = NO;
+        _fenshiButton.selected  = NO;
+        _KxianButton.selected  = NO;
+    }
+    
+    [self.view addSubview:_transactionView];
+    [_KLineView removeFromSuperview];
+    [_FSView removeFromSuperview];
+    
+    
+}
+
 - (void)addRightBtns:(NSString*)title{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     //! 这里需要根据内容大小来调整宽度
