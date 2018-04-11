@@ -8,11 +8,26 @@
 
 #import "TransactionSettingViewController.h"
 #import "MyAlertView.h"
-@interface TransactionSettingViewController ()
+
+#import "SinglePickerView.h"
+#define PICKER_HEIGHT   216
+@interface TransactionSettingViewController ()<UITextFieldDelegate>
 @property(nonatomic,strong)UISwitch *switchView;
 @property(nonatomic,strong) MyAlertView * alert;
 
 @property(nonatomic,strong)UITextField * textField1;
+
+@property(nonatomic,strong)SinglePickerView * picker;
+@property(nonatomic,strong)SinglePickerView * picker2;
+@property(nonatomic,strong)SinglePickerView * picker3;
+
+@property(nonatomic,strong)UITextField * tex;
+@property(nonatomic,strong)UITextField * tex2;
+@property(nonatomic,strong)UITextField * tex3;
+
+@property(nonatomic,strong)NSArray * arr1;
+@property(nonatomic,strong)NSArray * arr2;
+@property(nonatomic,strong)NSArray * arr3;
 @end
 
 @implementation TransactionSettingViewController
@@ -20,8 +35,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setnaviTitle:@"交易设置"];
-    
+     [self loadDate];
     [self makeUI];
+   
+}
+
+-(void)loadDate{
+     _arr1 = @[@"-5",@"-10",@"对手价",@"+5",@"+10"];
+    _arr2  = @[@"10秒",@"20秒",@"30秒",@"40秒",@"50秒",@"60秒",@"70秒",];
+    _arr3  = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10"];
+
 }
 
 -(void)makeUI{
@@ -73,14 +96,19 @@
     label2.frame = CGRectMake(30*wb, 0, 450*wb, 100*hb);
     [kjfsView addSubview:label2];
    
-    UITextField * tex = [[UITextField alloc]init];
-    tex.text =@"对手价";
-    tex.font = [UIFont systemFontOfSize:14];
-    tex.textAlignment = NSTextAlignmentRight;
-    tex.textColor =  RGBA(150, 160, 190, 1);
-    tex.frame = CGRectMake(SCREEN_WIDTH-250*wb, 0, 185*wb, 100*hb);
+     NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
     
-    [kjfsView addSubview:tex];
+    
+    _tex = [[UITextField alloc]init];
+    _tex.text =[def objectForKey:@"快捷反手默认委托价格"];
+    _tex.delegate = self;
+    _tex.tag = 101;
+    _tex.font = [UIFont systemFontOfSize:14];
+    _tex.textAlignment = NSTextAlignmentRight;
+    _tex.textColor =  RGBA(150, 160, 190, 1);
+    _tex.frame = CGRectMake(SCREEN_WIDTH-250*wb, 0, 185*wb, 100*hb);
+    
+    [kjfsView addSubview:_tex];
     
     UIImageView * gorimage = [[UIImageView alloc]init];
     gorimage.image = [UIImage imageNamed:@"ZXJT"];
@@ -110,14 +138,16 @@
     label3.frame = CGRectMake(30*wb, 0, 450*wb, 100*hb);
     [kjcdView addSubview:label3];
     
-    UITextField * tex2 = [[UITextField alloc]init];
-    tex2.text =@"10秒";
-    tex2.font = [UIFont systemFontOfSize:14];
-    tex2.textAlignment = NSTextAlignmentRight;
-    tex2.textColor =  RGBA(150, 160, 190, 1);
-    tex2.frame = CGRectMake(SCREEN_WIDTH-250*wb, 0, 185*wb, 100*hb);
+     _tex2 = [[UITextField alloc]init];
+    _tex2.text =[def objectForKey:@"快捷反手自动撤单时间"];
+    _tex2.delegate =self;
+    _tex2.tag = 102;
+    _tex2.font = [UIFont systemFontOfSize:14];
+    _tex2.textAlignment = NSTextAlignmentRight;
+    _tex2.textColor =  RGBA(150, 160, 190, 1);
+    _tex2.frame = CGRectMake(SCREEN_WIDTH-250*wb, 0, 185*wb, 100*hb);
     
-    [kjcdView addSubview:tex2];
+    [kjcdView addSubview:_tex2];
     
     UIImageView * gorimage2 = [[UIImageView alloc]init];
     gorimage2.image = [UIImage imageNamed:@"ZXJT"];
@@ -147,14 +177,16 @@
     label4.frame = CGRectMake(30*wb, 0, 450*wb, 100*hb);
     [jyslView addSubview:label4];
     
-    UITextField * tex3 = [[UITextField alloc]init];
-    tex3.text =@"1";
-    tex3.font = [UIFont systemFontOfSize:14];
-    tex3.textAlignment = NSTextAlignmentRight;
-    tex3.textColor =  RGBA(150, 160, 190, 1);
-    tex3.frame = CGRectMake(SCREEN_WIDTH-250*wb, 0, 185*wb, 100*hb);
+    _tex3 = [[UITextField alloc]init];
+    _tex3.text =[def objectForKey:@"交易数量默认加量"];
+    _tex3.delegate = self;
+    _tex3.tag = 103;
+    _tex3.font = [UIFont systemFontOfSize:14];
+    _tex3.textAlignment = NSTextAlignmentRight;
+    _tex3.textColor =  RGBA(150, 160, 190, 1);
+    _tex3.frame = CGRectMake(SCREEN_WIDTH-250*wb, 0, 185*wb, 100*hb);
     
-    [jyslView addSubview:tex3];
+    [jyslView addSubview:_tex3];
     
     UIImageView * gorimage3 = [[UIImageView alloc]init];
     gorimage3.image = [UIImage imageNamed:@"ZXJT"];
@@ -191,11 +223,164 @@
     [self.view addSubview:_alert];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark UITextFieldDelegate
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    
+    if (textField.tag == 101) {
+        //对手价
+        textField.inputView = self.picker;
+        [self.picker  setmyarrayDS:_arr1];
+    }
+    if(textField.tag == 102){
+        //10秒
+        textField.inputView = self.picker2;
+         [self.picker2  setmyarrayDS:_arr2];
+    }
+    if(textField.tag == 103){
+        //1
+        textField.inputView = self.picker3;
+         [self.picker3  setmyarrayDS:_arr3];
+    }
+    
+    
+    [textField becomeFirstResponder];
 }
 
 
+
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    for (UITextField * mytextField in self.view.subviews) {
+        if (mytextField.tag -1 == textField.tag) {
+            
+            [textField resignFirstResponder];
+            [mytextField becomeFirstResponder];
+        }else
+        {
+            [mytextField resignFirstResponder];
+        }
+    }
+    
+    
+    return YES;
+}
+
+#pragma mark UIPickerView
+
+
+-(SinglePickerView*)picker{
+    if (!_picker) {
+        _picker=[[SinglePickerView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - PICKER_HEIGHT, SCREEN_WIDTH, PICKER_HEIGHT)];
+        _picker.backgroundColor= APP_Gray;
+        __weak typeof (self)weakSelf = self;
+        [_picker setDidFinishBlock:^(NSString *message) {
+            
+            if(message.length >0){
+            
+            weakSelf.tex.text = message;
+             [ weakSelf.tex resignFirstResponder];
+            
+            NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+            [def setObject:message forKey:@"快捷反手默认委托价格"];
+            }else
+            {
+                NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+               
+                NSString * messg = [def objectForKey:@"快捷反手默认委托价格"];
+                if (messg.length>0) {
+                    weakSelf.tex.text = messg;
+                    [ weakSelf.tex resignFirstResponder];
+                }else
+                {
+                    weakSelf.tex.text = @"对手价";
+                    [ weakSelf.tex resignFirstResponder];
+                    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+                    [def setObject:@"对手价" forKey:@"快捷反手自动撤单时间"];
+                }
+            }
+        }];
+       
+    }
+    
+    return _picker;
+}
+-(SinglePickerView*)picker2{
+    if (!_picker2) {
+        _picker2=[[SinglePickerView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - PICKER_HEIGHT, SCREEN_WIDTH, PICKER_HEIGHT)];
+        _picker2.backgroundColor= APP_Gray;
+        __weak typeof (self)weakSelf = self;
+        [_picker2 setDidFinishBlock:^(NSString *message) {
+            
+            if(message.length >0){
+                
+                weakSelf.tex2.text = message;
+                [ weakSelf.tex2 resignFirstResponder];
+                
+                NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+                [def setObject:message forKey:@"快捷反手自动撤单时间"];
+            }else
+            {
+                NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+                
+                NSString * messg = [def objectForKey:@"快捷反手自动撤单时间"];
+                if (messg.length>0) {
+                    weakSelf.tex2.text = messg;
+                    [ weakSelf.tex2 resignFirstResponder];
+                }else
+                {
+                    weakSelf.tex2.text = @"10秒";
+                    [ weakSelf.tex2 resignFirstResponder];
+                    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+                    [def setObject:@"10秒" forKey:@"快捷反手自动撤单时间"];
+                }
+            }
+
+        }];
+        
+    }
+    
+    return _picker2;
+}
+
+-(SinglePickerView*)picker3{
+    if (!_picker3) {
+        _picker3=[[SinglePickerView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - PICKER_HEIGHT, SCREEN_WIDTH, PICKER_HEIGHT)];
+        _picker3.backgroundColor= APP_Gray;
+        __weak typeof (self)weakSelf = self;
+        [_picker3 setDidFinishBlock:^(NSString *message) {
+            if(message.length >0){
+                
+                weakSelf.tex3.text = message;
+                [ weakSelf.tex3 resignFirstResponder];
+                
+                NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+                [def setObject:message forKey:@"交易数量默认加量"];
+            }else
+            {
+                NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+                
+                NSString * messg = [def objectForKey:@"交易数量默认加量"];
+                if (messg.length>0) {
+                    weakSelf.tex3.text = messg;
+                    [ weakSelf.tex3 resignFirstResponder];
+                }else
+                {
+                    weakSelf.tex3.text = @"1";
+                    [ weakSelf.tex3 resignFirstResponder];
+                    
+                    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+                    [def setObject:@"1" forKey:@"交易数量默认加量"];
+                }
+            }
+
+            
+        }];
+        
+    }
+    
+    return _picker3;
+}
 @end
