@@ -10,4 +10,5 @@
 #import "KlineTopView.h"
 @interface TransctionFSView : UIView
 @property(nonatomic,strong)KlineTopView * topView;
+@property(nonatomic,strong)UIWebView  * web;
 @end

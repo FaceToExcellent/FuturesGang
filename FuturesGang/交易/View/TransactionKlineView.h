@@ -11,4 +11,5 @@
 @interface TransactionKlineView : UIView
 
 @property(nonatomic,strong)KlineTopView * topView;
+@property(nonatomic,strong)UIWebView  * web;
 @end

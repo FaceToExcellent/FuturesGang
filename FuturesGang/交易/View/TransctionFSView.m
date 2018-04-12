@@ -24,6 +24,11 @@
     _topView = [[KlineTopView alloc]init];
     _topView.frame =CGRectMake(0, 0, SCREEN_WIDTH, 280*hb);
     [self addSubview:_topView];
+    
+    _web = [[UIWebView alloc]init];
+    _web.frame = CGRectMake(0, 280*hb, SCREEN_WIDTH, 810*hb);
+    [_web loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
+    [self addSubview:_web];
 }
 
 @end

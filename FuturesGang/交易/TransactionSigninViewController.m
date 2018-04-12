@@ -71,7 +71,7 @@
     
     _FSView = [[TransctionFSView alloc]init];
     _FSView.frame =CGRectMake(0, 3, SCREEN_WIDTH, SCREEN_HEIGHT- StatusBarAndNavigationBarHeight-100*hb-3);
-    _FSView.backgroundColor =  [UIColor greenColor];
+    _FSView.backgroundColor =  APP_TEXTFEILD_BACKCOLOR;
     
     
     _KLineView = [[TransactionKlineView alloc]init];
