@@ -25,6 +25,7 @@
         
         [self setbackground];
         [self makeUIcondition];
+        [self  topButtonCLick];//默认选中
     }
     return self;
 }
@@ -32,7 +33,7 @@
 
 -(void)makeUIcondition{
     UIView * bgview = [[UIView alloc]init];
-    bgview.frame = CGRectMake((SCREEN_WIDTH-550*wb)/2, 430*hb, 550*wb, 330*hb);
+    bgview.frame = CGRectMake((SCREEN_WIDTH-604*wb)/2, 230*hb, 604*wb, 330*hb);
     [bgview setBackgroundColor:[UIColor whiteColor]];
     bgview.layer.masksToBounds = YES;
     bgview.layer.cornerRadius = bgview.frame.size.width/32;
@@ -51,12 +52,80 @@
     // 这里需要 chong'xie
    
     
-#pragma mark 还没写
+    UILabel * zxlabel = [[UILabel alloc]init];
+    zxlabel.frame = CGRectMake(25*wb, 120*hb, 90*wb, 30*hb);
+    zxlabel.text = @"最新价";
+    zxlabel.textColor = [UIColor blackColor];
+    zxlabel.font = [UIFont systemFontOfSize:12];
+    [bgview addSubview:zxlabel];
+    
+     _topButton = [[UIButton alloc]init];
+    _topButton.frame =CGRectMake(130*wb, 90*hb, 45*wb, 45*wb);
+    [_topButton setBackgroundImage:[UIImage imageNamed:@"DUI"] forState:UIControlStateSelected];
+    [_topButton  setBackgroundImage:[UIImage imageNamed:@"WEIXUANZHONG"] forState:UIControlStateNormal];
+    
+    [_topButton addTarget:self action:@selector(topButtonCLick) forControlEvents:UIControlEventTouchUpInside];
+    [bgview addSubview:_topButton];
+    
+    UILabel * biggerlabel = [[UILabel alloc]init];
+    biggerlabel.frame = CGRectMake(200*wb, 95*hb, 70*wb, 30*hb);
+    biggerlabel.text = @">=";
+    biggerlabel.textColor = [UIColor blackColor];
+    biggerlabel.font = [UIFont systemFontOfSize:12];
+    [bgview addSubview:biggerlabel];
+    
+    
+    
+   _downButton = [[UIButton alloc]init];
+    _downButton.frame =CGRectMake(130*wb, 150*hb, 45*wb, 45*wb);
+    [_downButton setBackgroundImage:[UIImage imageNamed:@"DUI"] forState:UIControlStateSelected];
+    [_downButton  setBackgroundImage:[UIImage imageNamed:@"WEIXUANZHONG"] forState:UIControlStateNormal];
+    
+    [_downButton addTarget:self action:@selector(downButtonCLick) forControlEvents:UIControlEventTouchUpInside];
+    [bgview addSubview:_downButton];
+    
+    UILabel * litterlabel = [[UILabel alloc]init];
+    litterlabel.frame = CGRectMake(200*wb, 155*hb, 70*wb, 30*hb);
+    litterlabel.text = @"<=";
+    litterlabel.textColor = [UIColor blackColor];
+    litterlabel.font = [UIFont systemFontOfSize:12];
+    [bgview addSubview:litterlabel];
     
     
     
     
+    _addButton = [[UIButton alloc]init];
+    _addButton.frame =CGRectMake(270*wb, 120*hb, 40*wb, 40*wb);
+    [_addButton setBackgroundImage:[UIImage imageNamed:@"zengjia"] forState:UIControlStateNormal];
+    [_addButton  setBackgroundImage:[UIImage imageNamed:@"zengjia_Selected"] forState:UIControlStateHighlighted];
     
+    [_addButton addTarget:self action:@selector(addButtonCLick) forControlEvents:UIControlEventTouchUpInside];
+    [bgview addSubview:_addButton];
+    
+    
+    _textfield = [[UITextField alloc]init];
+    _textfield.frame = CGRectMake(330*wb, 108*hb, 182*wb, 60*hb);
+    _textfield.layer.masksToBounds = YES;
+    _textfield.layer.cornerRadius =  60*hb/16;
+    _textfield.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+    _textfield.layer.borderColor = [UIColor blackColor].CGColor;
+    _textfield.layer.borderWidth = .5;
+    [bgview addSubview:_textfield];
+    
+    
+    _textfield.text = [NSString stringWithFormat:@"%.2f",_defultPrice];
+    
+    _reduceButton = [[UIButton alloc]init];
+    _reduceButton.frame =CGRectMake(bgview.frame.size.width-70*wb, 120*hb, 40*wb, 40*wb);
+    [_reduceButton setBackgroundImage:[UIImage imageNamed:@"jianshao"] forState:UIControlStateNormal];
+    [_reduceButton  setBackgroundImage:[UIImage imageNamed:@"jianshao_Selected"] forState:UIControlStateHighlighted];
+    
+    [_reduceButton addTarget:self action:@selector(reduceButtonCLick) forControlEvents:UIControlEventTouchUpInside];
+    [bgview addSubview:_reduceButton];
+    
+    
+    
+#pragma mark ^^^^^^^^^^^^^^^^^^^^^^^^
     //line1
     
     UIView * line1  =[[UIView alloc]init];
@@ -85,7 +154,7 @@
     qdButton.frame = CGRectMake(bgview.frame.size.width -260*wb, 240*hb, 260*wb, 85*hb);
     [qdButton setTitle:@"确定" forState:UIControlStateNormal];
     [qdButton setTitleColor:APP_BLUE forState:UIControlStateNormal];
-    [qdButton addTarget:self action:@selector(qdButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    [qdButton addTarget:self action:@selector(qdButtonClickwithCondtion) forControlEvents:UIControlEventTouchUpInside];
     qdButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [bgview addSubview:qdButton];
     
@@ -177,11 +246,20 @@
     _okBlock();
     [self cancelButtonClick];
 }
+
+-(void)qdButtonClickwithCondtion{
+    _conditionBLock(_biggerOrlitter,_textfield.text);
+    [self cancelButtonClick];
+}
 -(void)setCancelBlock:(MyAlertViewCancelBLock)cancelBlock{
     _cancelBlock = cancelBlock;
 }
 -(void)setOkBlock:(MyAlertViewViewOKBLock)okBlock{
     _okBlock = okBlock;
+}
+
+-(void)setConditionBLock:(MyAlertViewconditionBLock)conditionBLock{
+    _conditionBLock = conditionBLock;
 }
 - (void)cancelButtonClick
 {
@@ -190,5 +268,43 @@
 }
 
 
+#pragma mark 条件单相关
+-(void)topButtonCLick{
+    _topButton.selected = YES;
+    
+    _downButton.selected = NO;
+    
+    _biggerOrlitter = @"1";
+}
 
+-(void)downButtonCLick{
+    _topButton.selected = NO;
+    
+    _downButton.selected = YES;
+    
+    _biggerOrlitter = @"0";
+}
+
+-(void)addButtonCLick{
+    float price = [_textfield.text floatValue];
+    if (price +_step < _maxPrice) {
+        
+        _textfield.text  =[NSString stringWithFormat:@"%.2f",price +_step];
+    }else
+    {
+        _textfield.text  =[NSString stringWithFormat:@"%.2f",_maxPrice];
+    }
+    
+}
+
+-(void)reduceButtonCLick{
+    float price = [_textfield.text floatValue];
+    if (price -_step > _minPrice) {
+        
+        _textfield.text  =[NSString stringWithFormat:@"%.2f",price -_step];
+    }else
+    {
+        _textfield.text  =[NSString stringWithFormat:@"%.2f",_minPrice];
+    }
+}
 @end

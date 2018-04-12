@@ -210,11 +210,18 @@
     static int i = -1;
     i = i * -1;
     if (i==1) {
-                _alert = [[MyAlertView alloc]initWithcondition];
-                __weak typeof(self) weakSelf = self;
-                [weakSelf.alert setOkBlock:^{
-                    NSLog(@"确定");
-                }];
+             _alert = [[MyAlertView alloc]initWithcondition];
+             _alert.defultPrice = 200.0;
+             _alert.maxPrice  =  300.0;
+             _alert.minPrice   =  20.0;
+             _alert.step = 10;
+        _alert.textfield.text = [NSString stringWithFormat:@"%.2f",_alert.defultPrice];
+                 __weak typeof(self) weakSelf = self;
+        
+        [weakSelf.alert setConditionBLock:^(NSString *biggerOrlitter, NSString *defultPrice) {
+             NSLog(@"%@",biggerOrlitter);
+             NSLog(@"%@",defultPrice);
+        }];
         
                 [weakSelf.alert setCancelBlock:^{
                     NSLog(@"取消");
