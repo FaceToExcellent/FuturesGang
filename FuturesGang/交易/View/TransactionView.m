@@ -447,7 +447,7 @@
     
 }
 -(void)rightnumButtonClick{
-    
+    NSLog(@"rightnumButtonClick");
     NSInteger i = [_numLabel.text integerValue];
     _numLabel.text = [NSString stringWithFormat:@"%ld",i+1];
 }
@@ -468,7 +468,7 @@
     
     
     
-    [self addSubview:_menu];
+    [self  addSubview:_menu];
 }
 
 

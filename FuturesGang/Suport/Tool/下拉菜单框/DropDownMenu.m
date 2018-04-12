@@ -114,20 +114,20 @@
 }
 -(CGFloat)setMytableViewHeight:(CGFloat)tableViewHeight{
     
-    CGFloat  reH;
+
     if (tableViewHeight > _datearray.count * _heightForRow) {
         
         _bgView2.frame = CGRectMake(0, _heightForRow-1, self.frame.size.width, _datearray.count * _heightForRow);
         _bgView3.frame  = CGRectMake(1, 1, self.frame.size.width-2, _datearray.count * _heightForRow-2);
         _tableView.frame = CGRectMake(0, 0, self.frame.size.width-2, _datearray.count * _heightForRow-2);
-      reH = _datearray.count * _heightForRow;
+      self.reH = _datearray.count * _heightForRow;
     }else
     {
      _bgView2.frame = CGRectMake(0, _heightForRow-1, self.frame.size.width, tableViewHeight);
         _bgView3.frame  = CGRectMake(1, 1, self.frame.size.width-2, tableViewHeight-2);
         _tableView.frame = CGRectMake(0, 0, self.frame.size.width-2, tableViewHeight-2);
       _tableView.frame = CGRectMake(1, 1, self.frame.size.width-2, tableViewHeight-2);
-       reH =   tableViewHeight;
+       self.reH =   tableViewHeight;
     }
     
     
@@ -146,7 +146,7 @@
     
     
     
-    return  reH;
+    return  self.reH;
     
     
     
@@ -190,13 +190,22 @@
     
     _topViewlabel.text = _datearray[indexPath.row];
     
-     _tableView.hidden = !_tableView.hidden;
+     _bgView2.hidden = !_bgView2.hidden;
+    
+    self.frame = CGRectMake(30*wb, 27*hb, 380*wb, _heightForRow);
 }
 
 
 -(void)tapView:(UITapGestureRecognizer *)sender{
     
     _bgView2.hidden = !_bgView2.hidden;
+    
+    if (_bgView2.hidden) {
+       self.frame = CGRectMake(30*wb, 27*hb, 380*wb, _heightForRow);
+    }else
+    {
+        self.frame = CGRectMake(30*wb, 27*hb, 380*wb, _heightForRow+self.reH);
+    }
 }
 
 
