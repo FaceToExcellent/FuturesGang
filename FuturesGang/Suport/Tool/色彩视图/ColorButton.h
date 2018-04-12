@@ -15,4 +15,8 @@
 
 @property(nonatomic)BOOL isnoBack;//1 无背景  0 有背景
 
+-(void)setmyisnoBack:(BOOL)isnoBack;
+
+-(void)setmystateString:(NSString*)stateString;
+
 @end

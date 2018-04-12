@@ -76,7 +76,7 @@
     
     _KLineView = [[TransactionKlineView alloc]init];
     _KLineView.frame =CGRectMake(0, 3, SCREEN_WIDTH, SCREEN_HEIGHT- StatusBarAndNavigationBarHeight-100*hb-3);
-    _KLineView.backgroundColor =  [UIColor orangeColor];
+    _KLineView.backgroundColor = APP_TEXTFEILD_BACKCOLOR;
     
 }
 
@@ -165,6 +165,8 @@
         _jiaoyiButton.selected  = NO;
     }
     
+   #pragma mark 这里需要重新处理 
+    self.navigationItem.rightBarButtonItems = @[];
     [self.view addSubview:_KLineView];
     [_transactionView removeFromSuperview];
     [_FSView removeFromSuperview];

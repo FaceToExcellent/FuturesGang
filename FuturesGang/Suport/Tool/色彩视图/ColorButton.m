@@ -34,7 +34,11 @@
     }
 }
 
-
+-(void)setmystateString:(NSString*)stateString{
+    self.stateString = stateString;
+    
+    [self makeNObackUI];
+}
 -(void)makeNObackUI{
     if ([self.stateString isEqualToString:@"1"] ) {
         [self setTitleColor:APP_RED forState:UIControlStateNormal];
