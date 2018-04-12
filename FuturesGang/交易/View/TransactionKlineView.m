@@ -87,14 +87,16 @@
     _maijiaLabel.textColor = [UIColor whiteColor];
     _maijiaLabel.textAlignment = NSTextAlignmentRight;
     _maijiaLabel.font = [UIFont systemFontOfSize:14];
+      [_maijiaLabel sizeToFit];
     [self addSubview:_maijiaLabel];
     
     _maijianum = [[UILabel alloc]init];
-    _maijianum.frame = CGRectMake(SCREEN_WIDTH-100*wb, 50*hb, 70*wb, 30*hb);
+    _maijianum.frame = CGRectMake(SCREEN_WIDTH-70*wb, 50*hb, 70*wb, 30*hb);
     _maijianum.text = @"5";
     _maijianum.textColor = [UIColor whiteColor];
     _maijianum.textAlignment = NSTextAlignmentRight;
     _maijianum.font = [UIFont systemFontOfSize:14];
+      [_maijianum sizeToFit];
     [self addSubview:_maijianum];
     
     
@@ -111,14 +113,16 @@
     _MjiaLabel.textColor = [UIColor whiteColor];
     _MjiaLabel.textAlignment = NSTextAlignmentRight;
     _MjiaLabel.font = [UIFont systemFontOfSize:14];
+      [_MjiaLabel sizeToFit];
     [self addSubview:_MjiaLabel];
     
     _Mjianum = [[UILabel alloc]init];
     _Mjianum.frame = CGRectMake(SCREEN_WIDTH-100*wb, 130*hb, 70*wb, 30*hb);
-    _Mjianum.text = @"5";
+    _Mjianum.text = @"11115";
     _Mjianum.textColor = [UIColor whiteColor];
     _Mjianum.textAlignment = NSTextAlignmentRight;
     _Mjianum.font = [UIFont systemFontOfSize:14];
+      [_Mjianum sizeToFit];
     [self addSubview:_Mjianum];
     
     
@@ -136,6 +140,7 @@
     _jinkaiLabel.textColor = [UIColor whiteColor];
     _jinkaiLabel.textAlignment = NSTextAlignmentCenter;
     _jinkaiLabel.font = [UIFont systemFontOfSize:12];
+      [_jinkaiLabel sizeToFit];
     [self addSubview:_jinkaiLabel];
     
     
@@ -154,10 +159,64 @@
     _zuoyiLabel.textColor = [UIColor whiteColor];
     _zuoyiLabel.textAlignment = NSTextAlignmentCenter;
     _zuoyiLabel.font = [UIFont systemFontOfSize:12];
+      [_zuoyiLabel sizeToFit];
     [self addSubview:_zuoyiLabel];
 
     
     
+    UILabel * zuigao = [[UILabel alloc]init];
+    zuigao.frame = CGRectMake(310*wb, 200*hb, 100*wb, 30*hb);
+    zuigao.text = @"最高";
+    zuigao.textColor = [UIColor whiteColor];
+    zuigao.textAlignment = NSTextAlignmentCenter;
+    zuigao.font = [UIFont systemFontOfSize:12];
+    [self addSubview:zuigao];
+    
+    _zuigaoLabel = [[UILabel alloc]init];
+    _zuigaoLabel.frame = CGRectMake(310*wb, 240*hb, 110*wb, 30*hb);
+    _zuigaoLabel.text = @"24870";
+    _zuigaoLabel.textColor = [UIColor whiteColor];
+    _zuigaoLabel.textAlignment = NSTextAlignmentCenter;
+    _zuigaoLabel.font = [UIFont systemFontOfSize:12];
+     [_zuigaoLabel sizeToFit];
+    [self addSubview:_zuigaoLabel];
+    
+    
+    UILabel * zuidi = [[UILabel alloc]init];
+    zuidi.frame = CGRectMake(460*wb, 200*hb, 100*wb, 30*hb);
+    zuidi.text = @"最低";
+    zuidi.textColor = [UIColor whiteColor];
+    zuidi.textAlignment = NSTextAlignmentCenter;
+    zuidi.font = [UIFont systemFontOfSize:12];
+    [self addSubview:zuidi];
+    
+    _zuidiLabel = [[UILabel alloc]init];
+    _zuidiLabel.frame = CGRectMake(460*wb, 240*hb, 110*wb, 30*hb);
+    _zuidiLabel.text = @"24870";
+    _zuidiLabel.textColor = [UIColor whiteColor];
+    _zuidiLabel.textAlignment = NSTextAlignmentCenter;
+    _zuidiLabel.font = [UIFont systemFontOfSize:12];
+     [_zuidiLabel sizeToFit];
+    [self addSubview:_zuidiLabel];
+    
+    
+    UILabel * keyongzijin = [[UILabel alloc]init];
+    keyongzijin.frame = CGRectMake(580*wb, 200*hb, 150*wb, 30*hb);
+    keyongzijin.text = @"可用资金";
+    keyongzijin.textColor = [UIColor whiteColor];
+    keyongzijin.textAlignment = NSTextAlignmentCenter;
+    keyongzijin.font = [UIFont systemFontOfSize:12];
+    [self addSubview:keyongzijin];
+    
+    _keyongzijinLabel = [[UILabel alloc]init];
+    _keyongzijinLabel.frame = CGRectMake(580*wb, 240*hb, 180*wb, 30*hb);
+    _keyongzijinLabel.text = @"2487000.05";
+    _keyongzijinLabel.textColor = [UIColor whiteColor];
+    _keyongzijinLabel.textAlignment = NSTextAlignmentCenter;
+    _keyongzijinLabel.font = [UIFont systemFontOfSize:12];
+    _keyongzijinLabel.numberOfLines = 0;
+    [_keyongzijinLabel sizeToFit];
+    [self addSubview:_keyongzijinLabel];
     
 }
 
