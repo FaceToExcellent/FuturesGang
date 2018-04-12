@@ -27,7 +27,7 @@
     
     _web = [[UIWebView alloc]init];
     _web.frame = CGRectMake(0, 280*hb, SCREEN_WIDTH, 810*hb);
-    [_web loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
+    [_web loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.taobao.com"]]];
     [self addSubview:_web];
 }
 
