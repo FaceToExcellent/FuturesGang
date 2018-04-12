@@ -192,7 +192,10 @@
     
      _bgView2.hidden = !_bgView2.hidden;
     
-    self.frame = CGRectMake(30*wb, 27*hb, 380*wb, _heightForRow);
+    if (_delegate) {
+        [_delegate DropDownMenureSetFramehiden];
+    }
+    //self.frame = CGRectMake(30*wb, 27*hb, 380*wb, _heightForRow);
 }
 
 
@@ -201,10 +204,16 @@
     _bgView2.hidden = !_bgView2.hidden;
     
     if (_bgView2.hidden) {
-       self.frame = CGRectMake(30*wb, 27*hb, 380*wb, _heightForRow);
+        if (_delegate) {
+            [_delegate DropDownMenureSetFramehiden];
+        }
+      
     }else
     {
-        self.frame = CGRectMake(30*wb, 27*hb, 380*wb, _heightForRow+self.reH);
+        if (_delegate) {
+            [_delegate DropDownMenureSetFrameShow];
+        }
+        
     }
 }
 

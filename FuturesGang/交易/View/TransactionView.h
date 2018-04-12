@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DropDownMenu.h"
 #import "TransactionButton.h"
-@interface TransactionView : UIView
+@interface TransactionView : UIView<DropDownMenuDelegate>
 
 //提示框
 @property(nonatomic,strong) MyAlertView * alert;
