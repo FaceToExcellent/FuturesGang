@@ -15,6 +15,7 @@
 #import "RootTabViewController.h"
 #import "UIViewController+MYViewinit.h"
 #import "UIView+MYViewinit.h"
+#import "MyAlertView.h"
 
 
 

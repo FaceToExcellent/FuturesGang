@@ -11,6 +11,8 @@
 #import "TransactionButton.h"
 @interface TransactionView : UIView
 
+//提示框
+@property(nonatomic,strong) MyAlertView * alert;
 //下拉菜单部分
 @property(nonatomic,strong)DropDownMenu * menu;
 @property(nonatomic)CGFloat menuRowHeight;

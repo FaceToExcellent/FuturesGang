@@ -51,6 +51,24 @@
     
 }
 
+
+-(void)alertviewMake:(NSString*)name price:(NSString*)price how:(NSString*)how handnum:(NSString*)num{
+    _alert = [[MyAlertView alloc]initWithNormal];
+    __weak typeof(self) weakSelf = self;
+    _alert.Alerttitle.text = @"下单确认";
+    _alert.AlertMessage.text = [NSString stringWithFormat:@"%@,价格：%@,%@ %@ 手",name,price,how,num];
+    [weakSelf.alert setOkBlock:^{
+        // NSLog(@"确定");
+    }];
+    
+    [weakSelf.alert setCancelBlock:^{
+        // NSLog(@"取消");
+      
+    }];
+    
+    [self addSubview:_alert];
+}
+
 -(void)fourViewmake{
     
     _chicangView = [[UIView alloc]init];
@@ -190,6 +208,8 @@
     [_redButton setmynamelabel:@"买" numlabel:@"29563"];
     _redButton.layer.masksToBounds = YES;
     _redButton.layer.cornerRadius =  _redButton.frame.size.width/32;
+    
+    [_redButton addTarget:self action:@selector(redButtonCLick) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_redButton];
     
     
@@ -199,6 +219,7 @@
     [_greenButton setmynamelabel:@"卖" numlabel:@"29569"];
     _greenButton.layer.masksToBounds = YES;
     _greenButton.layer.cornerRadius =  _greenButton.frame.size.width/32;
+     [_greenButton addTarget:self action:@selector(greenButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_greenButton];
     
     
@@ -208,8 +229,24 @@
     [_grayButton setmynamelabel:@"平" numlabel:@"无仓位"];
     _grayButton.layer.masksToBounds = YES;
     _grayButton.layer.cornerRadius =  _grayButton.frame.size.width/32;
+    
+    [_grayButton addTarget:self action:@selector(grayButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_grayButton];
     
+}
+
+-(void)redButtonCLick{
+    [self alertviewMake:_menu.topViewlabel.text price:_redButton.numlabel.text how:_redButton.nameLabel.text handnum:_numLabel.text];
+}
+
+-(void)greenButtonClick{
+    
+    [self alertviewMake:_menu.topViewlabel.text price:_greenButton.numlabel.text how:_greenButton.nameLabel.text handnum:_numLabel.text];
+}
+
+-(void)grayButtonClick{
+    
+     [self alertviewMake:_menu.topViewlabel.text price:_grayButton.numlabel.text how:_grayButton.nameLabel.text handnum:_numLabel.text];
 }
 
 -(void)treeLabelView{
