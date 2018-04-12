@@ -51,6 +51,12 @@
     // 这里需要 chong'xie
    
     
+#pragma mark 还没写
+    
+    
+    
+    
+    
     //line1
     
     UIView * line1  =[[UIView alloc]init];
