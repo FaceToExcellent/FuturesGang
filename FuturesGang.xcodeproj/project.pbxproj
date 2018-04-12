@@ -44,6 +44,7 @@
 		46A24143207360F300EFA8B4 /* SignUPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A24142207360F300EFA8B4 /* SignUPViewController.m */; };
 		46A2414920736CAC00EFA8B4 /* MyCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A2414820736CAC00EFA8B4 /* MyCenterTableViewCell.m */; };
 		46A2414C2073740F00EFA8B4 /* MycenterHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A2414B2073740F00EFA8B4 /* MycenterHeadView.m */; };
+		46DFDE4F207F593800B03935 /* KlineTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DFDE4E207F593800B03935 /* KlineTopView.m */; };
 		46ECCF8F207B6803000CC19E /* TransactionSigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46ECCF8E207B6803000CC19E /* TransactionSigninViewController.m */; };
 		46FCE26F2079CB08004F0DB7 /* GetCashHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FCE26E2079CB08004F0DB7 /* GetCashHistoryCell.m */; };
 		46FCE2722079F3B2004F0DB7 /* MyuserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FCE2712079F3B2004F0DB7 /* MyuserViewController.m */; };
@@ -138,6 +139,8 @@
 		46A2414820736CAC00EFA8B4 /* MyCenterTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCenterTableViewCell.m; sourceTree = "<group>"; };
 		46A2414A2073740F00EFA8B4 /* MycenterHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MycenterHeadView.h; sourceTree = "<group>"; };
 		46A2414B2073740F00EFA8B4 /* MycenterHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MycenterHeadView.m; sourceTree = "<group>"; };
+		46DFDE4D207F593800B03935 /* KlineTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KlineTopView.h; sourceTree = "<group>"; };
+		46DFDE4E207F593800B03935 /* KlineTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KlineTopView.m; sourceTree = "<group>"; };
 		46ECCF8D207B6803000CC19E /* TransactionSigninViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionSigninViewController.h; sourceTree = "<group>"; };
 		46ECCF8E207B6803000CC19E /* TransactionSigninViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransactionSigninViewController.m; sourceTree = "<group>"; };
 		46FCE26D2079CB08004F0DB7 /* GetCashHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetCashHistoryCell.h; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 				4645CD98207DEB8F00939B8F /* TransactionView.m */,
 				4645CD9E207DF4E400939B8F /* TransactionKlineView.h */,
 				4645CD9F207DF4E400939B8F /* TransactionKlineView.m */,
+				46DFDE4D207F593800B03935 /* KlineTopView.h */,
+				46DFDE4E207F593800B03935 /* KlineTopView.m */,
 				4645CDA1207DF50700939B8F /* TransctionFSView.h */,
 				4645CDA2207DF50700939B8F /* TransctionFSView.m */,
 				4653A216207EEA47004B3B22 /* TransactionButton.h */,
@@ -742,6 +747,7 @@
 				46FE6705207462190027C8B9 /* SpreadViewController.m in Sources */,
 				4645CDA3207DF50700939B8F /* TransctionFSView.m in Sources */,
 				46FE67092074ACC50027C8B9 /* ChargeViewController.m in Sources */,
+				46DFDE4F207F593800B03935 /* KlineTopView.m in Sources */,
 				46A2414920736CAC00EFA8B4 /* MyCenterTableViewCell.m in Sources */,
 				4653A218207EEA47004B3B22 /* TransactionButton.m in Sources */,
 				4645CDA0207DF4E400939B8F /* TransactionKlineView.m in Sources */,

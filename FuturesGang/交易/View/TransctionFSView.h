@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "KlineTopView.h"
 @interface TransctionFSView : UIView
-
+@property(nonatomic,strong)KlineTopView * topView;
 @end

@@ -132,7 +132,7 @@
     
 }
 -(void)zixuanButtonCLick{
-    _zixuanButton.selected  = !_zixuanButton.selected;
+    _zixuanButton.selected  = YES;
     if (_zixuanButton.selected) {
         _fenshiButton.selected = NO;
         _KxianButton.selected  = NO;
@@ -145,7 +145,7 @@
 }
 
 -(void)fenshiButtonCLick{
-    _fenshiButton.selected  = !_fenshiButton.selected;
+    _fenshiButton.selected  = YES;
     if (_fenshiButton.selected) {
         _zixuanButton.selected = NO;
         _KxianButton.selected  = NO;
@@ -158,7 +158,7 @@
 }
 
 -(void)KxianButtonCLick{
-    _KxianButton.selected  = !_KxianButton.selected;
+    _KxianButton.selected  = YES;
     if (_KxianButton.selected) {
         _zixuanButton.selected = NO;
         _fenshiButton.selected  = NO;
@@ -172,7 +172,7 @@
     [_FSView removeFromSuperview];
 }
 -(void)jiaoyiButtonCLick{
-    _jiaoyiButton.selected  = !_jiaoyiButton.selected;
+    _jiaoyiButton.selected  = YES;
     if (_jiaoyiButton.selected) {
         _zixuanButton.selected = NO;
         _fenshiButton.selected  = NO;

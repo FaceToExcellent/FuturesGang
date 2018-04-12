@@ -21,7 +21,9 @@
 
 
 -(void)makeUI{
-    
+    _topView = [[KlineTopView alloc]init];
+    _topView.frame =CGRectMake(0, 0, SCREEN_WIDTH, 280*hb);
+    [self addSubview:_topView];
 }
 
 @end
