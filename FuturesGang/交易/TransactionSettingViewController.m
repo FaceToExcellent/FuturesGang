@@ -17,15 +17,14 @@
 
 @property(nonatomic,strong)UITextField * textField1;
 
-@property(nonatomic,strong)SinglePickerView * picker;
+
 @property(nonatomic,strong)SinglePickerView * picker2;
 @property(nonatomic,strong)SinglePickerView * picker3;
 
-@property(nonatomic,strong)UITextField * tex;
+@property(nonatomic,strong)UILabel * tex;
 @property(nonatomic,strong)UITextField * tex2;
 @property(nonatomic,strong)UITextField * tex3;
 
-@property(nonatomic,strong)NSArray * arr1;
 @property(nonatomic,strong)NSArray * arr2;
 @property(nonatomic,strong)NSArray * arr3;
 @end
@@ -41,12 +40,11 @@
 }
 
 -(void)loadDate{
-     _arr1 = @[@"-5",@"-10",@"对手价",@"+5",@"+10"];
+    
     _arr2  = @[@"10秒",@"20秒",@"30秒",@"40秒",@"50秒",@"60秒",@"70秒",];
     _arr3  = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10"];
     //默认数据
     NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
-    [def setObject:@"对手价" forKey:@"快捷反手自动撤单时间"];
     [def setObject:@"10秒" forKey:@"快捷反手自动撤单时间"];
     [def setObject:@"1" forKey:@"交易数量默认加量"];
 
@@ -106,10 +104,8 @@
      NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
     
     
-    _tex = [[UITextField alloc]init];
-    
-    _tex.text =[def objectForKey:@"快捷反手默认委托价格"];
-    _tex.delegate = self;
+    _tex = [[UILabel alloc]init];
+    _tex.text =@"对手价";
     _tex.tag = 101;
     _tex.font = [UIFont systemFontOfSize:14];
     _tex.textAlignment = NSTextAlignmentRight;
@@ -118,10 +114,10 @@
     
     [kjfsView addSubview:_tex];
     
-    UIImageView * gorimage = [[UIImageView alloc]init];
-    gorimage.image = [UIImage imageNamed:@"ZXJT"];
-    gorimage.frame = CGRectMake(SCREEN_WIDTH-45*wb, 35*hb, 15*wb, 30*hb);
-    [kjfsView addSubview:gorimage];
+//    UIImageView * gorimage = [[UIImageView alloc]init];
+//    gorimage.image = [UIImage imageNamed:@"ZXJT"];
+//    gorimage.frame = CGRectMake(SCREEN_WIDTH-45*wb, 35*hb, 15*wb, 30*hb);
+//    [kjfsView addSubview:gorimage];
     
     
     //快捷反手自动撤单时间
@@ -235,11 +231,7 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     
-    if (textField.tag == 101) {
-        //对手价
-        textField.inputView = self.picker;
-        [self.picker  setmyarrayDS:_arr1];
-    }
+   
     if(textField.tag == 102){
         //10秒
         textField.inputView = self.picker2;
@@ -278,43 +270,6 @@
 
 #pragma mark UIPickerView
 
-
--(SinglePickerView*)picker{
-    if (!_picker) {
-        _picker=[[SinglePickerView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - PICKER_HEIGHT, SCREEN_WIDTH, PICKER_HEIGHT)];
-        _picker.backgroundColor= APP_Gray;
-        __weak typeof (self)weakSelf = self;
-        [_picker setDidFinishBlock:^(NSString *message) {
-            
-            if(message.length >0){
-            
-            weakSelf.tex.text = message;
-             [ weakSelf.tex resignFirstResponder];
-            
-            NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
-            [def setObject:message forKey:@"快捷反手默认委托价格"];
-            }else
-            {
-                NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
-               
-                NSString * messg = [def objectForKey:@"快捷反手默认委托价格"];
-                if (messg.length>0) {
-                    weakSelf.tex.text = messg;
-                    [ weakSelf.tex resignFirstResponder];
-                }else
-                {
-                    weakSelf.tex.text = @"对手价";
-                    [ weakSelf.tex resignFirstResponder];
-                    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
-                    [def setObject:@"对手价" forKey:@"快捷反手自动撤单时间"];
-                }
-            }
-        }];
-       
-    }
-    
-    return _picker;
-}
 -(SinglePickerView*)picker2{
     if (!_picker2) {
         _picker2=[[SinglePickerView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - PICKER_HEIGHT, SCREEN_WIDTH, PICKER_HEIGHT)];

@@ -71,6 +71,94 @@
     _rightcolorButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [self addSubview:_rightcolorButton];
     
+    
+    
+    
+    UILabel * maijia = [[UILabel alloc]init];
+    maijia.frame = CGRectMake(430*wb, 50*hb, 70*wb, 30*hb);
+    maijia.text = @"卖价";
+    maijia.textColor = [UIColor whiteColor];
+    maijia.font = [UIFont systemFontOfSize:14];
+    [self addSubview:maijia];
+    
+    _maijiaLabel = [[UILabel alloc]init];
+    _maijiaLabel.frame = CGRectMake(530*wb, 50*hb, 130*wb, 30*hb);
+    _maijiaLabel.text = @"24995";
+    _maijiaLabel.textColor = [UIColor whiteColor];
+    _maijiaLabel.textAlignment = NSTextAlignmentRight;
+    _maijiaLabel.font = [UIFont systemFontOfSize:14];
+    [self addSubview:_maijiaLabel];
+    
+    _maijianum = [[UILabel alloc]init];
+    _maijianum.frame = CGRectMake(SCREEN_WIDTH-100*wb, 50*hb, 70*wb, 30*hb);
+    _maijianum.text = @"5";
+    _maijianum.textColor = [UIColor whiteColor];
+    _maijianum.textAlignment = NSTextAlignmentRight;
+    _maijianum.font = [UIFont systemFontOfSize:14];
+    [self addSubview:_maijianum];
+    
+    
+    UILabel * Mjia = [[UILabel alloc]init];
+    Mjia.frame = CGRectMake(430*wb, 130*hb, 70*wb, 30*hb);
+    Mjia.text = @"买价";
+    Mjia.textColor = [UIColor whiteColor];
+    Mjia.font = [UIFont systemFontOfSize:14];
+    [self addSubview:Mjia];
+    
+    _MjiaLabel = [[UILabel alloc]init];
+    _MjiaLabel.frame = CGRectMake(530*wb, 130*hb, 130*wb, 30*hb);
+    _MjiaLabel.text = @"24995";
+    _MjiaLabel.textColor = [UIColor whiteColor];
+    _MjiaLabel.textAlignment = NSTextAlignmentRight;
+    _MjiaLabel.font = [UIFont systemFontOfSize:14];
+    [self addSubview:_MjiaLabel];
+    
+    _Mjianum = [[UILabel alloc]init];
+    _Mjianum.frame = CGRectMake(SCREEN_WIDTH-100*wb, 130*hb, 70*wb, 30*hb);
+    _Mjianum.text = @"5";
+    _Mjianum.textColor = [UIColor whiteColor];
+    _Mjianum.textAlignment = NSTextAlignmentRight;
+    _Mjianum.font = [UIFont systemFontOfSize:14];
+    [self addSubview:_Mjianum];
+    
+    
+    UILabel * jinkai = [[UILabel alloc]init];
+    jinkai.frame = CGRectMake(30*wb, 200*hb, 100*wb, 30*hb);
+    jinkai.text = @"今开";
+    jinkai.textColor = [UIColor whiteColor];
+    jinkai.textAlignment = NSTextAlignmentCenter;
+    jinkai.font = [UIFont systemFontOfSize:12];
+    [self addSubview:jinkai];
+    
+    _jinkaiLabel = [[UILabel alloc]init];
+    _jinkaiLabel.frame = CGRectMake(30*wb, 240*hb, 110*wb, 30*hb);
+    _jinkaiLabel.text = @"24870";
+    _jinkaiLabel.textColor = [UIColor whiteColor];
+    _jinkaiLabel.textAlignment = NSTextAlignmentCenter;
+    _jinkaiLabel.font = [UIFont systemFontOfSize:12];
+    [self addSubview:_jinkaiLabel];
+    
+    
+    
+    UILabel * zuoyi = [[UILabel alloc]init];
+    zuoyi.frame = CGRectMake(170*wb, 200*hb, 100*wb, 30*hb);
+    zuoyi.text = @"昨益";
+    zuoyi.textColor = [UIColor whiteColor];
+    zuoyi.textAlignment = NSTextAlignmentCenter;
+    zuoyi.font = [UIFont systemFontOfSize:12];
+    [self addSubview:zuoyi];
+    
+    _zuoyiLabel = [[UILabel alloc]init];
+    _zuoyiLabel.frame = CGRectMake(170*wb, 240*hb, 110*wb, 30*hb);
+    _zuoyiLabel.text = @"24870";
+    _zuoyiLabel.textColor = [UIColor whiteColor];
+    _zuoyiLabel.textAlignment = NSTextAlignmentCenter;
+    _zuoyiLabel.font = [UIFont systemFontOfSize:12];
+    [self addSubview:_zuoyiLabel];
+
+    
+    
+    
 }
 
 @end
