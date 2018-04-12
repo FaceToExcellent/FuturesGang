@@ -96,11 +96,11 @@
     [conView setBackgroundColor:APP_BACKCOLOR];
     [self addSubview:conView];
     
-    //成交
+    //持仓
     _chicangButton = [[UIButton alloc]init];
     _chicangButton.frame = CGRectMake(0, 0, SCREEN_WIDTH/4, 100*hb);
     
-    [_chicangButton setTitle:@"成交" forState:UIControlStateNormal];
+    [_chicangButton setTitle:@"持仓" forState:UIControlStateNormal];
     [_chicangButton setBackgroundImage:[UIImage imageNamed:@"lanse"] forState:UIControlStateSelected];
     [_chicangButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     [_chicangButton setTitleColor:APP_Gray forState:UIControlStateNormal];
