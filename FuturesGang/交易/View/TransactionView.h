@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DropDownMenu.h"
+#import "TransactionButton.h"
 @interface TransactionView : UIView
 
 //下拉菜单部分
@@ -37,25 +38,28 @@
 @property(nonatomic,strong)UILabel * buynum;
 
 //红绿灰 三个按钮
-@property(nonatomic,strong)UIButton * redButton;
-@property(nonatomic,strong)UIButton * greenButton;
-@property(nonatomic,strong)UIButton * grayButton;
+@property(nonatomic,strong)TransactionButton * redButton;
+@property(nonatomic,strong)TransactionButton * greenButton;
+@property(nonatomic,strong)TransactionButton * grayButton;
+
+
 
 //持仓
 
 @property(nonatomic,strong)UIButton * chicangButton;
-
+@property(nonatomic,strong)UIView   * chicangView;
 //可撤
 
 @property(nonatomic,strong)UIButton * kecheButton;
-
+@property(nonatomic,strong)UIView   *  kecheView;
 //委托
 
 @property(nonatomic,strong)UIButton * weituoButton;
+@property(nonatomic,strong)UIView   *  weituoView;
 
 //成交
 @property(nonatomic,strong)UIButton * chengjiaoButton;
-
+@property(nonatomic,strong)UIView   * chengjiaoView;
 
 
 

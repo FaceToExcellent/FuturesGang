@@ -23,6 +23,7 @@
 		4645CD99207DEB8F00939B8F /* TransactionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4645CD98207DEB8F00939B8F /* TransactionView.m */; };
 		4645CDA0207DF4E400939B8F /* TransactionKlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4645CD9F207DF4E400939B8F /* TransactionKlineView.m */; };
 		4645CDA3207DF50700939B8F /* TransctionFSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4645CDA2207DF50700939B8F /* TransctionFSView.m */; };
+		4653A218207EEA47004B3B22 /* TransactionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4653A217207EEA47004B3B22 /* TransactionButton.m */; };
 		46599CB8207AFB6C002BC96E /* BankCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CB7207AFB6C002BC96E /* BankCardTableViewCell.m */; };
 		46599CBC207AFCCD002BC96E /* UIView+MYViewinit.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CBB207AFCCD002BC96E /* UIView+MYViewinit.m */; };
 		46599CBF207AFD82002BC96E /* UIViewController+MYViewinit.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CBE207AFD82002BC96E /* UIViewController+MYViewinit.m */; };
@@ -95,6 +96,8 @@
 		4645CD9F207DF4E400939B8F /* TransactionKlineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransactionKlineView.m; sourceTree = "<group>"; };
 		4645CDA1207DF50700939B8F /* TransctionFSView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransctionFSView.h; sourceTree = "<group>"; };
 		4645CDA2207DF50700939B8F /* TransctionFSView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransctionFSView.m; sourceTree = "<group>"; };
+		4653A216207EEA47004B3B22 /* TransactionButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionButton.h; sourceTree = "<group>"; };
+		4653A217207EEA47004B3B22 /* TransactionButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransactionButton.m; sourceTree = "<group>"; };
 		46599CB6207AFB6C002BC96E /* BankCardTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BankCardTableViewCell.h; sourceTree = "<group>"; };
 		46599CB7207AFB6C002BC96E /* BankCardTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BankCardTableViewCell.m; sourceTree = "<group>"; };
 		46599CBA207AFCCD002BC96E /* UIView+MYViewinit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+MYViewinit.h"; sourceTree = "<group>"; };
@@ -231,6 +234,8 @@
 				4645CD9F207DF4E400939B8F /* TransactionKlineView.m */,
 				4645CDA1207DF50700939B8F /* TransctionFSView.h */,
 				4645CDA2207DF50700939B8F /* TransctionFSView.m */,
+				4653A216207EEA47004B3B22 /* TransactionButton.h */,
+				4653A217207EEA47004B3B22 /* TransactionButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -738,6 +743,7 @@
 				4645CDA3207DF50700939B8F /* TransctionFSView.m in Sources */,
 				46FE67092074ACC50027C8B9 /* ChargeViewController.m in Sources */,
 				46A2414920736CAC00EFA8B4 /* MyCenterTableViewCell.m in Sources */,
+				4653A218207EEA47004B3B22 /* TransactionButton.m in Sources */,
 				4645CDA0207DF4E400939B8F /* TransactionKlineView.m in Sources */,
 				46FCE26F2079CB08004F0DB7 /* GetCashHistoryCell.m in Sources */,
 				46FE66F6207460AE0027C8B9 /* CashDetailViewController.m in Sources */,

@@ -33,8 +33,182 @@
     //最新 卖价 买价
     [self treeLabelView];
     
+    //红 绿灰
+    
+    [self treeButtonView];
+    
+    //持仓 可撤 委托 成交
+    [self fourButtonView];
+    
+    //默认选中第一个
+    [self chicangButtonCLick];
+    
+    //持仓 可撤 委托 成交 的 view
+    [self fourViewmake];
+    
     //下拉 放在下面保证最上层
     [self DropDownMenuAdd];
+    
+}
+
+-(void)fourViewmake{
+    
+    _chicangView = [[UIView alloc]init];
+    _chicangView.frame =CGRectMake(0, 585*hb, SCREEN_WIDTH, SCREEN_HEIGHT- StatusBarAndNavigationBarHeight-100*hb-3-585*hb);
+    _chicangView.backgroundColor =  APP_TEXTFEILD_BACKCOLOR;
+    
+    _kecheView = [[UIView alloc]init];
+    _kecheView.frame =CGRectMake(0, 585*hb, SCREEN_WIDTH, SCREEN_HEIGHT- StatusBarAndNavigationBarHeight-100*hb-3-585*hb);
+    _kecheView.backgroundColor =  [UIColor greenColor];
+    
+    
+    _weituoView = [[UIView alloc]init];
+    _weituoView.frame =CGRectMake(0, 585*hb, SCREEN_WIDTH, SCREEN_HEIGHT- StatusBarAndNavigationBarHeight-100*hb-3-585*hb);
+    _weituoView.backgroundColor =  [UIColor orangeColor];
+    
+    
+    _chengjiaoView = [[UIView alloc]init];
+    _chengjiaoView.frame =CGRectMake(0, 585*hb, SCREEN_WIDTH, SCREEN_HEIGHT- StatusBarAndNavigationBarHeight-100*hb-3-585*hb);
+    _chengjiaoView.backgroundColor =  [UIColor whiteColor];
+    
+}
+-(void)fourButtonView{
+    UIView * conView  =[[UIView alloc]init];
+    conView.frame = CGRectMake(0, 460*hb + 25*hb, SCREEN_WIDTH, 100*hb);
+    [conView setBackgroundColor:APP_BACKCOLOR];
+    [self addSubview:conView];
+    
+    //成交
+    _chicangButton = [[UIButton alloc]init];
+    _chicangButton.frame = CGRectMake(0, 0, SCREEN_WIDTH/4, 100*hb);
+    
+    [_chicangButton setTitle:@"成交" forState:UIControlStateNormal];
+    [_chicangButton setBackgroundImage:[UIImage imageNamed:@"lanse"] forState:UIControlStateSelected];
+    [_chicangButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [_chicangButton setTitleColor:APP_Gray forState:UIControlStateNormal];
+    [_chicangButton addTarget:self action:@selector(chicangButtonCLick) forControlEvents:UIControlEventTouchUpInside];
+    [conView addSubview:_chicangButton];
+    //可撤
+    _kecheButton = [[UIButton alloc]init];
+    _kecheButton.frame = CGRectMake(SCREEN_WIDTH/4, 0, SCREEN_WIDTH/4, 100*hb);
+    
+    [_kecheButton setTitle:@"可撤" forState:UIControlStateNormal];
+    [_kecheButton setBackgroundImage:[UIImage imageNamed:@"lanse"] forState:UIControlStateSelected];
+    [_kecheButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [_kecheButton setTitleColor:APP_Gray forState:UIControlStateNormal];
+    [_kecheButton addTarget:self action:@selector(kecheButtonCLick) forControlEvents:UIControlEventTouchUpInside];
+    [conView addSubview:_kecheButton];
+    
+    //委托
+    _weituoButton = [[UIButton alloc]init];
+    _weituoButton.frame = CGRectMake(SCREEN_WIDTH/4 *2, 0, SCREEN_WIDTH/4, 100*hb);
+    
+    [_weituoButton setTitle:@"委托" forState:UIControlStateNormal];
+    [_weituoButton setBackgroundImage:[UIImage imageNamed:@"lanse"] forState:UIControlStateSelected];
+    [_weituoButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [_weituoButton setTitleColor:APP_Gray forState:UIControlStateNormal];
+    [_weituoButton addTarget:self action:@selector(weituoButtonclick) forControlEvents:UIControlEventTouchUpInside];
+    [conView addSubview:_weituoButton];
+    //成交
+    _chengjiaoButton = [[UIButton alloc]init];
+    _chengjiaoButton.frame = CGRectMake(SCREEN_WIDTH/4 *3 , 0, SCREEN_WIDTH/4, 100*hb);
+    
+    [_chengjiaoButton setTitle:@"成交" forState:UIControlStateNormal];
+    [_chengjiaoButton setBackgroundImage:[UIImage imageNamed:@"lanse"] forState:UIControlStateSelected];
+    [_chengjiaoButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [_chengjiaoButton setTitleColor:APP_Gray forState:UIControlStateNormal];
+    [_chengjiaoButton addTarget:self action:@selector(chengjiaoButtonCLick) forControlEvents:UIControlEventTouchUpInside];
+    [conView addSubview:_chengjiaoButton];
+
+}
+
+
+
+-(void)chicangButtonCLick{
+    _chicangButton.selected  = !_chicangButton.selected;
+    if (_chicangButton.selected) {
+        _chengjiaoButton.selected = NO;
+        _weituoButton.selected  = NO;
+        _kecheButton.selected  = NO;
+    }
+    
+    [self addSubview:_chicangView];
+    [_chengjiaoView removeFromSuperview];
+    [_weituoView removeFromSuperview];
+    [_kecheView removeFromSuperview];
+}
+
+-(void)kecheButtonCLick{
+    
+    _kecheButton.selected  = !_kecheButton.selected;
+    if (_kecheButton.selected) {
+        _chengjiaoButton.selected = NO;
+        _weituoButton.selected  = NO;
+        _chicangButton.selected  = NO;
+    }
+    
+    
+    [self addSubview:_kecheView];
+    [_chengjiaoView removeFromSuperview];
+    [_weituoView removeFromSuperview];
+    [_chicangView removeFromSuperview];
+}
+
+-(void)weituoButtonclick{
+    
+    _weituoButton.selected  = !_weituoButton.selected;
+    if (_weituoButton.selected) {
+        _chengjiaoButton.selected = NO;
+        _kecheButton.selected  = NO;
+        _chicangButton.selected  = NO;
+    }
+    
+    [self addSubview:_weituoView];
+    [_chengjiaoView removeFromSuperview];
+    [_kecheView removeFromSuperview];
+    [_chicangView removeFromSuperview];
+}
+
+-(void)chengjiaoButtonCLick{
+    _chengjiaoButton.selected  = !_chengjiaoButton.selected;
+    if (_chengjiaoButton.selected) {
+        _weituoButton.selected = NO;
+        _kecheButton.selected  = NO;
+        _chicangButton.selected  = NO;
+    }
+    
+    [self addSubview:_chengjiaoView];
+    [_weituoView removeFromSuperview];
+    [_kecheView removeFromSuperview];
+    [_chicangView removeFromSuperview];
+}
+-(void)treeButtonView{
+    
+    _redButton = [[TransactionButton alloc]init];
+    _redButton.frame = CGRectMake(30*wb, 340*hb, 200*wb, 120*hb);
+    [_redButton setBackgroundColor:APP_RED];
+    [_redButton setmynamelabel:@"买" numlabel:@"29563"];
+    _redButton.layer.masksToBounds = YES;
+    _redButton.layer.cornerRadius =  _redButton.frame.size.width/32;
+    [self addSubview:_redButton];
+    
+    
+    _greenButton = [[TransactionButton alloc]init];
+    _greenButton.frame = CGRectMake(275*wb, 340*hb, 200*wb, 120*hb);
+    [_greenButton setBackgroundColor:APP_Green];
+    [_greenButton setmynamelabel:@"卖" numlabel:@"29569"];
+    _greenButton.layer.masksToBounds = YES;
+    _greenButton.layer.cornerRadius =  _greenButton.frame.size.width/32;
+    [self addSubview:_greenButton];
+    
+    
+    _grayButton = [[TransactionButton alloc]init];
+    _grayButton.frame = CGRectMake(520*wb, 340*hb, 200*wb, 120*hb);
+    [_grayButton setBackgroundColor:APP_Gray];
+    [_grayButton setmynamelabel:@"平" numlabel:@"无仓位"];
+    _grayButton.layer.masksToBounds = YES;
+    _grayButton.layer.cornerRadius =  _grayButton.frame.size.width/32;
+    [self addSubview:_grayButton];
     
 }
 
