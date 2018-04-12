@@ -25,4 +25,9 @@ typedef void(^MyAlertViewViewOKBLock)(void);
 
 
 -(id)initWithNormal;
+-(id)initWithcondition;
+
+
+- (void)cancelButtonClick;
 @end
+

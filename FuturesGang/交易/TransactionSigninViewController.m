@@ -33,13 +33,17 @@
 @property(nonatomic,strong)TransctionFSView * FSView;
 @property(nonatomic,strong)TransactionKlineView * KLineView;
 
+
+//提示框
+@property(nonatomic,strong) MyAlertView * alert;
+
 @end
 
 @implementation TransactionSigninViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+   
      [self setnaviTitle:@"交易"];
     self.view.backgroundColor = APP_TEXTFEILD_BACKCOLOR;
     
@@ -192,6 +196,7 @@
     
     UIButton * tjbutton = [UIButton buttonWithType:UIButtonTypeCustom];
     tjbutton.frame = CGRectMake(0, 0, 87/2, 20);
+    [tjbutton addTarget:self action:@selector(tiaojianButtonclick) forControlEvents:UIControlEventTouchUpInside];
     [tjbutton setBackgroundImage:[UIImage imageNamed:@"TIAOJIAN"] forState:UIControlStateNormal];
     UIBarButtonItem *backItem2 = [[UIBarButtonItem alloc] initWithCustomView:tjbutton];
     
@@ -199,6 +204,40 @@
     self.navigationItem.rightBarButtonItems = @[backItem,backItem2];
     // self.navigationItem.rightBarButtonItems = @[negativeSpacer, backItem];
 }
+
+-(void)tiaojianButtonclick{
+    
+    static int i = -1;
+    i = i * -1;
+    if (i==1) {
+                _alert = [[MyAlertView alloc]initWithcondition];
+                __weak typeof(self) weakSelf = self;
+                [weakSelf.alert setOkBlock:^{
+                    NSLog(@"确定");
+                }];
+        
+                [weakSelf.alert setCancelBlock:^{
+                    NSLog(@"取消");
+        
+                }];
+        
+        
+                [self.view addSubview:_alert];
+    }else
+    {
+        [_alert removeFromSuperview];
+    }
+   
+    
+    
+    
+    
+    
+}
+
+
+
+
 -(void)BubbleViewMakeUI{
     //弹出菜单栏
     

@@ -20,6 +20,71 @@
     return self;
 }
 
+-(id)initWithcondition{
+    if (self = [super init]) {
+        
+        [self setbackground];
+        [self makeUIcondition];
+    }
+    return self;
+}
+
+
+-(void)makeUIcondition{
+    UIView * bgview = [[UIView alloc]init];
+    bgview.frame = CGRectMake((SCREEN_WIDTH-550*wb)/2, 430*hb, 550*wb, 330*hb);
+    [bgview setBackgroundColor:[UIColor whiteColor]];
+    bgview.layer.masksToBounds = YES;
+    bgview.layer.cornerRadius = bgview.frame.size.width/32;
+    [self addSubview:bgview];
+    
+    //标题
+    _Alerttitle = [[UILabel alloc]init];
+    _Alerttitle.frame =CGRectMake(0, 30*hb, 550*wb, 40*hb);
+    [_Alerttitle setText:@"条件单设置"];
+    [_Alerttitle setTextColor:[UIColor blackColor]];
+    [_Alerttitle setFont:[UIFont systemFontOfSize:14]];
+    _Alerttitle.textAlignment = NSTextAlignmentCenter;
+    _Alerttitle.numberOfLines = 1;
+    [bgview addSubview:_Alerttitle];
+    
+    // 这里需要 chong'xie
+   
+    
+    //line1
+    
+    UIView * line1  =[[UIView alloc]init];
+    line1.frame =CGRectMake(0, 240*hb, 550*wb, 1);
+    line1.backgroundColor = RGBA(243, 243, 243, 1);
+    [bgview addSubview:line1];
+    
+    //lin2
+    
+    UIView * line2  =[[UIView alloc]init];
+    line2.frame =CGRectMake(550*wb/2, 240*hb,1 , bgview.frame.size.height-160*wb);
+    line2.backgroundColor = RGBA(243, 243, 243, 1);
+    [bgview addSubview:line2];
+    
+    
+    //取消
+    UIButton * cancelButton = [[UIButton alloc]init];
+    cancelButton.frame = CGRectMake(0, 240*hb, 260*wb, 85*hb);
+    [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+    [cancelButton setTitleColor:APP_BLUE forState:UIControlStateNormal];
+    cancelButton.titleLabel.font = [UIFont systemFontOfSize:16];
+    [cancelButton addTarget:self action:@selector(qxButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    [bgview addSubview:cancelButton];
+    //确定
+    UIButton * qdButton = [[UIButton alloc]init];
+    qdButton.frame = CGRectMake(bgview.frame.size.width -260*wb, 240*hb, 260*wb, 85*hb);
+    [qdButton setTitle:@"确定" forState:UIControlStateNormal];
+    [qdButton setTitleColor:APP_BLUE forState:UIControlStateNormal];
+    [qdButton addTarget:self action:@selector(qdButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    qdButton.titleLabel.font = [UIFont systemFontOfSize:16];
+    [bgview addSubview:qdButton];
+    
+    
+}
 -(void)setbackground{
     self.backgroundColor = [UIColor clearColor];
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
