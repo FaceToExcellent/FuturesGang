@@ -21,8 +21,6 @@
 }
 
 
-
-
 -(void)setbackground{
     self.backgroundColor = [UIColor clearColor];
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
@@ -119,8 +117,9 @@
 }
 
 -(void)setConditionBLock:(MyAlertViewconditionBLock)conditionBLock{
-    self.conditionBLock = conditionBLock;
+    _conditionBLock = conditionBLock;
 }
+
 - (void)cancelButtonClick
 {
      [self removeFromSuperview];

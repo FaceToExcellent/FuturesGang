@@ -218,28 +218,25 @@
              _alert.minPrice   =  20.0;
              _alert.step = 10;
         _alert.textfield.text = [NSString stringWithFormat:@"%.2f",_alert.defultPrice];
-                 __weak typeof(self) weakSelf = self;
+               //  __weak typeof(self) weakSelf = self;
         
-        [weakSelf.alert setConditionBLock:^(NSString *biggerOrlitter, NSString *defultPrice) {
-             NSLog(@"%@",biggerOrlitter);
-             NSLog(@"%@",defultPrice);
+        
+        [_alert setConditionBLock:^(NSString *biggerOrlitter, NSString *defultPrice) {
+            NSLog(@"%@",biggerOrlitter);
+            NSLog(@"%@",defultPrice);
         }];
-        
-                [weakSelf.alert setCancelBlock:^{
+        [_alert setCancelBlock:^{
                     NSLog(@"取消");
         
-                }];
+        }];
         
         
-                [self.view addSubview:_alert];
+        [self.view addSubview:_alert];
     }else
     {
         [_alert removeFromSuperview];
     }
    
-    
-    
-    
     
     
 }
