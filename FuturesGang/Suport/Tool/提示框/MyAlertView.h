@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 typedef void(^MyAlertViewCancelBLock)(void);
 typedef void(^MyAlertViewViewOKBLock)(void);
-
-
 typedef void(^MyAlertViewconditionBLock)(NSString*biggerOrlitter,NSString * defultPrice);
+
+
 
 
 @interface MyAlertView : UIView
@@ -19,6 +19,18 @@ typedef void(^MyAlertViewconditionBLock)(NSString*biggerOrlitter,NSString * defu
 
 @property(nonatomic,strong)UILabel * Alerttitle;
 @property(nonatomic,strong)UILabel * AlertMessage;
+
+@property(nonatomic,copy)MyAlertViewCancelBLock  cancelBlock;
+@property(nonatomic,copy)MyAlertViewViewOKBLock  okBlock;
+
+
+-(void)setCancelBlock:(MyAlertViewCancelBLock)cancelBlock;
+-(void)setOkBlock:(MyAlertViewViewOKBLock)okBlock;
+
+
+-(id)initWithNormal;
+
+- (void)cancelButtonClick;
 
 
 //条件单
@@ -35,24 +47,15 @@ typedef void(^MyAlertViewconditionBLock)(NSString*biggerOrlitter,NSString * defu
 @property(nonatomic,assign) float  minPrice; //最低价
 @property(nonatomic,assign) NSInteger step; //步数
 
-
-@property(nonatomic,copy)MyAlertViewCancelBLock  cancelBlock;
-@property(nonatomic,copy)MyAlertViewViewOKBLock  okBlock;
 @property(nonatomic,copy)MyAlertViewconditionBLock  conditionBLock ;
-
-
-
-
-
 -(void)setConditionBLock:(MyAlertViewconditionBLock)conditionBLock;
--(void)setCancelBlock:(MyAlertViewCancelBLock)cancelBlock;
--(void)setOkBlock:(MyAlertViewViewOKBLock)okBlock;
+
+-(void)setbackground;
+-(void)qxButtonClick;
+-(void)qdButtonClick;
 
 
--(id)initWithNormal;
--(id)initWithcondition;
 
 
-- (void)cancelButtonClick;
 @end
 

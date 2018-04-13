@@ -27,6 +27,7 @@
 		46599CB8207AFB6C002BC96E /* BankCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CB7207AFB6C002BC96E /* BankCardTableViewCell.m */; };
 		46599CBC207AFCCD002BC96E /* UIView+MYViewinit.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CBB207AFCCD002BC96E /* UIView+MYViewinit.m */; };
 		46599CBF207AFD82002BC96E /* UIViewController+MYViewinit.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CBE207AFD82002BC96E /* UIViewController+MYViewinit.m */; };
+		46783E1E20803A1600744B57 /* MyAlertView+ConditionAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 46783E1D20803A1600744B57 /* MyAlertView+ConditionAlert.m */; };
 		467DE9672073096E00183731 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE9662073096E00183731 /* AppDelegate.m */; };
 		467DE96F2073096F00183731 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467DE96E2073096F00183731 /* Assets.xcassets */; };
 		467DE9752073096F00183731 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE9742073096F00183731 /* main.m */; };
@@ -105,6 +106,8 @@
 		46599CBB207AFCCD002BC96E /* UIView+MYViewinit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+MYViewinit.m"; sourceTree = "<group>"; };
 		46599CBD207AFD82002BC96E /* UIViewController+MYViewinit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MYViewinit.h"; sourceTree = "<group>"; };
 		46599CBE207AFD82002BC96E /* UIViewController+MYViewinit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MYViewinit.m"; sourceTree = "<group>"; };
+		46783E1C20803A1600744B57 /* MyAlertView+ConditionAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyAlertView+ConditionAlert.h"; sourceTree = "<group>"; };
+		46783E1D20803A1600744B57 /* MyAlertView+ConditionAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MyAlertView+ConditionAlert.m"; sourceTree = "<group>"; };
 		467DE9622073096E00183731 /* FuturesGang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuturesGang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		467DE9652073096E00183731 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		467DE9662073096E00183731 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -250,6 +253,8 @@
 			children = (
 				46172D79207C9C0200BADCDE /* MyAlertView.h */,
 				46172D7A207C9C0200BADCDE /* MyAlertView.m */,
+				46783E1C20803A1600744B57 /* MyAlertView+ConditionAlert.h */,
+				46783E1D20803A1600744B57 /* MyAlertView+ConditionAlert.m */,
 			);
 			path = "提示框";
 			sourceTree = "<group>";
@@ -761,6 +766,7 @@
 				4645CD99207DEB8F00939B8F /* TransactionView.m in Sources */,
 				4645CD96207DD3F700939B8F /* DropDownMenuCell.m in Sources */,
 				467DE9982073195F00183731 /* OneLevelViewController.m in Sources */,
+				46783E1E20803A1600744B57 /* MyAlertView+ConditionAlert.m in Sources */,
 				46FE670C2074B0500027C8B9 /* GetCashViewController.m in Sources */,
 				467DE98D2073162600183731 /* OptionalViewController.m in Sources */,
 				467DE9902073165E00183731 /* QuotationViewController.m in Sources */,
