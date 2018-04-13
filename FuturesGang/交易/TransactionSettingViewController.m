@@ -8,7 +8,7 @@
 
 #import "TransactionSettingViewController.h"
 #import "MyAlertView.h"
-
+#import "MyAlertView+Addquantity.h"
 #import "SinglePickerView.h"
 #define PICKER_HEIGHT   216
 @interface TransactionSettingViewController ()<UITextFieldDelegate>
@@ -23,10 +23,11 @@
 
 @property(nonatomic,strong)UILabel * tex;
 @property(nonatomic,strong)UITextField * tex2;
-@property(nonatomic,strong)UITextField * tex3;
+
 
 @property(nonatomic,strong)NSArray * arr2;
-@property(nonatomic,strong)NSArray * arr3;
+
+
 @end
 
 @implementation TransactionSettingViewController
@@ -42,11 +43,11 @@
 -(void)loadDate{
     
     _arr2  = @[@"10秒",@"20秒",@"30秒",@"40秒",@"50秒",@"60秒",@"70秒",];
-    _arr3  = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10"];
+    
     //默认数据
     NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
     [def setObject:@"10秒" forKey:@"快捷反手自动撤单时间"];
-    [def setObject:@"1" forKey:@"交易数量默认加量"];
+  
 
 }
 
@@ -181,16 +182,16 @@
     label4.frame = CGRectMake(30*wb, 0, 450*wb, 100*hb);
     [jyslView addSubview:label4];
     
-    _tex3 = [[UITextField alloc]init];
-    _tex3.text =[def objectForKey:@"交易数量默认加量"];
-    _tex3.delegate = self;
-    _tex3.tag = 103;
-    _tex3.font = [UIFont systemFontOfSize:14];
-    _tex3.textAlignment = NSTextAlignmentRight;
-    _tex3.textColor =  RGBA(150, 160, 190, 1);
-    _tex3.frame = CGRectMake(SCREEN_WIDTH-250*wb, 0, 185*wb, 100*hb);
-    
-    [jyslView addSubview:_tex3];
+//    _tex3 = [[UITextField alloc]init];
+//    _tex3.text =[def objectForKey:@"交易数量默认加量"];
+//    _tex3.delegate = self;
+//    _tex3.tag = 103;
+//    _tex3.font = [UIFont systemFontOfSize:14];
+//    _tex3.textAlignment = NSTextAlignmentRight;
+//    _tex3.textColor =  RGBA(150, 160, 190, 1);
+//    _tex3.frame = CGRectMake(SCREEN_WIDTH-250*wb, 0, 185*wb, 100*hb);
+//
+//    [jyslView addSubview:_tex3];
     
     UIImageView * gorimage3 = [[UIImageView alloc]init];
     gorimage3.image = [UIImage imageNamed:@"ZXJT"];
@@ -237,11 +238,7 @@
         textField.inputView = self.picker2;
          [self.picker2  setmyarrayDS:_arr2];
     }
-    if(textField.tag == 103){
-        //1
-        textField.inputView = self.picker3;
-         [self.picker3  setmyarrayDS:_arr3];
-    }
+    
     
     
     [textField becomeFirstResponder];
@@ -308,42 +305,5 @@
     return _picker2;
 }
 
--(SinglePickerView*)picker3{
-    if (!_picker3) {
-        _picker3=[[SinglePickerView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - PICKER_HEIGHT, SCREEN_WIDTH, PICKER_HEIGHT)];
-        _picker3.backgroundColor= APP_Gray;
-        __weak typeof (self)weakSelf = self;
-        [_picker3 setDidFinishBlock:^(NSString *message) {
-            if(message.length >0){
-                
-                weakSelf.tex3.text = message;
-                [ weakSelf.tex3 resignFirstResponder];
-                
-                NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
-                [def setObject:message forKey:@"交易数量默认加量"];
-            }else
-            {
-                NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
-                
-                NSString * messg = [def objectForKey:@"交易数量默认加量"];
-                if (messg.length>0) {
-                    weakSelf.tex3.text = messg;
-                    [ weakSelf.tex3 resignFirstResponder];
-                }else
-                {
-                    weakSelf.tex3.text = @"1";
-                    [ weakSelf.tex3 resignFirstResponder];
-                    
-                    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
-                    [def setObject:@"1" forKey:@"交易数量默认加量"];
-                }
-            }
 
-            
-        }];
-        
-    }
-    
-    return _picker3;
-}
 @end
