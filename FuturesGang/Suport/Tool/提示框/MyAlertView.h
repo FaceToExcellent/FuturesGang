@@ -10,7 +10,7 @@
 typedef void(^MyAlertViewCancelBLock)(void);
 typedef void(^MyAlertViewViewOKBLock)(void);
 typedef void(^MyAlertViewconditionBLock)(NSString*biggerOrlitter,NSString * defultPrice);
-
+typedef void(^MyAlertViewAddquantityBLock)(NSString*number);
 
 
 
@@ -54,7 +54,10 @@ typedef void(^MyAlertViewconditionBLock)(NSString*biggerOrlitter,NSString * defu
 -(void)qxButtonClick;
 -(void)qdButtonClick;
 
-
+//Addquantity.h
+@property(nonatomic,strong)UITextField *AddquantityFeild;
+@property(nonatomic,copy)MyAlertViewAddquantityBLock addquantityBlock;
+-(void)setAddquantityBlock:(MyAlertViewAddquantityBLock)addquantityBlock;
 
 
 @end

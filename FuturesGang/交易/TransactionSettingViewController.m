@@ -23,6 +23,9 @@
 
 @property(nonatomic,strong)UILabel * tex;
 @property(nonatomic,strong)UITextField * tex2;
+@property(nonatomic,strong)UIButton * tex3;
+
+@property(nonatomic,strong)MyAlertView * aler;
 
 
 @property(nonatomic,strong)NSArray * arr2;
@@ -182,16 +185,17 @@
     label4.frame = CGRectMake(30*wb, 0, 450*wb, 100*hb);
     [jyslView addSubview:label4];
     
-//    _tex3 = [[UITextField alloc]init];
-//    _tex3.text =[def objectForKey:@"交易数量默认加量"];
-//    _tex3.delegate = self;
-//    _tex3.tag = 103;
-//    _tex3.font = [UIFont systemFontOfSize:14];
-//    _tex3.textAlignment = NSTextAlignmentRight;
-//    _tex3.textColor =  RGBA(150, 160, 190, 1);
-//    _tex3.frame = CGRectMake(SCREEN_WIDTH-250*wb, 0, 185*wb, 100*hb);
-//
-//    [jyslView addSubview:_tex3];
+    _tex3 = [[UIButton alloc]init];
+    [_tex3 setTitle:@"1" forState:UIControlStateNormal];
+    _tex3.titleLabel.font =[UIFont systemFontOfSize:14];
+   
+    _tex3.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    //_tex3.textAlignment = NSTextAlignmentRight;
+    [_tex3 setTitleColor:RGBA(150, 160, 190, 1) forState:UIControlStateNormal];
+    [_tex3 addTarget:self action:@selector(view3Click) forControlEvents:UIControlEventTouchUpInside];
+    _tex3.frame = CGRectMake(SCREEN_WIDTH-250*wb, 0, 185*wb, 100*hb);
+
+    [jyslView addSubview:_tex3];
     
     UIImageView * gorimage3 = [[UIImageView alloc]init];
     gorimage3.image = [UIImage imageNamed:@"ZXJT"];
@@ -305,5 +309,33 @@
     return _picker2;
 }
 
+-(void)view3Click{
+    
+  
+   
+    
+    static int i = -1;
+    i = i * -1;
+    if (i==1) {
+    _aler = [[MyAlertView alloc]initWithAddquantity];
+        __weak typeof (self)weakself = self;
+        [_aler setAddquantityBlock:^(NSString *number) {
+            //NSLog(@"%@",number);
+            [weakself.tex3 setTitle:number forState:UIControlStateNormal];
+        }];
+    
+    [_aler setCancelBlock:^{
+        NSLog(@"取消");
+    }];
+    
+    [self.view addSubview:_aler];
+    }else
+    {
+       [_aler removeFromSuperview];
+    }
+    
+    
+    
+}
 
 @end

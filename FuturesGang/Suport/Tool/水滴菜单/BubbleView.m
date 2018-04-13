@@ -94,22 +94,22 @@
     [self addSubview:line2];
     
     //交易设置
-    UIButton * jyszButton = [[UIButton alloc]init];
-    jyszButton.frame = CGRectMake(30*wb, 220*wb , 290*wb, 90*wb);
-    [jyszButton setTitle:@"交易设置" forState:UIControlStateNormal];
-    [jyszButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    jyszButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    [jyszButton addTarget:self action:@selector(jyszButtonCLick) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:jyszButton];
-    //line3
-    UIView * line3  = [[UIView alloc]init];
-    line3.frame = CGRectMake(30*wb,312*wb, 290*wb, 1);
-    line3.backgroundColor = APP_Gray;
-    [self addSubview:line3];
+//    UIButton * jyszButton = [[UIButton alloc]init];
+//    jyszButton.frame = CGRectMake(30*wb, 220*wb , 290*wb, 90*wb);
+//    [jyszButton setTitle:@"交易设置" forState:UIControlStateNormal];
+//    [jyszButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    jyszButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+//    [jyszButton addTarget:self action:@selector(jyszButtonCLick) forControlEvents:UIControlEventTouchUpInside];
+//    [self addSubview:jyszButton];
+//    //line3
+//    UIView * line3  = [[UIView alloc]init];
+//    line3.frame = CGRectMake(30*wb,312*wb, 290*wb, 1);
+//    line3.backgroundColor = APP_Gray;
+//    [self addSubview:line3];
     
     //退出登录
     UIButton * tcdlButton = [[UIButton alloc]init];
-    tcdlButton.frame = CGRectMake(30*wb, 314*wb , 290*wb, 90*wb);
+    tcdlButton.frame = CGRectMake(30*wb, 220*wb , 290*wb, 90*wb);
     [tcdlButton setTitle:@"退出登录" forState:UIControlStateNormal];
     [tcdlButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     tcdlButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
@@ -117,7 +117,7 @@
     [self addSubview:tcdlButton];
     //line4
     UIView * line4  = [[UIView alloc]init];
-    line4.frame = CGRectMake(30*wb,406*wb, 290*wb, 1);
+    line4.frame = CGRectMake(30*wb,312*wb, 290*wb, 1);
     line4.backgroundColor = APP_Gray;
     [self addSubview:line4];
 }

@@ -109,6 +109,7 @@
 }
 
 
+
 -(void)setCancelBlock:(MyAlertViewCancelBLock)cancelBlock{
     _cancelBlock = cancelBlock;
 }
@@ -120,6 +121,10 @@
     _conditionBLock = conditionBLock;
 }
 
+-(void)setAddquantityBlock:(MyAlertViewAddquantityBLock)addquantityBlock
+{
+    _addquantityBlock = addquantityBlock;
+}
 - (void)cancelButtonClick
 {
      [self removeFromSuperview];

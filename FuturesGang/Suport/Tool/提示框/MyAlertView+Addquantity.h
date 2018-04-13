@@ -9,5 +9,6 @@
 #import "MyAlertView.h"
 
 @interface MyAlertView (Addquantity)
+-(id)initWithAddquantity;
 
 @end
