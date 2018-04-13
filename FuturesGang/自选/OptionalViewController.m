@@ -55,11 +55,12 @@
         cell.selectionStyle  = UITableViewCellSelectionStyleNone;
     }
     
+    [cell setcellData:indexPath.row];
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return 124*hb;
 }
 
 - (void)didReceiveMemoryWarning {

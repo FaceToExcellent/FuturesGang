@@ -17,4 +17,5 @@
 
 @property(nonatomic,strong)ColorButton  * RoseButton;
 
+-(void)setcellData:(NSInteger)row;
 @end

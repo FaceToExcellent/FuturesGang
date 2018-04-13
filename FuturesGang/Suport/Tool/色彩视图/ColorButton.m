@@ -27,6 +27,7 @@
     self.isnoBack  = isnoBack;
     if (self.isnoBack) {
         
+        
         [self makeNObackUI];
     }else
     {
@@ -37,12 +38,12 @@
 -(void)setmystateString:(NSString*)stateString{
     self.stateString = stateString;
     
-    [self makeNObackUI];
+   // [self makeNObackUI];
 }
 -(void)makeNObackUI{
-    if ([self.stateString isEqualToString:@"1"] ) {
+    if ([self.stateString isEqualToString:@"0"] ) {
         [self setTitleColor:APP_RED forState:UIControlStateNormal];
-    }else if ( [self.stateString isEqualToString:@"2"]){
+    }else if ( [self.stateString isEqualToString:@"1"]){
         
         [self setTitleColor:APP_Gray forState:UIControlStateNormal];
     }else if ( [self.stateString isEqualToString:@"2"]){
@@ -59,14 +60,16 @@
 }
 -(void)makeUI{
     
-    if ([self.stateString isEqualToString:@"1"] ) {
+    if ([self.stateString isEqualToString:@"0"] ) {
         
-        self.backgroundColor = APP_RED;
-    }else if ( [self.stateString isEqualToString:@"2"]){
-         self.backgroundColor = APP_Gray;
+      
+        [self setBackgroundColor:APP_RED];
+    }else if ( [self.stateString isEqualToString:@"1"]){
         
+        [self setBackgroundColor:APP_Gray];
     }else if ( [self.stateString isEqualToString:@"2"]){
-         self.backgroundColor = APP_Green;
+        
+         [self setBackgroundColor:APP_Green];
     }
     
     
