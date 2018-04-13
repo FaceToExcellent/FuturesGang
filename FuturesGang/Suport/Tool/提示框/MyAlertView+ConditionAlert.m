@@ -96,7 +96,7 @@
     self.textfield.frame = CGRectMake(330*wb, 108*hb, 182*wb, 60*hb);
     self.textfield.layer.masksToBounds = YES;
     self.textfield.layer.cornerRadius =  60*hb/16;
-    self.textfield.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+    self.textfield.userInteractionEnabled = NO;
     self.textfield.layer.borderColor = [UIColor blackColor].CGColor;
     self.textfield.layer.borderWidth = .5;
     [bgview addSubview:self.textfield];
