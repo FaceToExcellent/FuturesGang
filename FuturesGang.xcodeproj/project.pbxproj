@@ -16,6 +16,7 @@
 		4606AF0C2080468C0084808B /* MyAlertView+Addquantity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4606AF0B2080468C0084808B /* MyAlertView+Addquantity.m */; };
 		4606AF1020805B6C0084808B /* OptionalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4606AF0F20805B6C0084808B /* OptionalTableViewCell.m */; };
 		4606AF16208087FA0084808B /* KlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4606AF15208087FA0084808B /* KlineViewController.m */; };
+		4606AF1A20808D840084808B /* YButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4606AF1920808D840084808B /* YButton.m */; };
 		46172D71207C6B0200BADCDE /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46172D70207C6B0200BADCDE /* BubbleView.m */; };
 		46172D74207C8F5C00BADCDE /* TransactionCashDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46172D73207C8F5C00BADCDE /* TransactionCashDetailViewController.m */; };
 		46172D77207C8FBE00BADCDE /* TransactionSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46172D76207C8FBE00BADCDE /* TransactionSettingViewController.m */; };
@@ -87,6 +88,8 @@
 		4606AF0F20805B6C0084808B /* OptionalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OptionalTableViewCell.m; sourceTree = "<group>"; };
 		4606AF14208087FA0084808B /* KlineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KlineViewController.h; sourceTree = "<group>"; };
 		4606AF15208087FA0084808B /* KlineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KlineViewController.m; sourceTree = "<group>"; };
+		4606AF1820808D840084808B /* YButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YButton.h; sourceTree = "<group>"; };
+		4606AF1920808D840084808B /* YButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YButton.m; sourceTree = "<group>"; };
 		46172D6F207C6B0200BADCDE /* BubbleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BubbleView.h; sourceTree = "<group>"; };
 		46172D70207C6B0200BADCDE /* BubbleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BubbleView.m; sourceTree = "<group>"; };
 		46172D72207C8F5C00BADCDE /* TransactionCashDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionCashDetailViewController.h; sourceTree = "<group>"; };
@@ -247,6 +250,15 @@
 				4606AF0F20805B6C0084808B /* OptionalTableViewCell.m */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		4606AF1720808D4D0084808B /* 三种状态按钮 */ = {
+			isa = PBXGroup;
+			children = (
+				4606AF1820808D840084808B /* YButton.h */,
+				4606AF1920808D840084808B /* YButton.m */,
+			);
+			path = "三种状态按钮";
 			sourceTree = "<group>";
 		};
 		46172D6E207C6AAF00BADCDE /* View */ = {
@@ -457,6 +469,7 @@
 		46FCE276207A08B4004F0DB7 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				4606AF1720808D4D0084808B /* 三种状态按钮 */,
 				4645CD9D207DEDD800939B8F /* Picker */,
 				4645CD9B207DEDBF00939B8F /* 水滴菜单 */,
 				4645CD90207DB13200939B8F /* 下拉菜单框 */,
@@ -806,6 +819,7 @@
 				46FCE2722079F3B2004F0DB7 /* MyuserViewController.m in Sources */,
 				467DE9672073096E00183731 /* AppDelegate.m in Sources */,
 				46FCE2752079F529004F0DB7 /* MyuserTableViewCell.m in Sources */,
+				4606AF1A20808D840084808B /* YButton.m in Sources */,
 				46FCE281207A1A3F004F0DB7 /* BankCardViewController.m in Sources */,
 				46172D77207C8FBE00BADCDE /* TransactionSettingViewController.m in Sources */,
 				46A2414020735F3E00EFA8B4 /* ForgetWordViewController.m in Sources */,

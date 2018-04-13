@@ -9,10 +9,12 @@
 #import "OptionalViewController.h"
 #import "OptionalTableViewCell.h"
 #import "KlineViewController.h"
+
 @interface OptionalViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong) UITableView * tableView;
 
-@property(nonatomic,strong)UIButton * zfButton;
+@property(nonatomic,strong)YButton * zfButton;
+
 @end
 
 @implementation OptionalViewController
@@ -53,7 +55,7 @@
     hylabel.text = @"合约代码";
     hylabel.textAlignment = NSTextAlignmentCenter;
     hylabel.font = [UIFont systemFontOfSize:14];
-    hylabel.textColor = RGBA(169, 169, 169, 1);
+    hylabel.textColor = RGBA(183, 183, 183, 1);
     [bgview addSubview:hylabel];
     //最新价
     UILabel * zxlabel = [[UILabel alloc]init];
@@ -61,15 +63,33 @@
     zxlabel.text = @"最新价";
     zxlabel.textAlignment = NSTextAlignmentLeft;
     zxlabel.font = [UIFont systemFontOfSize:14];
-    zxlabel.textColor = RGBA(169, 169, 169, 1);
+    zxlabel.textColor = RGBA(183, 183, 183, 1);
     [bgview addSubview:zxlabel];
     
+    //三种状态按钮
     
+    _zfButton = [[YButton alloc]init];
+    _zfButton.frame = CGRectMake(570*wb, 25*hb, 110*wb, 30*hb);
+    [_zfButton  setYBackimage:@"ZHANGFU0" forYstate:YbuttonstateDefult];
+    [_zfButton  setYBackimage:@"ZHANGFU2" forYstate:YbuttonstateUpselected];
+    [_zfButton  setYBackimage:@"ZHANGFU1" forYstate:YbuttonstateDownselected];
+    
+    [_zfButton addTarget:self action:@selector(zfButtonCLick) forControlEvents:UIControlEventTouchUpInside];
+    [bgview addSubview:_zfButton];
     
     
     return bgview;
     
 }
+
+-(void)zfButtonCLick{
+    static int i = 0;
+    i = i+1;
+   // NSLog(@"zfButtonCLick%d -- %d",i,i%3);
+    [_zfButton setYstate:i%3];
+    
+}
+
 #pragma mark  tableView.delegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
