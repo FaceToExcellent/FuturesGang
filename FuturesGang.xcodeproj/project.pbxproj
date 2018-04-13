@@ -14,6 +14,7 @@
 		4603CE5F2079A993003F2332 /* SocketRocketUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4603CE5E2079A993003F2332 /* SocketRocketUtility.m */; };
 		4603CE642079BD95003F2332 /* CashTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4603CE632079BD95003F2332 /* CashTableViewCell.m */; };
 		4606AF0C2080468C0084808B /* MyAlertView+Addquantity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4606AF0B2080468C0084808B /* MyAlertView+Addquantity.m */; };
+		4606AF1020805B6C0084808B /* OptionalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4606AF0F20805B6C0084808B /* OptionalTableViewCell.m */; };
 		46172D71207C6B0200BADCDE /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46172D70207C6B0200BADCDE /* BubbleView.m */; };
 		46172D74207C8F5C00BADCDE /* TransactionCashDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46172D73207C8F5C00BADCDE /* TransactionCashDetailViewController.m */; };
 		46172D77207C8FBE00BADCDE /* TransactionSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46172D76207C8FBE00BADCDE /* TransactionSettingViewController.m */; };
@@ -81,6 +82,8 @@
 		4603CE632079BD95003F2332 /* CashTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CashTableViewCell.m; sourceTree = "<group>"; };
 		4606AF0A2080468C0084808B /* MyAlertView+Addquantity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyAlertView+Addquantity.h"; sourceTree = "<group>"; };
 		4606AF0B2080468C0084808B /* MyAlertView+Addquantity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MyAlertView+Addquantity.m"; sourceTree = "<group>"; };
+		4606AF0E20805B6C0084808B /* OptionalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OptionalTableViewCell.h; sourceTree = "<group>"; };
+		4606AF0F20805B6C0084808B /* OptionalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OptionalTableViewCell.m; sourceTree = "<group>"; };
 		46172D6F207C6B0200BADCDE /* BubbleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BubbleView.h; sourceTree = "<group>"; };
 		46172D70207C6B0200BADCDE /* BubbleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BubbleView.m; sourceTree = "<group>"; };
 		46172D72207C8F5C00BADCDE /* TransactionCashDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionCashDetailViewController.h; sourceTree = "<group>"; };
@@ -234,6 +237,15 @@
 			path = NetWork;
 			sourceTree = "<group>";
 		};
+		4606AF0D20805A730084808B /* view */ = {
+			isa = PBXGroup;
+			children = (
+				4606AF0E20805B6C0084808B /* OptionalTableViewCell.h */,
+				4606AF0F20805B6C0084808B /* OptionalTableViewCell.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		46172D6E207C6AAF00BADCDE /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +390,7 @@
 		467DE9822073157100183731 /* 自选 */ = {
 			isa = PBXGroup;
 			children = (
+				4606AF0D20805A730084808B /* view */,
 				467DE98B2073162600183731 /* OptionalViewController.h */,
 				467DE98C2073162600183731 /* OptionalViewController.m */,
 			);
@@ -735,6 +748,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4606AF1020805B6C0084808B /* OptionalTableViewCell.m in Sources */,
 				46FE6702207461D30027C8B9 /* AboutUsViewController.m in Sources */,
 				46172D7B207C9C0200BADCDE /* MyAlertView.m in Sources */,
 				4603CE5F2079A993003F2332 /* SocketRocketUtility.m in Sources */,
