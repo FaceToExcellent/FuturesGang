@@ -23,8 +23,9 @@
 -(void)makeUI{
     _biggestButton =  [[ColorButton alloc]init];
     _biggestButton.frame = CGRectMake(30*wb, 25*hb, 360*wb, 80*hb);
-    [_biggestButton setIsnoBack:1];
-    [_biggestButton setmystateString:@"1"];
+    [_biggestButton setmystateString:@"0"];
+    [_biggestButton setmyisnoBack:1];
+   
     [_biggestButton setTitle:@"24995" forState:UIControlStateNormal];
     _biggestButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:40];
     _biggestButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
@@ -33,20 +34,22 @@
     
     _leftcolorButton =  [[ColorButton alloc]init];
     _leftcolorButton.frame = CGRectMake(30*wb, 120*hb, 110*wb, 50*hb);
-    [_leftcolorButton setIsnoBack:1];
-    [_leftcolorButton setmystateString:@"1"];
+    [_leftcolorButton setmystateString:@"0"];
+    [_leftcolorButton setmyisnoBack:1];
+  
     [_leftcolorButton setTitle:@"125" forState:UIControlStateNormal];
-    _leftcolorButton.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:35];
+    _leftcolorButton.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:20];
     _leftcolorButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [self addSubview:_leftcolorButton];
     
     
     _rightcolorButton =  [[ColorButton alloc]init];
     _rightcolorButton.frame = CGRectMake(130*wb, 120*hb, 240*wb, 50*hb);
-    [_rightcolorButton setIsnoBack:1];
-    [_rightcolorButton setmystateString:@"1"];
+    [_rightcolorButton setmystateString:@"0"];
+    [_rightcolorButton setmyisnoBack:1];
+    
     [_rightcolorButton setTitle:@"+0.050%" forState:UIControlStateNormal];
-    _rightcolorButton.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:35];
+    _rightcolorButton.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:20];
     _rightcolorButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [self addSubview:_rightcolorButton];
     

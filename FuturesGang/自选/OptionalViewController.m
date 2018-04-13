@@ -8,8 +8,11 @@
 
 #import "OptionalViewController.h"
 #import "OptionalTableViewCell.h"
+#import "KlineViewController.h"
 @interface OptionalViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong) UITableView * tableView;
+
+@property(nonatomic,strong)UIButton * zfButton;
 @end
 
 @implementation OptionalViewController
@@ -33,10 +36,40 @@
      _tableView.backgroundColor = APP_TEXTFEILD_BACKCOLOR;
     _tableView.tableFooterView = [[UIView alloc]init];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.tableHeaderView = [self headviewmake];
     [self.view addSubview:_tableView];
 
 }
 
+
+-(UIView*)headviewmake{
+    UIView * bgview = [[UIView alloc]init];
+    bgview.frame =CGRectMake(0, 0, SCREEN_WIDTH, 80*hb);
+    [bgview setBackgroundColor:APP_BACKCOLOR];
+    
+    //合约代码
+    UILabel * hylabel = [[UILabel alloc]init];
+    hylabel.frame =CGRectMake(30*wb, 20*hb, 170*wb, 40*hb);
+    hylabel.text = @"合约代码";
+    hylabel.textAlignment = NSTextAlignmentCenter;
+    hylabel.font = [UIFont systemFontOfSize:14];
+    hylabel.textColor = RGBA(169, 169, 169, 1);
+    [bgview addSubview:hylabel];
+    //最新价
+    UILabel * zxlabel = [[UILabel alloc]init];
+    zxlabel.frame =CGRectMake(360*wb, 20*hb, 170*wb, 40*hb);
+    zxlabel.text = @"最新价";
+    zxlabel.textAlignment = NSTextAlignmentLeft;
+    zxlabel.font = [UIFont systemFontOfSize:14];
+    zxlabel.textColor = RGBA(169, 169, 169, 1);
+    [bgview addSubview:zxlabel];
+    
+    
+    
+    
+    return bgview;
+    
+}
 #pragma mark  tableView.delegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -63,6 +96,15 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 124*hb;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    OptionalTableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+    KlineViewController * kvc = [[KlineViewController alloc]init];
+    [kvc setnaviTitle:cell.nameLabel.text];
+    [self.navigationController pushViewController:kvc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

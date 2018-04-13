@@ -15,6 +15,7 @@
 		4603CE642079BD95003F2332 /* CashTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4603CE632079BD95003F2332 /* CashTableViewCell.m */; };
 		4606AF0C2080468C0084808B /* MyAlertView+Addquantity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4606AF0B2080468C0084808B /* MyAlertView+Addquantity.m */; };
 		4606AF1020805B6C0084808B /* OptionalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4606AF0F20805B6C0084808B /* OptionalTableViewCell.m */; };
+		4606AF16208087FA0084808B /* KlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4606AF15208087FA0084808B /* KlineViewController.m */; };
 		46172D71207C6B0200BADCDE /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46172D70207C6B0200BADCDE /* BubbleView.m */; };
 		46172D74207C8F5C00BADCDE /* TransactionCashDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46172D73207C8F5C00BADCDE /* TransactionCashDetailViewController.m */; };
 		46172D77207C8FBE00BADCDE /* TransactionSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46172D76207C8FBE00BADCDE /* TransactionSettingViewController.m */; };
@@ -84,6 +85,8 @@
 		4606AF0B2080468C0084808B /* MyAlertView+Addquantity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MyAlertView+Addquantity.m"; sourceTree = "<group>"; };
 		4606AF0E20805B6C0084808B /* OptionalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OptionalTableViewCell.h; sourceTree = "<group>"; };
 		4606AF0F20805B6C0084808B /* OptionalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OptionalTableViewCell.m; sourceTree = "<group>"; };
+		4606AF14208087FA0084808B /* KlineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KlineViewController.h; sourceTree = "<group>"; };
+		4606AF15208087FA0084808B /* KlineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KlineViewController.m; sourceTree = "<group>"; };
 		46172D6F207C6B0200BADCDE /* BubbleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BubbleView.h; sourceTree = "<group>"; };
 		46172D70207C6B0200BADCDE /* BubbleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BubbleView.m; sourceTree = "<group>"; };
 		46172D72207C8F5C00BADCDE /* TransactionCashDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionCashDetailViewController.h; sourceTree = "<group>"; };
@@ -393,6 +396,8 @@
 				4606AF0D20805A730084808B /* view */,
 				467DE98B2073162600183731 /* OptionalViewController.h */,
 				467DE98C2073162600183731 /* OptionalViewController.m */,
+				4606AF14208087FA0084808B /* KlineViewController.h */,
+				4606AF15208087FA0084808B /* KlineViewController.m */,
 			);
 			path = "自选";
 			sourceTree = "<group>";
@@ -758,6 +763,7 @@
 				4606AF0C2080468C0084808B /* MyAlertView+Addquantity.m in Sources */,
 				4645CD8F207D986E00939B8F /* SinglePickerView.m in Sources */,
 				46599CB8207AFB6C002BC96E /* BankCardTableViewCell.m in Sources */,
+				4606AF16208087FA0084808B /* KlineViewController.m in Sources */,
 				4603CE642079BD95003F2332 /* CashTableViewCell.m in Sources */,
 				46172D71207C6B0200BADCDE /* BubbleView.m in Sources */,
 				46172D74207C8F5C00BADCDE /* TransactionCashDetailViewController.m in Sources */,
