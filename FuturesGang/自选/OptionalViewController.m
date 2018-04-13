@@ -23,6 +23,8 @@
     
 }
 
+
+
 -(void)makeUI{
     _tableView = [[UITableView alloc]init];
     _tableView.frame =CGRectMake(0, 3, SCREEN_WIDTH, SCREEN_HEIGHT-StatusBarAndNavigationBarHeight-3);
