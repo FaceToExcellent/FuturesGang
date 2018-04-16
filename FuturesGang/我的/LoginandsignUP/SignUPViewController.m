@@ -160,7 +160,54 @@
 // 开启倒计时效果
 -(void)openCountdown{
     
-    self.time = 59; //倒计时时间
+    [_phoneNumber resignFirstResponder];
+     self.time = 59;
+    
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] initWithCapacity:2];
+    [parameters setObject:_phoneNumber.text forKey:@"phone"];
+  
+    __weak typeof(self)weakself = self;
+    
+    NSLog(@"URL_smsverify%@",URL_smsverify);
+    [AFNetworkTool postJSONWithUrl:URL_smsverify parameters:parameters images:nil imageKey:nil success:^(id dict) {
+        NSLog(@"%@",dict);
+        NSLog(@"URL_addUser%@",dict[@"ret_msg"]);
+        
+        weakself.message = dict[@"ret_msg"];
+        
+        
+         self.time = 1;
+        if (![dict[@"status"] isEqualToString:@"1"]) {
+            weakself.alert = [[MyAlertView alloc]initWithNormal];
+            [weakself.alert setTitile:@"提示" message:weakself.message];
+            [weakself.alert setOkBlock:^{
+                
+                
+            }];
+            
+            [weakself.alert setCancelBlock:^{
+                
+            }];
+            
+            
+            [weakself.view addSubview:weakself.alert];
+        }else
+        {
+           
+            
+        }
+    } fail:^(NSError *error) {
+        
+        //网络错误的时候
+        
+    }];
+    
+    
+    
+    
+    
+    
+   //倒计时时间
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
