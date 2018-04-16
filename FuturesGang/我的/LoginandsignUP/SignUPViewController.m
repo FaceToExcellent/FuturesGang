@@ -110,7 +110,7 @@
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] initWithCapacity:2];
     [parameters setObject:_phoneNumber.text forKey:@"phone"];
     [parameters setObject:_spnewWord.text forKey:@"password"];
-    [parameters setObject:_yzm.text forKey:@"messagecode "];
+    [parameters setObject:_yzm.text forKey:@"messagecode"];
     [parameters setObject:_tjWord.text forKey:@"code"];
     __weak typeof(self)weakself = self;
     
@@ -142,9 +142,11 @@
             [def setObject:dict[@"uid"] forKey:@"APP_Uid"];
             
             
-            RootTabViewController * vc = [[RootTabViewController alloc]init];
-            //  [self presentModalViewController:vc animated:YES];
-            [self presentViewController:vc animated:YES completion:Nil];
+//            RootTabViewController * vc = [[RootTabViewController alloc]init];
+//            //  [self presentModalViewController:vc animated:YES];
+//            [self presentViewController:vc animated:YES completion:Nil];
+            
+            [self.navigationController popViewControllerAnimated:YES];
             
         }
     } fail:^(NSError *error) {

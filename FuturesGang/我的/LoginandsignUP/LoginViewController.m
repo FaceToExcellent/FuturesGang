@@ -43,7 +43,7 @@
     
     
     //账号 切圆角
-    _zhTextview = [self textFieldMakewithtext:@"账号" placeholder:@"用户名或手机号" withframe:CGRectMake((SCREEN_WIDTH-580*wb)/2, 520*hb, 580*wb, 88*hb) backgroundColor:RGBA(66, 69, 87, 1) andtag:101 andleftViewframe: CGRectMake(0, 0, 155*wb, 90*hb)];
+    _zhTextview = [self textFieldMakewithtext:@"账号" placeholder:@"请输入手机号" withframe:CGRectMake((SCREEN_WIDTH-580*wb)/2, 520*hb, 580*wb, 88*hb) backgroundColor:RGBA(66, 69, 87, 1) andtag:101 andleftViewframe: CGRectMake(0, 0, 155*wb, 90*hb)];
     _zhTextview.delegate = self ;
     _zhTextview.returnKeyType = UIReturnKeyNext;
     [self.view addSubview:_zhTextview];
