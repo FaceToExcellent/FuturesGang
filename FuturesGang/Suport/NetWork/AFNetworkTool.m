@@ -50,7 +50,13 @@
 }
 
 #pragma mark - JSON方式post提交数据
-
+/*  NSMutableDictionary *parameters = [[NSMutableDictionary alloc] initWithCapacity:2];
+ [parameters setObject:_commodityid forKey:@"goods_id"];
+ [parameters setObject:_addressDict[@"username"] forKey:@"username"];
+ [parameters setObject:_addressDict[@"address"] forKey:@"address"];
+ [parameters setObject:_addressDict[@"phone"] forKey:@"phone"];
+ [parameters setObject:@"1" forKey:@"PHPSESSID"];
+ [AFNetworkTool postJSONWithUrl:TRADEIN_ADD_UTL encrypt:YES parameters:parameters images:nil imageKey:nil success:^(id dict) {*/
 
 + (void)postJSONWithUrl:(NSString *)urlStr  parameters:(NSDictionary*)parameters images:(NSMutableArray*)imageArray imageKey:(NSString *)imageKey success:(void (^)(id dict))success fail:(void (^)(NSError *error))fail
 {
