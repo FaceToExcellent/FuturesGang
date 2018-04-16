@@ -15,4 +15,8 @@
 
 @interface BubbleView : UIImageView
 @property(nonatomic,weak)id <BubbleViewDelegate>delegate;
+
+@property(nonatomic,strong) UIImageView *bgImage;
+-(instancetype)init;
+-(instancetype)initWithFrame:(CGRect)frame;
 @end
