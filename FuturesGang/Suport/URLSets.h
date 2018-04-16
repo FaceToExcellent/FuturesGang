@@ -10,4 +10,23 @@
 #define URLSets_h
 
 
+//主地址
+#define MainUrl   @"http://www.deloittechinatmt.com/index"
+
+
+
+//完整的URL1
+#define ADDRESS_IP1(Url)              \
+[NSString stringWithFormat:@"%@%@",MainUrl,Url]
+
+//登录 参数:手机号 phone 密码:password   方式 post
+#define URL_loginuser   ADDRESS_IP1(@"/Register/loginuser")
+
+//注册 传入参数:手机号 phone 密码:password 短信验证码：messagecode 推广码：code 方式 post
+#define URL_addUser   ADDRESS_IP1(@"Register/addUser")
+
+
+
+
+
 #endif /* URLSets_h */

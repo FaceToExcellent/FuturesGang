@@ -15,6 +15,9 @@
 @property(nonatomic,strong) UIButton * dlbutton;
 @property(nonatomic,strong) UIButton * wjbutton;
 @property(nonatomic,strong) UIButton * mfbutton;
+
+@property(nonatomic,copy)NSString * message;
+@property(nonatomic,strong)MyAlertView * alert;
 @end
 
 @implementation LoginViewController
@@ -131,9 +134,53 @@
     
      [self dismissViewControllerAnimated:YES completion:nil];
     
-    RootTabViewController * vc = [[RootTabViewController alloc]init];
-  //  [self presentModalViewController:vc animated:YES];
-     [self presentViewController:vc animated:YES completion:Nil];
+    //NSLog(@"URL_Regist--%@",URL_Regist);
+    
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] initWithCapacity:2];
+    [parameters setObject:_zhTextview.text forKey:@"phone"];
+    [parameters setObject:_mmTextview.text forKey:@"password"];
+    __weak typeof(self)weakself = self;
+    [AFNetworkTool postJSONWithUrl:URL_loginuser parameters:parameters images:nil imageKey:nil success:^(id dict) {
+//        NSLog(@"%@",dict);
+//        NSLog(@"URL_Regist%@",dict[@"msg"]);
+       
+        weakself.message = dict[@"msg"];
+        
+        if (![dict[@"status"] isEqualToString:@"1"]) {
+            weakself.alert = [[MyAlertView alloc]initWithNormal];
+            [weakself.alert setTitile:@"登录失败" message:weakself.message];
+            [weakself.alert setOkBlock:^{
+                
+                weakself.zhTextview.text = nil;
+                weakself.mmTextview.text = nil;
+            }];
+            
+            [weakself.alert setCancelBlock:^{
+                weakself.zhTextview.text = nil;
+                weakself.mmTextview.text = nil;
+            }];
+            
+            
+            [weakself.view addSubview:weakself.alert];
+        }else
+        {
+            NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+            [def setObject:dict[@"TokenId"] forKey:@"APP_TokenId"];
+            [def setObject:dict[@"uid"] forKey:@"APP_Uid"];
+            
+        }
+    } fail:^(NSError *error) {
+        
+        //网络错误的时候
+      
+    }];
+    
+    
+    
+    
+//    RootTabViewController * vc = [[RootTabViewController alloc]init];
+//  //  [self presentModalViewController:vc animated:YES];
+//     [self presentViewController:vc animated:YES completion:Nil];
     
     
 }
