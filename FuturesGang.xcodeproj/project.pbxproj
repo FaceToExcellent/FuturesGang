@@ -35,6 +35,8 @@
 		46646FC920843019003B79F4 /* InformationScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46646FC720843019003B79F4 /* InformationScrollView.m */; };
 		46646FCC20843BA9003B79F4 /* QuotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46646FCB20843BA9003B79F4 /* QuotationView.m */; };
 		46646FCF20843E43003B79F4 /* QuotationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46646FCE20843E43003B79F4 /* QuotationTableViewCell.m */; };
+		46646FD520844BFA003B79F4 /* AFNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 46646FD220844BFA003B79F4 /* AFNetworkTool.m */; };
+		46646FD620844BFA003B79F4 /* AFAppDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 46646FD420844BFA003B79F4 /* AFAppDotNetAPIClient.m */; };
 		46783E1E20803A1600744B57 /* MyAlertView+ConditionAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 46783E1D20803A1600744B57 /* MyAlertView+ConditionAlert.m */; };
 		467DE9672073096E00183731 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE9662073096E00183731 /* AppDelegate.m */; };
 		467DE96F2073096F00183731 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467DE96E2073096F00183731 /* Assets.xcassets */; };
@@ -130,6 +132,10 @@
 		46646FCB20843BA9003B79F4 /* QuotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuotationView.m; sourceTree = "<group>"; };
 		46646FCD20843E43003B79F4 /* QuotationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuotationTableViewCell.h; sourceTree = "<group>"; };
 		46646FCE20843E43003B79F4 /* QuotationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuotationTableViewCell.m; sourceTree = "<group>"; };
+		46646FD120844BFA003B79F4 /* AFAppDotNetAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAppDotNetAPIClient.h; sourceTree = "<group>"; };
+		46646FD220844BFA003B79F4 /* AFNetworkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkTool.m; sourceTree = "<group>"; };
+		46646FD320844BFA003B79F4 /* AFNetworkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkTool.h; sourceTree = "<group>"; };
+		46646FD420844BFA003B79F4 /* AFAppDotNetAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAppDotNetAPIClient.m; sourceTree = "<group>"; };
 		46783E1C20803A1600744B57 /* MyAlertView+ConditionAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyAlertView+ConditionAlert.h"; sourceTree = "<group>"; };
 		46783E1D20803A1600744B57 /* MyAlertView+ConditionAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MyAlertView+ConditionAlert.m"; sourceTree = "<group>"; };
 		467DE9622073096E00183731 /* FuturesGang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuturesGang.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +253,10 @@
 		4603CE592079A468003F2332 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
+				46646FD320844BFA003B79F4 /* AFNetworkTool.h */,
+				46646FD220844BFA003B79F4 /* AFNetworkTool.m */,
+				46646FD120844BFA003B79F4 /* AFAppDotNetAPIClient.h */,
+				46646FD420844BFA003B79F4 /* AFAppDotNetAPIClient.m */,
 				4603CE5A2079A4E8003F2332 /* SRNetworkTool.h */,
 				4603CE5B2079A4E8003F2332 /* SRNetworkTool.m */,
 				4603CE5D2079A993003F2332 /* SocketRocketUtility.h */,
@@ -815,6 +825,7 @@
 				46599CB8207AFB6C002BC96E /* BankCardTableViewCell.m in Sources */,
 				4606AF16208087FA0084808B /* KlineViewController.m in Sources */,
 				4603CE642079BD95003F2332 /* CashTableViewCell.m in Sources */,
+				46646FD620844BFA003B79F4 /* AFAppDotNetAPIClient.m in Sources */,
 				46172D71207C6B0200BADCDE /* BubbleView.m in Sources */,
 				46172D74207C8F5C00BADCDE /* TransactionCashDetailViewController.m in Sources */,
 				4603CE5C2079A4E8003F2332 /* SRNetworkTool.m in Sources */,
@@ -847,6 +858,7 @@
 				46646FCC20843BA9003B79F4 /* QuotationView.m in Sources */,
 				46783E1E20803A1600744B57 /* MyAlertView+ConditionAlert.m in Sources */,
 				46FE670C2074B0500027C8B9 /* GetCashViewController.m in Sources */,
+				46646FD520844BFA003B79F4 /* AFNetworkTool.m in Sources */,
 				467DE98D2073162600183731 /* OptionalViewController.m in Sources */,
 				467DE9902073165E00183731 /* QuotationViewController.m in Sources */,
 				4645CD93207DB18E00939B8F /* DropDownMenu.m in Sources */,
