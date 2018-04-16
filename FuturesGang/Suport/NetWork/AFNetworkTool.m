@@ -11,8 +11,6 @@
 
 #include <sys/sysctl.h>
 #include <sys/types.h>
-#define KEY @"nGPl1eHqcKeoKzbyl4KzygwELqZ4DwqejfYg1yL6dYk="
-
 @implementation AFNetworkTool
 
 #pragma mark 检测网路状态
