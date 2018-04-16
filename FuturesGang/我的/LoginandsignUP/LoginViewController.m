@@ -148,7 +148,7 @@
         weakself.message = dict[@"msg"];
         
         if (![dict[@"status"] isEqualToString:@"1"]) {
-            weakself.alert = [[MyAlertView alloc]initWithNormal];
+            weakself.alert = [[MyAlertView alloc]initWithNormalAndNOCancell];
             [weakself.alert setTitile:@"登录失败" message:weakself.message];
             [weakself.alert setOkBlock:^{
                 
@@ -156,10 +156,6 @@
                 weakself.mmTextview.text = nil;
             }];
             
-            [weakself.alert setCancelBlock:^{
-                weakself.zhTextview.text = nil;
-                weakself.mmTextview.text = nil;
-            }];
             
             
             [weakself.view addSubview:weakself.alert];

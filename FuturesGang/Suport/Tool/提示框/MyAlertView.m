@@ -10,6 +10,66 @@
 
 @implementation MyAlertView
 
+-(id)initWithNormalAndNOCancell{
+    if (self = [super init]) {
+        
+        [self setbackground];
+        [self makeUINOCancell];
+    }
+    return self;
+}
+-(void)makeUINOCancell{
+    
+    UIView * bgview = [[UIView alloc]init];
+    bgview.frame = CGRectMake((SCREEN_WIDTH-550*wb)/2, 430*hb, 550*wb, 250*hb);
+    [bgview setBackgroundColor:[UIColor whiteColor]];
+    bgview.layer.masksToBounds = YES;
+    bgview.layer.cornerRadius = bgview.frame.size.width/32;
+    [self addSubview:bgview];
+    
+    //标题
+    _Alerttitle = [[UILabel alloc]init];
+    _Alerttitle.frame =CGRectMake(0, 30*hb, 550*wb, 40*hb);
+    
+    [_Alerttitle setTextColor:[UIColor blackColor]];
+    [_Alerttitle setFont:[UIFont systemFontOfSize:14]];
+    _Alerttitle.textAlignment = NSTextAlignmentCenter;
+    _Alerttitle.numberOfLines = 1;
+    [bgview addSubview:_Alerttitle];
+    
+    //message
+    _AlertMessage = [[UILabel alloc]init];
+    _AlertMessage.frame =CGRectMake(65*wb, 80*hb, 415*wb, 75*hb);
+    
+    [_AlertMessage setTextColor:[UIColor blackColor]];
+    [_AlertMessage setFont:[UIFont systemFontOfSize:12]];
+    _AlertMessage.textAlignment = NSTextAlignmentCenter;
+    _AlertMessage.numberOfLines = 2;
+    [bgview addSubview:_AlertMessage];
+    
+    //line1
+    
+    UIView * line1  =[[UIView alloc]init];
+    line1.frame =CGRectMake(0, 160*hb, 550*wb, 1);
+    line1.backgroundColor = RGBA(243, 243, 243, 1);
+    [bgview addSubview:line1];
+    
+   
+    
+   
+    //确定
+    UIButton * qdButton = [[UIButton alloc]init];
+    qdButton.frame = CGRectMake((bgview.frame.size.width -260*wb)/2, 160*hb, 260*wb, 85*hb);
+    [qdButton setTitle:@"确定" forState:UIControlStateNormal];
+    [qdButton setTitleColor:APP_BLUE forState:UIControlStateNormal];
+    [qdButton addTarget:self action:@selector(qdButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    qdButton.titleLabel.font = [UIFont systemFontOfSize:16];
+    [bgview addSubview:qdButton];
+    
+    
+    
+}
+
 -(id)initWithNormal{
     
     if (self = [super init]) {

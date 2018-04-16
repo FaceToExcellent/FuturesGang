@@ -89,7 +89,7 @@
     
     
     //推荐码
-    _tjWord = [self textFieldMakewithtext:@"推荐码" placeholder:@"请输入推荐码" withframe:CGRectMake(0, 310*hb+1, SCREEN_WIDTH, 100*hb) backgroundColor:APP_TEXTFEILD_BACKCOLOR andtag:104 andleftViewframe: CGRectMake(0, 0, 230*wb, 100*hb)];
+    _tjWord = [self textFieldMakewithtext:@"推荐码" placeholder:@"请输入推荐码(*必填*)" withframe:CGRectMake(0, 310*hb+1, SCREEN_WIDTH, 100*hb) backgroundColor:APP_TEXTFEILD_BACKCOLOR andtag:104 andleftViewframe: CGRectMake(0, 0, 230*wb, 100*hb)];
     _tjWord.delegate = self ;
     _tjWord.returnKeyType = UIReturnKeyDone;
     [self.view addSubview:_tjWord];

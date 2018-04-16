@@ -19,6 +19,8 @@
 
 @property(nonatomic,strong) dispatch_source_t timer;
 @property(nonatomic,assign) __block NSInteger time;
+
+@property(nonatomic,strong)MyAlertView * alert;
 @end
 
 @implementation ForgetWordViewController
@@ -113,8 +115,23 @@
 
 //确定按钮 这里需要提交网路
 -(void)qdbuttonClick{
-    
-    [self.navigationController popViewControllerAnimated:YES];
+    [_comformWord resignFirstResponder];
+
+    if (![_comformWord.text isEqualToString:_mynewWord.text]) {
+        
+        _alert = [[MyAlertView alloc]initWithNormalAndNOCancell];
+        [_alert setTitile:@"提示" message:@"密码和再次输入密码不相同"];
+        __weak typeof(self)weakself = self;
+        [_alert setOkBlock:^{
+            weakself.comformWord.text = nil;
+        }];
+        
+        [self.view addSubview:_alert];
+        
+        return;
+    }
+  
+   // [self.navigationController popViewControllerAnimated:YES];
     
 }
 
