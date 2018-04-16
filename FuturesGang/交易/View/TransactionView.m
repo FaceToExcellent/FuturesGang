@@ -463,7 +463,7 @@
     [_menu setMydatearray:arr];
     _menu.delegate = self;
     [_menu setMytopViewlabel:arr[0]];
-    _reH =  [_menu setMytableViewHeight:250*hb];
+    _reH =  [_menu setMaxHeight:250*hb];
     [_menu setMyleftImage:[UIImage imageNamed:@"xia"]];
     [self  addSubview:_menu];
 }

@@ -112,22 +112,20 @@
     
     _leftImage.image = image;
 }
--(CGFloat)setMytableViewHeight:(CGFloat)tableViewHeight{
-    
-
+-(CGFloat)setMaxHeight:(CGFloat)tableViewHeight{
     if (tableViewHeight > _datearray.count * _heightForRow) {
         
         _bgView2.frame = CGRectMake(0, _heightForRow-1, self.frame.size.width, _datearray.count * _heightForRow);
         _bgView3.frame  = CGRectMake(1, 1, self.frame.size.width-2, _datearray.count * _heightForRow-2);
         _tableView.frame = CGRectMake(0, 0, self.frame.size.width-2, _datearray.count * _heightForRow-2);
-      self.reH = _datearray.count * _heightForRow;
+        self.reH = _datearray.count * _heightForRow;
     }else
     {
-     _bgView2.frame = CGRectMake(0, _heightForRow-1, self.frame.size.width, tableViewHeight);
+        _bgView2.frame = CGRectMake(0, _heightForRow-1, self.frame.size.width, tableViewHeight);
         _bgView3.frame  = CGRectMake(1, 1, self.frame.size.width-2, tableViewHeight-2);
         _tableView.frame = CGRectMake(0, 0, self.frame.size.width-2, tableViewHeight-2);
-      _tableView.frame = CGRectMake(1, 1, self.frame.size.width-2, tableViewHeight-2);
-       self.reH =   tableViewHeight;
+        _tableView.frame = CGRectMake(1, 1, self.frame.size.width-2, tableViewHeight-2);
+        self.reH =   tableViewHeight;
     }
     
     
@@ -149,8 +147,9 @@
     return  self.reH;
     
     
-    
 }
+
+
 -(void)setMydatearray:(NSMutableArray*)array{
     _datearray = array;
    // NSLog(@"%@",_datearray);

@@ -38,7 +38,8 @@
 -(void)setMytopViewlabel:(NSString*)topViewlabel;
 -(void)setMyleftImage:(UIImage*)image;
 -(void)setMyheightForRow:(CGFloat) heightForRow;
--(CGFloat)setMytableViewHeight:(CGFloat)tableViewHeight;
+//设置最大高度
+-(CGFloat)setMaxHeight:(CGFloat)tableViewHeight;
 -(void)setMydatearray:(NSMutableArray*)array;
 
 
