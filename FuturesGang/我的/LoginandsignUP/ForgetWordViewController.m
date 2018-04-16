@@ -84,6 +84,7 @@
     //新登录密码
     _mynewWord = [self textFieldMakewithtext:@"新登录密码" placeholder:@"6-12位数字和字母组合" withframe:CGRectMake(0, 210*hb, SCREEN_WIDTH, 100*hb) backgroundColor:APP_TEXTFEILD_BACKCOLOR andtag:103 andleftViewframe:CGRectMake(0, 0, 230*wb, 100*hb)];
     _mynewWord.delegate = self ;
+    _mynewWord.secureTextEntry = YES;
     _mynewWord.returnKeyType = UIReturnKeyNext;
     [self.view addSubview:_mynewWord];
     
@@ -93,6 +94,7 @@
     
     _comformWord = [self textFieldMakewithtext:@"确认登录密码" placeholder:@"请输入确认登录密码" withframe:CGRectMake(0, 210*hb +100*hb + 1, SCREEN_WIDTH, 100*hb) backgroundColor:APP_TEXTFEILD_BACKCOLOR andtag:104 andleftViewframe:CGRectMake(0, 0, 230*wb, 100*hb)];
     _comformWord.delegate = self ;
+    _comformWord.secureTextEntry = YES;
     _comformWord.returnKeyType = UIReturnKeyDone;
     [self.view addSubview:_comformWord];
     

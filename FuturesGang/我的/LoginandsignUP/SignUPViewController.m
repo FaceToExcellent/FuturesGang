@@ -19,6 +19,10 @@
 
 @property(nonatomic,strong) dispatch_source_t timer;
 @property(nonatomic,assign) __block NSInteger time;
+
+
+@property(nonatomic,copy)NSString * message;
+@property(nonatomic,strong)MyAlertView * alert;
 @end
 
 @implementation SignUPViewController
@@ -101,7 +105,57 @@
 }
 
 -(void)zcButtonClick{
-    [self.navigationController popViewControllerAnimated:YES];
+    
+    
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] initWithCapacity:2];
+    [parameters setObject:_phoneNumber.text forKey:@"phone"];
+    [parameters setObject:_spnewWord.text forKey:@"password"];
+    [parameters setObject:_yzm.text forKey:@"messagecode "];
+    [parameters setObject:_tjWord.text forKey:@"code"];
+    __weak typeof(self)weakself = self;
+    
+     NSLog(@"URL_addUser%@",URL_addUser);
+    [AFNetworkTool postJSONWithUrl:URL_addUser parameters:parameters images:nil imageKey:nil success:^(id dict) {
+                NSLog(@"%@",dict);
+                NSLog(@"URL_addUser%@",dict[@"msg"]);
+        
+        weakself.message = dict[@"msg"];
+        
+        if (![dict[@"status"] isEqualToString:@"1"]) {
+            weakself.alert = [[MyAlertView alloc]initWithNormal];
+            [weakself.alert setTitile:@"注册失败" message:weakself.message];
+            [weakself.alert setOkBlock:^{
+                
+              
+            }];
+            
+            [weakself.alert setCancelBlock:^{
+               
+            }];
+            
+            
+            [weakself.view addSubview:weakself.alert];
+        }else
+        {
+            NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+            [def setObject:dict[@"TokenId"] forKey:@"APP_TokenId"];
+            [def setObject:dict[@"uid"] forKey:@"APP_Uid"];
+            
+            
+            RootTabViewController * vc = [[RootTabViewController alloc]init];
+            //  [self presentModalViewController:vc animated:YES];
+            [self presentViewController:vc animated:YES completion:Nil];
+            
+        }
+    } fail:^(NSError *error) {
+        
+        //网络错误的时候
+        
+    }];
+    
+    
+    
+   // [self.navigationController popViewControllerAnimated:YES];
 }
 // 开启倒计时效果
 -(void)openCountdown{

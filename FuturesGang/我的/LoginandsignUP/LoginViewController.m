@@ -59,6 +59,7 @@
     _mmTextview.returnKeyType = UIReturnKeyDone;
     [self.view addSubview:_mmTextview];
     _mmTextview.layer.masksToBounds = YES;
+    _mmTextview.secureTextEntry = YES;
     _mmTextview.layer.cornerRadius  = _mmTextview.frame.size.height/16;
  
     
@@ -167,6 +168,11 @@
             NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
             [def setObject:dict[@"TokenId"] forKey:@"APP_TokenId"];
             [def setObject:dict[@"uid"] forKey:@"APP_Uid"];
+            
+            
+                RootTabViewController * vc = [[RootTabViewController alloc]init];
+              //  [self presentModalViewController:vc animated:YES];
+                 [self presentViewController:vc animated:YES completion:Nil];
             
         }
     } fail:^(NSError *error) {

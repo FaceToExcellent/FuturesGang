@@ -23,7 +23,7 @@
 #define URL_loginuser   ADDRESS_IP1(@"/Register/loginuser")
 
 //注册 传入参数:手机号 phone 密码:password 短信验证码：messagecode 推广码：code 方式 post
-#define URL_addUser   ADDRESS_IP1(@"Register/addUser")
+#define URL_addUser   ADDRESS_IP1(@"/Register/addUser")
 
 
 
