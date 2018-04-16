@@ -32,6 +32,12 @@
     self.alpha = 1;
     self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 }
+
+-(void)setTitile:(NSString*)title  message:(NSString*)message{
+     [_Alerttitle setText:title];
+     //[_AlertMessage setText:@"打开此功能后,下单时将没有确认提示,请谨慎使用"];
+     [_AlertMessage setText:message];
+}
 -(void)makeUI{
   
     UIView * bgview = [[UIView alloc]init];
@@ -44,7 +50,7 @@
     //标题
     _Alerttitle = [[UILabel alloc]init];
     _Alerttitle.frame =CGRectMake(0, 30*hb, 550*wb, 40*hb);
-    [_Alerttitle setText:@"警告"];
+   
     [_Alerttitle setTextColor:[UIColor blackColor]];
     [_Alerttitle setFont:[UIFont systemFontOfSize:14]];
     _Alerttitle.textAlignment = NSTextAlignmentCenter;
@@ -54,7 +60,7 @@
     //message
     _AlertMessage = [[UILabel alloc]init];
     _AlertMessage.frame =CGRectMake(65*wb, 80*hb, 415*wb, 75*hb);
-    [_AlertMessage setText:@"打开此功能后,下单时将没有确认提示,请谨慎使用"];
+
     [_AlertMessage setTextColor:[UIColor blackColor]];
     [_AlertMessage setFont:[UIFont systemFontOfSize:12]];
     _AlertMessage.textAlignment = NSTextAlignmentCenter;

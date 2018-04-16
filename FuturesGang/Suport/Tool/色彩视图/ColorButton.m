@@ -38,7 +38,7 @@
 -(void)setmystateString:(NSString*)stateString{
     self.stateString = stateString;
     
-   // [self makeNObackUI];
+ 
 }
 -(void)makeNObackUI{
     if ([self.stateString isEqualToString:@"0"] ) {
@@ -55,8 +55,6 @@
     
     self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
     
-//    [self.layer setMasksToBounds:YES];
-//    [self.layer setCornerRadius:3.0];
 }
 -(void)makeUI{
     

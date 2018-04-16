@@ -29,7 +29,7 @@ typedef void(^MyAlertViewAddquantityBLock)(NSString*number);
 
 
 -(id)initWithNormal;
-
+-(void)setTitile:(NSString*)title  message:(NSString*)message;
 - (void)cancelButtonClick;
 
 

@@ -218,8 +218,8 @@
 
 -(void)alertviewMake{
    _alert = [[MyAlertView alloc]initWithNormal];
+    [_alert setTitile:@"警告" message:@"打开此功能后,下单时将没有确认提示,请谨慎使用"];
    __weak typeof(self) weakSelf = self;
- 
     [weakSelf.alert setOkBlock:^{
         // NSLog(@"确定");
     }];
