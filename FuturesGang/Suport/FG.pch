@@ -23,6 +23,8 @@
 #import "AFNetworkTool.h"
 #import "SRNetworkTool.h"
 
+//url 
+#import "URLSets.h"
 
 
 #define RGBA(R/*红*/, G/*绿*/, B/*蓝*/, A/*透明*/) \

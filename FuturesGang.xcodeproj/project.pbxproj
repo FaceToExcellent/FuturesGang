@@ -136,6 +136,7 @@
 		46646FD220844BFA003B79F4 /* AFNetworkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkTool.m; sourceTree = "<group>"; };
 		46646FD320844BFA003B79F4 /* AFNetworkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkTool.h; sourceTree = "<group>"; };
 		46646FD420844BFA003B79F4 /* AFAppDotNetAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAppDotNetAPIClient.m; sourceTree = "<group>"; };
+		46646FD7208452D4003B79F4 /* URLSets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLSets.h; sourceTree = "<group>"; };
 		46783E1C20803A1600744B57 /* MyAlertView+ConditionAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyAlertView+ConditionAlert.h"; sourceTree = "<group>"; };
 		46783E1D20803A1600744B57 /* MyAlertView+ConditionAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MyAlertView+ConditionAlert.m"; sourceTree = "<group>"; };
 		467DE9622073096E00183731 /* FuturesGang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuturesGang.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -482,6 +483,7 @@
 				467DE9742073096F00183731 /* main.m */,
 				467DE97E2073143B00183731 /* Default-568h@2x.png */,
 				467DE992207317D900183731 /* FG.pch */,
+				46646FD7208452D4003B79F4 /* URLSets.h */,
 			);
 			path = Suport;
 			sourceTree = "<group>";
