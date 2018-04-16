@@ -31,6 +31,8 @@
 		46599CB8207AFB6C002BC96E /* BankCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CB7207AFB6C002BC96E /* BankCardTableViewCell.m */; };
 		46599CBC207AFCCD002BC96E /* UIView+MYViewinit.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CBB207AFCCD002BC96E /* UIView+MYViewinit.m */; };
 		46599CBF207AFD82002BC96E /* UIViewController+MYViewinit.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CBE207AFD82002BC96E /* UIViewController+MYViewinit.m */; };
+		46646FC62084300F003B79F4 /* InformationNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46646FC42084300F003B79F4 /* InformationNavView.m */; };
+		46646FC920843019003B79F4 /* InformationScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46646FC720843019003B79F4 /* InformationScrollView.m */; };
 		46783E1E20803A1600744B57 /* MyAlertView+ConditionAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 46783E1D20803A1600744B57 /* MyAlertView+ConditionAlert.m */; };
 		467DE9672073096E00183731 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE9662073096E00183731 /* AppDelegate.m */; };
 		467DE96F2073096F00183731 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467DE96E2073096F00183731 /* Assets.xcassets */; };
@@ -118,6 +120,10 @@
 		46599CBB207AFCCD002BC96E /* UIView+MYViewinit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+MYViewinit.m"; sourceTree = "<group>"; };
 		46599CBD207AFD82002BC96E /* UIViewController+MYViewinit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MYViewinit.h"; sourceTree = "<group>"; };
 		46599CBE207AFD82002BC96E /* UIViewController+MYViewinit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MYViewinit.m"; sourceTree = "<group>"; };
+		46646FC42084300F003B79F4 /* InformationNavView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationNavView.m; sourceTree = "<group>"; };
+		46646FC52084300F003B79F4 /* InformationNavView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationNavView.h; sourceTree = "<group>"; };
+		46646FC720843019003B79F4 /* InformationScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationScrollView.m; sourceTree = "<group>"; };
+		46646FC820843019003B79F4 /* InformationScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationScrollView.h; sourceTree = "<group>"; };
 		46783E1C20803A1600744B57 /* MyAlertView+ConditionAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyAlertView+ConditionAlert.h"; sourceTree = "<group>"; };
 		46783E1D20803A1600744B57 /* MyAlertView+ConditionAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MyAlertView+ConditionAlert.m"; sourceTree = "<group>"; };
 		467DE9622073096E00183731 /* FuturesGang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuturesGang.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -344,6 +350,17 @@
 			path = "通用封装方法";
 			sourceTree = "<group>";
 		};
+		46646FC320842EF0003B79F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				46646FC820843019003B79F4 /* InformationScrollView.h */,
+				46646FC720843019003B79F4 /* InformationScrollView.m */,
+				46646FC52084300F003B79F4 /* InformationNavView.h */,
+				46646FC42084300F003B79F4 /* InformationNavView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		467DE9592073096E00183731 = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +434,7 @@
 		467DE9832073158900183731 /* 行情 */ = {
 			isa = PBXGroup;
 			children = (
+				46646FC320842EF0003B79F4 /* View */,
 				467DE98E2073165E00183731 /* QuotationViewController.h */,
 				467DE98F2073165E00183731 /* QuotationViewController.m */,
 			);
@@ -773,6 +791,7 @@
 				467DE99B20731A0B00183731 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				4601A06E207B40C900D174F4 /* MyPickerView.m in Sources */,
 				467DE97D20730BF500183731 /* RootTabViewController.m in Sources */,
+				46646FC920843019003B79F4 /* InformationScrollView.m in Sources */,
 				4606AF0C2080468C0084808B /* MyAlertView+Addquantity.m in Sources */,
 				4645CD8F207D986E00939B8F /* SinglePickerView.m in Sources */,
 				46599CB8207AFB6C002BC96E /* BankCardTableViewCell.m in Sources */,
@@ -791,6 +810,7 @@
 				46FE6705207462190027C8B9 /* SpreadViewController.m in Sources */,
 				4645CDA3207DF50700939B8F /* TransctionFSView.m in Sources */,
 				46FE67092074ACC50027C8B9 /* ChargeViewController.m in Sources */,
+				46646FC62084300F003B79F4 /* InformationNavView.m in Sources */,
 				46DFDE4F207F593800B03935 /* KlineTopView.m in Sources */,
 				46A2414920736CAC00EFA8B4 /* MyCenterTableViewCell.m in Sources */,
 				4653A218207EEA47004B3B22 /* TransactionButton.m in Sources */,
