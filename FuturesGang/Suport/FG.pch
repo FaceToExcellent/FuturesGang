@@ -15,15 +15,18 @@
 #import "RootTabViewController.h"
 #import "UIViewController+MYViewinit.h"
 #import "UIView+MYViewinit.h"
+//提示框
 #import "MyAlertView.h"
 #import "MyAlertView+ConditionAlert.h"
+//三色按钮
 #import "ColorButton.h"
+//三种状态按钮
 #import "YButton.h"
-
+//网络请求工具
 #import "AFNetworkTool.h"
 #import "SRNetworkTool.h"
 
-//url 
+//url
 #import "URLSets.h"
 
 
@@ -46,7 +49,7 @@
 #define DEVICE_TYPE                [[NSUserDefaults standardUserDefaults] objectForKey:@"DeviceType"]
 //设备分辨率
 #define DEVICE_SCREEN_SIZE          [[NSUserDefaults standardUserDefaults] objectForKey:@"ScreenSize"]
-//列表字体
+//列表字体-瘦
 #define LIST_FOUNT      @"STHeitiSC-Light"
 
 //获取沙盒的路径
@@ -54,7 +57,7 @@
 
 #define CACHE_FILE_PATH(file)       [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:file];
 
-
+//APP基础颜色
 #define APP_BLUE RGBA(49,111,204,1)
 #define APP_BACKCOLOR RGBA(31,33,44,1)
 #define APP_TEXTFEILD_BACKCOLOR RGBA(38,40,52,1)

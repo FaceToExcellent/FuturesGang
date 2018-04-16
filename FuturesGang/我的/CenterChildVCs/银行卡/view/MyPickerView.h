@@ -15,7 +15,7 @@ typedef void (^PickerDidFinish)(NSString * address);
 
 @property(nonatomic)NSInteger provinceIndex;   // 省份选择 记录
 @property(nonatomic)NSInteger cityIndex;       // 市选择 记录
-@property(nonatomic)NSInteger districtIndex;   // 区选择 记录
+//@property(nonatomic)NSInteger districtIndex;   // 区选择 记录
 
 
 @property (copy,nonatomic) PickerDidFinish didFinishBlock;

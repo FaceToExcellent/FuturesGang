@@ -157,7 +157,7 @@
         NSString *dataStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSString *json;
         json =  dataStr;
-        NSData* data=[json dataUsingEncoding:NSUTF8StringEncoding];
+       NSData* data=[json dataUsingEncoding:NSUTF8StringEncoding];
         if (data) {
             id dict=[NSJSONSerialization  JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
             if ([dict isKindOfClass:[NSDictionary class]]) {

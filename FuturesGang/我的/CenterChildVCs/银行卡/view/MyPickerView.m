@@ -27,7 +27,7 @@
 
 -(void)initData
 {
-    _provinceIndex = _cityIndex = _districtIndex = 0;
+    _provinceIndex = _cityIndex  = 0;
 }
 // 读取本地Plist加载数据源
 -(NSArray *)arrayDS
@@ -64,7 +64,7 @@
 {
     //self.didFinishBlock(self.id_,self.brand_name);
     
-     NSString * address = [NSString stringWithFormat:@"%@-%@-%@", self.arrayDS[_provinceIndex][@"province"], self.arrayDS[_provinceIndex][@"citys"][_cityIndex][@"city"], self.arrayDS[_provinceIndex][@"citys"][_cityIndex][@"districts"][_districtIndex]];
+     NSString * address = [NSString stringWithFormat:@"%@-%@", self.arrayDS[_provinceIndex][@"province"], self.arrayDS[_provinceIndex][@"citys"][_cityIndex][@"city"]];
     self.didFinishBlock(address);
     
     [self removeFromSuperview];
@@ -79,7 +79,7 @@
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    return 3;
+    return 2;
 }
 // 每列有多少行
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
@@ -90,9 +90,11 @@
     else if (component == 1){
         return [self.arrayDS[_provinceIndex][@"citys"] count];
     }
-    else{
-        return [self.arrayDS[_provinceIndex][@"citys"][_cityIndex][@"districts"] count];
-    }
+//    else{
+//        return [self.arrayDS[_provinceIndex][@"citys"][_cityIndex][@"districts"] count];
+//    }
+   // return nil;
+    return 0;
 }
 
 // 返回每一行的内容
@@ -104,9 +106,10 @@
     else if (component == 1){
         return self.arrayDS[_provinceIndex][@"citys"][row][@"city"];
     }
-    else{
-        return self.arrayDS[_provinceIndex][@"citys"][_cityIndex][@"districts"][row];
-    }
+//    else{
+//        return self.arrayDS[_provinceIndex][@"citys"][_cityIndex][@"districts"][row];
+//    }
+    return nil;
 }
 
 // 滑动或点击选择，确认pickerView选中结果
@@ -116,20 +119,20 @@
     if(component == 0){
         _provinceIndex = row;
         _cityIndex = 0;
-        _districtIndex = 0;
+       // _districtIndex = 0;
         
         [self.CustomPicker reloadComponent:1];
-        [self.CustomPicker reloadComponent:2];
+      //  [self.CustomPicker reloadComponent:2];
     }
     else if (component == 1){
         _cityIndex = row;
-        _districtIndex = 0;
+       // _districtIndex = 0;
         
-        [self.CustomPicker reloadComponent:2];
+       // [self.CustomPicker reloadComponent:2];
     }
-    else{
-        _districtIndex = row;
-    }
+//    else{
+//        _districtIndex = row;
+//    }
     
     // 重置当前选中项
     [self resetPickerSelectRow];
@@ -143,7 +146,7 @@
 {
     [self.CustomPicker selectRow:_provinceIndex inComponent:0 animated:YES];
     [self.CustomPicker selectRow:_cityIndex inComponent:1 animated:YES];
-    [self.CustomPicker selectRow:_districtIndex inComponent:2 animated:YES];
+   // [self.CustomPicker selectRow:_districtIndex inComponent:2 animated:YES];
 }
 
 @end
