@@ -16,6 +16,6 @@
 @property(nonatomic,strong)ColorButton  * newnestButton;
 
 @property(nonatomic,strong)ColorButton  * RoseButton;
-
+-(void)cellMakeUI;
 -(void)setcellData:(NSInteger)row;
 @end

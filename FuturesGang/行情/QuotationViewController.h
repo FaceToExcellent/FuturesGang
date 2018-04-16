@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "InformationNavView.h"
 #import "InformationScrollView.h"
-@interface QuotationViewController : RootViewController<InfoScrollViewDelegate>
+@interface QuotationViewController : RootViewController
 
 
 @end

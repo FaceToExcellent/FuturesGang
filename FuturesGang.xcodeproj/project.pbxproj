@@ -33,6 +33,8 @@
 		46599CBF207AFD82002BC96E /* UIViewController+MYViewinit.m in Sources */ = {isa = PBXBuildFile; fileRef = 46599CBE207AFD82002BC96E /* UIViewController+MYViewinit.m */; };
 		46646FC62084300F003B79F4 /* InformationNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46646FC42084300F003B79F4 /* InformationNavView.m */; };
 		46646FC920843019003B79F4 /* InformationScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46646FC720843019003B79F4 /* InformationScrollView.m */; };
+		46646FCC20843BA9003B79F4 /* QuotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46646FCB20843BA9003B79F4 /* QuotationView.m */; };
+		46646FCF20843E43003B79F4 /* QuotationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46646FCE20843E43003B79F4 /* QuotationTableViewCell.m */; };
 		46783E1E20803A1600744B57 /* MyAlertView+ConditionAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 46783E1D20803A1600744B57 /* MyAlertView+ConditionAlert.m */; };
 		467DE9672073096E00183731 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE9662073096E00183731 /* AppDelegate.m */; };
 		467DE96F2073096F00183731 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467DE96E2073096F00183731 /* Assets.xcassets */; };
@@ -124,6 +126,10 @@
 		46646FC52084300F003B79F4 /* InformationNavView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationNavView.h; sourceTree = "<group>"; };
 		46646FC720843019003B79F4 /* InformationScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationScrollView.m; sourceTree = "<group>"; };
 		46646FC820843019003B79F4 /* InformationScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationScrollView.h; sourceTree = "<group>"; };
+		46646FCA20843BA9003B79F4 /* QuotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuotationView.h; sourceTree = "<group>"; };
+		46646FCB20843BA9003B79F4 /* QuotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuotationView.m; sourceTree = "<group>"; };
+		46646FCD20843E43003B79F4 /* QuotationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuotationTableViewCell.h; sourceTree = "<group>"; };
+		46646FCE20843E43003B79F4 /* QuotationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuotationTableViewCell.m; sourceTree = "<group>"; };
 		46783E1C20803A1600744B57 /* MyAlertView+ConditionAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyAlertView+ConditionAlert.h"; sourceTree = "<group>"; };
 		46783E1D20803A1600744B57 /* MyAlertView+ConditionAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MyAlertView+ConditionAlert.m"; sourceTree = "<group>"; };
 		467DE9622073096E00183731 /* FuturesGang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuturesGang.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -353,12 +359,24 @@
 		46646FC320842EF0003B79F4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				46646FD02084453B003B79F4 /* 暂时无用 */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46646FD02084453B003B79F4 /* 暂时无用 */ = {
+			isa = PBXGroup;
+			children = (
 				46646FC820843019003B79F4 /* InformationScrollView.h */,
 				46646FC720843019003B79F4 /* InformationScrollView.m */,
 				46646FC52084300F003B79F4 /* InformationNavView.h */,
 				46646FC42084300F003B79F4 /* InformationNavView.m */,
+				46646FCA20843BA9003B79F4 /* QuotationView.h */,
+				46646FCB20843BA9003B79F4 /* QuotationView.m */,
+				46646FCD20843E43003B79F4 /* QuotationTableViewCell.h */,
+				46646FCE20843E43003B79F4 /* QuotationTableViewCell.m */,
 			);
-			path = View;
+			path = "暂时无用";
 			sourceTree = "<group>";
 		};
 		467DE9592073096E00183731 = {
@@ -822,9 +840,11 @@
 				467DE9752073096F00183731 /* main.m in Sources */,
 				467DE98A2073160D00183731 /* TransactionViewController.m in Sources */,
 				46FE66F9207461120027C8B9 /* SettlementViewController.m in Sources */,
+				46646FCF20843E43003B79F4 /* QuotationTableViewCell.m in Sources */,
 				4645CD99207DEB8F00939B8F /* TransactionView.m in Sources */,
 				4645CD96207DD3F700939B8F /* DropDownMenuCell.m in Sources */,
 				467DE9982073195F00183731 /* OneLevelViewController.m in Sources */,
+				46646FCC20843BA9003B79F4 /* QuotationView.m in Sources */,
 				46783E1E20803A1600744B57 /* MyAlertView+ConditionAlert.m in Sources */,
 				46FE670C2074B0500027C8B9 /* GetCashViewController.m in Sources */,
 				467DE98D2073162600183731 /* OptionalViewController.m in Sources */,
