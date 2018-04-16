@@ -32,10 +32,9 @@
 + (NSString *)getDevicePlatform;
 
 
-
+//get
 + (void) getStringDataWithUrl:(NSString *)url   success:(void (^)(id dict))success fail:(void (^)(NSError *error))fail;
-
-
+//post 
 + (void)postJSONWithUrl:(NSString *)urlStr  parameters:(NSDictionary*)parameters images:(NSMutableArray*)imageArray imageKey:(NSString *)imageKey success:(void (^)(id dict))success fail:(void (^)(NSError *error))fail;
 
 

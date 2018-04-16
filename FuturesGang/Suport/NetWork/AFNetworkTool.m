@@ -8,10 +8,114 @@
 
 #import "AFNetworkTool.h"
 #import "AFAppDotNetAPIClient.h"
-
 #include <sys/sysctl.h>
 #include <sys/types.h>
 @implementation AFNetworkTool
+#pragma mark - JSON加密字符串方式获取数据
+
++ (void) getStringDataWithUrl:(NSString *)url   success:(void (^)(id dict))success fail:(void (^)(NSError *error))fail
+{
+    //[self checkPublicKeyCookie];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    //
+    [[AFAppDotNetAPIClient sharedClient] GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        //
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        //        NSLog(@"%@",responseObject);
+        NSString *dataStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSString *json;
+        json =  dataStr;
+        NSData* data=[json dataUsingEncoding:NSUTF8StringEncoding];
+        if (data) {
+            id dict=[NSJSONSerialization  JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            if ([dict isKindOfClass:[NSDictionary class]]) {
+                success(dict);
+            }
+            else
+            {
+                //
+            }
+        }
+        else
+        {
+            
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        
+        fail(error);
+    }];
+}
+
+#pragma mark - JSON方式post提交数据
+
+
++ (void)postJSONWithUrl:(NSString *)urlStr  parameters:(NSDictionary*)parameters images:(NSMutableArray*)imageArray imageKey:(NSString *)imageKey success:(void (^)(id dict))success fail:(void (^)(NSError *error))fail
+{
+    // [self checkPublicKeyCookie];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    if (![parameters isKindOfClass:[NSDictionary class]]) {
+        NSLog(@"异常");
+    }
+    
+    [[AFAppDotNetAPIClient sharedClient] POST:urlStr parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        //
+        if (imageArray.count >0) {
+            for (NSDictionary *dict in imageArray) {
+                NSData *imageData = (NSData *)[dict objectForKey:@"image"];
+                NSString *imageName = [dict objectForKey:@"imageName"];
+                NSString *imageKeyW = imageKey;
+                if (!imageKeyW) {
+                    imageKeyW = @"pic[]";
+                }
+                if (imageData) {
+                    [formData appendPartWithFileData:imageData name:imageKeyW fileName:[NSString stringWithFormat:@"%@",imageName] mimeType:@""];
+                }
+            }
+        }
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        //
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        //        NSLog(@"%@",responseObject);
+        NSString *dataStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSString *json;
+        json = dataStr;
+        NSData* data=[json dataUsingEncoding:NSUTF8StringEncoding];
+        if (data) {
+            id dict=[NSJSONSerialization  JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            if ([dict isKindOfClass:[NSDictionary class]]) {
+                success(dict);
+            }
+            else
+            {
+                fail(nil);
+            }
+        }
+        else
+        {
+            fail (nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        fail(error);
+    }];
+    
+}
+
++ (NSString*)dictionaryToJson:(NSDictionary *)dic
+
+{
+    
+    NSError *parseError = nil;
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
+    
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+}
 
 #pragma mark 检测网路状态
 + (void)netWorkStatus
@@ -142,111 +246,6 @@
     return [[[UIDevice currentDevice] systemVersion] floatValue];
 }
 
-#pragma mark - JSON加密字符串方式获取数据
-
-+ (void) getStringDataWithUrl:(NSString *)url   success:(void (^)(id dict))success fail:(void (^)(NSError *error))fail
-{
-    //[self checkPublicKeyCookie];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    //
-    [[AFAppDotNetAPIClient sharedClient] GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        //
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-//        NSLog(@"%@",responseObject);
-        NSString *dataStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSString *json;
-        json =  dataStr;
-       NSData* data=[json dataUsingEncoding:NSUTF8StringEncoding];
-        if (data) {
-            id dict=[NSJSONSerialization  JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-            if ([dict isKindOfClass:[NSDictionary class]]) {
-                success(dict);
-            }
-            else
-            {
-//
-            }
-        }
-        else
-        {
-          
-        }
-
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-
-        fail(error);
-    }];
-}
-
-#pragma mark - JSON方式post提交数据
-
-
-+ (void)postJSONWithUrl:(NSString *)urlStr  parameters:(NSDictionary*)parameters images:(NSMutableArray*)imageArray imageKey:(NSString *)imageKey success:(void (^)(id dict))success fail:(void (^)(NSError *error))fail
-{
-   // [self checkPublicKeyCookie];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    if (![parameters isKindOfClass:[NSDictionary class]]) {
-        NSLog(@"异常");
-    }
-
-    [[AFAppDotNetAPIClient sharedClient] POST:urlStr parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        //
-        if (imageArray.count >0) {
-            for (NSDictionary *dict in imageArray) {
-                NSData *imageData = (NSData *)[dict objectForKey:@"image"];
-                NSString *imageName = [dict objectForKey:@"imageName"];
-                NSString *imageKeyW = imageKey;
-                if (!imageKeyW) {
-                    imageKeyW = @"pic[]";
-                }
-                if (imageData) {
-                    [formData appendPartWithFileData:imageData name:imageKeyW fileName:[NSString stringWithFormat:@"%@",imageName] mimeType:@""];
-                }
-            }
-        }
-    } progress:^(NSProgress * _Nonnull uploadProgress) {
-        //
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        //        NSLog(@"%@",responseObject);
-        NSString *dataStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSString *json;
-        json = dataStr;
-        NSData* data=[json dataUsingEncoding:NSUTF8StringEncoding];
-        if (data) {
-            id dict=[NSJSONSerialization  JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-            if ([dict isKindOfClass:[NSDictionary class]]) {
-                success(dict);
-            }
-            else
-            {
-                fail(nil);
-            }
-        }
-        else
-        {
-            fail (nil);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        fail(error);
-    }];
-    
-}
-
-+ (NSString*)dictionaryToJson:(NSDictionary *)dic
-
-{
-    
-    NSError *parseError = nil;
-    
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
-    
-    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    
-}
 
 
 
