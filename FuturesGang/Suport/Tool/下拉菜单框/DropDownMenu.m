@@ -14,7 +14,9 @@
 {
     if (self = [super initWithFrame:frame]) {
         
-        [self makeUI];
+       // [self makeUI];
+        
+        [self setMyheightForRow:frame.size.height];
     }
     return self;
 }
@@ -107,6 +109,7 @@
     
    
     [self makeUI];
+    
 }
 -(void)setMyleftImage:(UIImage*)image{
     
@@ -154,6 +157,7 @@
     _datearray = array;
    // NSLog(@"%@",_datearray);
     [_tableView reloadData];
+     [self setMytopViewlabel:_datearray[0]];
 }
 
 #pragma mark _tableView delegate
